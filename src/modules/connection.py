@@ -184,12 +184,17 @@ class Session:
             raise TypeError(
                 "x, y and z codes must be integer or string values"
             )
-        elif not all(1 <= len(str(code)) <= 3 for code in (x, y, z)):
-            raise TypeError(
-                "x, y and z values must contain between 1 and 3 characters"
-            )
 
-        x, y, z = abs(x), abs(y), abs(z)  # Quick fix.
+        x, y, z = str(x), str(y), str(z)
+
+        if not all(
+                1 <= len(code) <= 3 and code.isnumeric()
+                for code in (x, y, z)
+                ):
+            raise TypeError(
+                "x, y and z values must contain between 1 and 3 numeric "
+                + "characters"
+            )
 
         try:
             url = f"{ATTACHMENT_URL}?id=download_{x}_{y}_{z}"
