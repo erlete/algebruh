@@ -14,6 +14,7 @@ import mechanize
 from PIL import Image
 
 from .config import ACCESS_URL, ATTACHMENT_URL, LOGIN_URL
+from .logger import Logger
 
 
 class Browser(mechanize.Browser):
@@ -47,13 +48,19 @@ class Session:
         browser (Browser): browser instance for the session.
     """
 
-    def __init__(self, username: str, password: str) -> None:
+    def __init__(self, username: str, password: str,
+                 log_level: int = 1) -> None:
         """Initialize a Session instance.
 
         Args:
             username (str): username for the login process.
             password (str): password for the login process.
+            log_level (int, optional): message logging level. Defaults to 1.
         """
+        self._logger = Logger(log_level)
+        self._authenticated = False
+        self._accessed = False
+
         self.username = username
         self.password = password
         self.browser = Browser()
@@ -81,6 +88,7 @@ class Session:
                 + f" {type(value).__name__} instead"
             )
 
+        self._logger.log(f"Setting session username to \"{value}\"...", 0)
         self._username = value
 
     @property
@@ -106,6 +114,7 @@ class Session:
                 + f" {type(value).__name__} instead"
             )
 
+        self._logger.log(f"Setting session pasword to \"{value}\"...", 0)
         self._password = value
 
     def login(self):
@@ -114,20 +123,35 @@ class Session:
         This method logs the user into the site and stores its credentials
         for subsequent requests.
         """
+        self._logger.log(f"Opening \"{LOGIN_URL}\"...", 0)
         self.browser.open(LOGIN_URL)
 
+        self._logger.log("Selecting form and setting attributes...", 0)
         self.browser.select_form(nr=0)
         self.browser["login"] = self.username
         self.browser["password"] = self.password
 
-        # An error is generated due to a 301 response code, but it is OK:
         try:
+            self._logger.log("Submitting data...", 0)
             self.browser.submit()
-        except Exception:
-            pass
 
-        self.browser.open(ACCESS_URL)
-        _ = self.browser.response()  # This might be unnecessary.
+        # An error is generated due to a 301 response code, but it is OK:
+        except mechanize.HTTPError:
+            self._authenticated = True
+            self._logger.log("Authentication successful.", 1)
+
+            self._logger.log(f"Opening \"{ACCESS_URL}\"...", 0)
+            self.browser.open(ACCESS_URL)
+
+            response = self.browser.response()
+            if response.code == 200:
+                self._accessed = True
+                self._logger.log("Access successful.")
+            else:
+                self._logger.log("Access error.", 2)
+
+        else:
+            self._logger.log("Authentication error.", 2)
 
     def get_attachment(
                 self,
@@ -143,12 +167,19 @@ class Session:
             z (int | str): Z code of the URL.
 
         Raises:
+            RuntimeError: if the user is not authenticated.
+            RuntimeError: if the user does not have access permissions.
             TypeError: if any of the arguments is not an int or str.
             TypeError: if any of the arguments does not contain 1-3 characters.
 
         Returns:
             PIL.Image.Image | None: image attachment (if existent, else None).
         """
+        if not self._authenticated:
+            raise RuntimeError("user is not authenticated.")
+        elif not self._accessed:
+            raise RuntimeError("user does not have access permissions.")
+
         if not all(isinstance(code, (int, str)) for code in (x, y, z)):
             raise TypeError(
                 "x, y and z codes must be integer or string values"
@@ -158,11 +189,18 @@ class Session:
                 "x, y and z values must contain between 1 and 3 characters"
             )
 
+        x, y, z = abs(x), abs(y), abs(z)  # Quick fix.
+
         try:
-            self.browser.open(f"{ATTACHMENT_URL}?id=download_{x}_{y}_{z}")
+            url = f"{ATTACHMENT_URL}?id=download_{x}_{y}_{z}"
+            self._logger.log(f"Opening \"{url}\"...", 0)
+            self.browser.open(url)
+
         except mechanize.HTTPError:
+            self._logger.log("Unable to fetch attachment.", 2)
             return None
 
+        self._logger.log("Attachment fetch successful.", 0)
         return Image.open(BytesIO(
             self.browser.response().get_data()
         ))
