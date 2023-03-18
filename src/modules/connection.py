@@ -1,4 +1,4 @@
-"""Authentication module.
+"""Connection module.
 
 This module contains all required functionalities for the user to establish a
 connection with the site and save their data in a session.
