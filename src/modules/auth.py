@@ -7,9 +7,13 @@ Authors:
     Paulo Sanchez (@erlete)
 """
 
-import mechanize
+from io import BytesIO
+from typing import Optional, Union
 
-from .config import ACCESS_URL, LOGIN_URL
+import mechanize
+from PIL import Image
+
+from .config import ACCESS_URL, ATTACHMENT_URL, LOGIN_URL
 
 
 class Browser(mechanize.Browser):
@@ -124,3 +128,41 @@ class Session:
 
         self.browser.open(ACCESS_URL)
         _ = self.browser.response()  # This might be unnecessary.
+
+    def get_attachment(
+                self,
+                x: Union[int, str],
+                y: Union[int, str],
+                z: Union[int, str]
+            ) -> Optional[Image.Image]:
+        """Get an image attachment from the site.
+
+        Args:
+            x (int | str): X code of the URL.
+            y (int | str): Y code of the URL.
+            z (int | str): Z code of the URL.
+
+        Raises:
+            TypeError: if any of the arguments is not an int or str.
+            TypeError: if any of the arguments does not contain 1-3 characters.
+
+        Returns:
+            PIL.Image.Image | None: image attachment (if existent, else None).
+        """
+        if not all(isinstance(code, (int, str)) for code in (x, y, z)):
+            raise TypeError(
+                "x, y and z codes must be integer or string values"
+            )
+        elif not all(1 <= len(str(code)) <= 3 for code in (x, y, z)):
+            raise TypeError(
+                "x, y and z values must contain between 1 and 3 characters"
+            )
+
+        try:
+            self.browser.open(f"{ATTACHMENT_URL}?id=download_{x}_{y}_{z}")
+        except mechanize.HTTPError:
+            return None
+
+        return Image.open(BytesIO(
+            self.browser.response().get_data()
+        ))
