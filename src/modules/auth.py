@@ -1,11 +1,21 @@
-import mechanize
+"""Authentication module.
 
-from auth import ACCESS_URL, LOGIN_URL
+This module contains all required functionalities for the user to establish a
+connection with the site and save their data in a session.
+
+Authors:
+    Paulo Sanchez (@erlete)
+"""
+
+import mechanize
+from config import ACCESS_URL, LOGIN_URL
 
 
 class Browser(mechanize.Browser):
+    """Customized mechanize.Browser descendant class."""
 
     def __init__(self):
+        """Initialize a Browser instance."""
         super().__init__()
 
         self.set_handle_equiv(True)
@@ -22,8 +32,23 @@ class Browser(mechanize.Browser):
 
 
 class Session:
+    """Client session handler.
+
+    This class represents a session that the user starts with the site.
+
+    Attributes:
+        username (str): username for the login process.
+        password (str): password for the login process.
+        browser (Browser): browser instance for the session.
+    """
 
     def __init__(self, username: str, password: str) -> None:
+        """Initialize a Session instance.
+
+        Args:
+            username (str): username for the login process.
+            password (str): password for the login process.
+        """
         self.usename = username
         self.password = password
         self.browser = Browser()
