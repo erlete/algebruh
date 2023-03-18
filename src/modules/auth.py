@@ -21,10 +21,12 @@ class Browser(mechanize.Browser):
         self.addheaders = [("User-agent", "Chrome")]
 
 
+class Session:
 
     def __init__(self, username: str, password: str) -> None:
         self.usename = username
         self.password = password
+        self.browser = Browser()
 
     @property
     def username(self) -> str:
@@ -75,3 +77,24 @@ class Browser(mechanize.Browser):
             )
 
         self._password = value
+
+    def login(self):
+        """Log into the site.
+
+        This method logs the user into the site and stores its credentials
+        for subsequent requests.
+        """
+        self.browser.open(LOGIN_URL)
+
+        self.browser.select_form(nr=0)
+        self.browser["login"] = self.username
+        self.browser["password"] = self.password
+
+        # An error is generated due to a 301 response code, but it is OK:
+        try:
+            self.browser.submit()
+        except Exception:
+            pass
+
+        self.browser.open(ACCESS_URL)
+        _ = self.browser.response()  # This might be unnecessary.
