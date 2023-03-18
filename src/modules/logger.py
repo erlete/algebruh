@@ -58,7 +58,8 @@ class Logger:
 
         if not 0 <= log_level < len(Logger.CONFIG) - 1:
             raise ValueError(
-                f"log_level must be between 0 and {len(Logger.CONFIG)}, " + "inclusive."
+                f"log_level must be between 0 and {len(Logger.CONFIG)}, "
+                + "inclusive."
             )
 
         self._log_level = log_level
