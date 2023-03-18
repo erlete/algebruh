@@ -1,4 +1,26 @@
-class Authenticate:
+import mechanize
+
+from auth import ACCESS_URL, LOGIN_URL
+
+
+class Browser(mechanize.Browser):
+
+    def __init__(self):
+        super().__init__()
+
+        self.set_handle_equiv(True)
+        self.set_handle_gzip(True)
+        self.set_handle_redirect(True)
+        self.set_handle_referer(True)
+        self.set_handle_robots(False)
+        self.set_handle_refresh(
+            mechanize._http.HTTPRefreshProcessor(),
+            max_time=1
+        )
+
+        self.addheaders = [("User-agent", "Chrome")]
+
+
 
     def __init__(self, username: str, password: str) -> None:
         self.usename = username
