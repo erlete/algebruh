@@ -21,7 +21,7 @@ COURSE_ID = "O06G151V0116"
 BASE_URL = "https://torricelli.uvigo.es/aula/claroline"
 
 LOGIN_EXT = "auth/login.php"
-ACCESS_EXT = "aula/claroline/course/index.php"
+ACCESS_EXT = "course/index.php"
 ATTACHMENT_EXT = "exercise/get_attachment.php"
 
 LOGIN_URL = f"{BASE_URL}/{LOGIN_EXT}"

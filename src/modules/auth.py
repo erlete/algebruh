@@ -8,7 +8,8 @@ Authors:
 """
 
 import mechanize
-from config import ACCESS_URL, LOGIN_URL
+
+from .config import ACCESS_URL, LOGIN_URL
 
 
 class Browser(mechanize.Browser):
@@ -49,7 +50,7 @@ class Session:
             username (str): username for the login process.
             password (str): password for the login process.
         """
-        self.usename = username
+        self.username = username
         self.password = password
         self.browser = Browser()
 
