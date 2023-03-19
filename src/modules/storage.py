@@ -35,8 +35,8 @@ class DBHandler:
             path (str): path to the database directory.
         """
         self.path = path
-        self._by_id = self._load(f"{path}/by_id.json")
-        self._by_hash = self._load(f"{path}/by_hash.json")
+        self._by_id = self._load(f"{path}\\by_id.json")
+        self._by_hash = self._load(f"{path}\\by_hash.json")
 
     def _load(self, name: str) -> dict[Any, Any]:
         """Load a JSON file in memory.

@@ -81,7 +81,7 @@ class AnswerWidget(QWidget):
             admin_login(bool): whether the login is performed by an admin.
         """
         self.session = session
-        self.dbhandler = DBHandler(resource_path("src\\databases"))
+        self.dbhandler = DBHandler(resource_path("databases"))
         self.__admin_login = admin_login
         self.__log = {}
 
