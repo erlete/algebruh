@@ -1,10 +1,16 @@
+"""Container module for application classes.
+
+This module contains all application-related classes, used to represent a
+graphical user interface.
+
+Authors:
+    Paulo Sanchez (@erlete)
+"""
 
 import sys
 from io import BytesIO
 
-import mechanize
 import numpy as np
-import PIL
 import PyQt6
 from PIL import Image
 from PIL.ImageQt import ImageQt
@@ -15,8 +21,6 @@ from PyQt6.QtWidgets import (QApplication, QLabel, QPushButton, QVBoxLayout,
 
 from src.modules.connection import Session
 from src.modules.storage import DBHandler
-
-br = mechanize.Browser()
 
 
 class ImageLabel(QLabel):
@@ -46,6 +50,13 @@ class ImageLabel(QLabel):
 
 
 class MainWidget(QWidget):
+    """Main widget of the application.
+
+    Attributes:
+        session (Session): client session.
+        dbhandler (DBHandler): database handler.
+        VALID_EXTENSIONS (tuple[str]): valid extensions for dropped files.
+    """
 
     VALID_EXTENSIONS = (".png",)
 
@@ -85,7 +96,8 @@ class MainWidget(QWidget):
         """
         return file_path.endswith(cls.VALID_EXTENSIONS)
 
-    def clear_pixmap(self):
+    def clear_pixmap(self) -> None:
+        """Clear the pixel map from the window."""
         self.photoViewer.clear()
         self.resize(400, 400)
         self.photoViewer.setText("\n\nDrag and drop image here\n\n")
@@ -158,6 +170,14 @@ class MainWidget(QWidget):
 
 
 class App:
+    """Main interactive application.
+
+    This is the main application that the user must use to interact with the
+    programs in the repository.
+
+    Attributes:
+        session (Session): client session.
+    """
 
     def __init__(self, session: Session) -> None:
         """Initialize an App instance.
@@ -170,5 +190,6 @@ class App:
         demo = MainWidget(session)
         demo.show()
         app.exec()
+
 
 App(Session("123", "123"))
