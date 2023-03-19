@@ -8,6 +8,7 @@ Authors:
 """
 
 import datetime
+import os
 import sys
 from io import BytesIO
 
@@ -16,12 +17,22 @@ import PyQt6
 from PIL import Image
 from PIL.ImageQt import ImageQt
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QPixmap
-from PyQt6.QtWidgets import (QApplication, QLabel, QPushButton, QVBoxLayout,
-                             QWidget)
+from PyQt6.QtGui import QIcon, QPixmap
+from PyQt6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
+                             QPushButton, QVBoxLayout, QWidget)
 
 from .connection import Session
 from .storage import DBHandler
+
+
+def resource_path(relative_path):
+    """Get absolute path to resource, works for dev and for PyInstaller."""
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 class ImageLabel(QLabel):
@@ -221,6 +232,101 @@ class MainWidget(QWidget):
             self.clear_pixmap()
 
 
+class LoginWindow(QMainWindow):
+
+    def __init__(self) -> None:
+        """Initialize a LoginWindow instance."""
+        super().__init__()
+        self.setWindowTitle("Algebruh - Login")
+
+        self.setWindowIcon(QIcon(resource_path("media/icon.ico")))
+        self.resize(400, 300)
+        self.setFixedSize(self.size())
+
+        self.header = QLabel("Welcome to Algebruh!")
+        self.header.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.header.setStyleSheet("""
+            QLabel {
+                font-weight: bold;
+                font-size: 20px;
+            }
+        """)
+
+        self.login_status = QLabel(
+            "Login to continue. Do not worry, we" +
+            "\ndo not store your credentials. They are sent" +
+            "\nonly to the login page and then discarded."
+        )
+        self.login_status.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.login_status.setStyleSheet("""
+            QLabel {
+                font-size: 12px;
+                font-weight: normal;
+            }
+        """)
+
+        self.user = QLineEdit()
+        self.user.setPlaceholderText("Username")
+        self.password = QLineEdit()
+        self.password.setPlaceholderText("Password")
+        self.password.setEchoMode(QLineEdit.EchoMode.Password)
+
+        self.submit = QPushButton("Submit")
+
+        self._layout = QVBoxLayout()
+        self._layout.setContentsMargins(20, 20, 20, 20)
+        self._layout.setSpacing(10)
+
+        self._layout.addWidget(self.header)
+        self._layout.addWidget(self.login_status)
+        self._layout.addWidget(self.user)
+        self._layout.addWidget(self.password)
+        self._layout.addWidget(self.submit)
+
+        widget = QWidget()
+        widget.setLayout(self._layout)
+
+        self.setCentralWidget(widget)
+
+        self.submit.clicked.connect(self.login)
+
+    def login(self) -> None:
+        """Login method for the application.
+
+        This method is used to get the username and password from the user
+        and then attempt to login to the site. If the login is successful,
+        the main window is opened. Otherwise, the user is notified that the
+        login was unsuccessful.
+        """
+        self.submit.setEnabled(False)
+
+        username = self.user.text()
+        password = self.password.text()
+
+        session = Session(username, password)
+        session.login()
+
+        if session.is_logged_in():
+            self.close()
+            self.main = MainWidget(session)
+            self.main.show()
+
+        else:
+            self.submit.setEnabled(True)
+            self.login_status.setText("Invalid username or password")
+            self.login_status.setStyleSheet("""
+                QLabel {
+                    color: red;
+                    font-weight: bold;
+                }
+            """)
+
+            self.user.setText("")
+            self.user.setPlaceholderText("Username")
+            self.password.setText("")
+            self.password.setPlaceholderText("Password")
+
+
 class App:
     """Main interactive application.
 
@@ -242,6 +348,7 @@ class App:
     def start(self) -> None:
         """Execute the application."""
         app = QApplication(sys.argv)
-        demo = MainWidget(self.session)
+        # demo = MainWidget(self.session)
+        demo = LoginWindow()
         demo.show()
         app.exec()
