@@ -14,9 +14,13 @@ This application does not require prior installation. Just download the `.exe` f
 
 In the main window application (login), you will be prompted for your username and password. This is due to the fact that the application is designed to operate over remote URLs data, which require an identification to be accessed.
 
+![image](https://user-images.githubusercontent.com/76848729/226191704-391b5ecc-ea33-4fb5-bb6b-3d2990011141.png)
+
 Once again, feel free to examine the code to make sure that your data is not being sent anywhere but the site you are connecting to.
 
 After a successful login, a new window will pop up. This window contains a drag and drop area where users can drop remote and local images in order to identify the linked answer, which will appear in the first text box, followed by an explanation (if existent).
+
+![image](https://user-images.githubusercontent.com/76848729/226191724-18b5c35c-e6a1-4ded-bfb4-9e5198a0ff24.png)
 
 ## Disclaimer
 
