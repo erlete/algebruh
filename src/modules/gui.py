@@ -12,7 +12,6 @@ import os
 import sys
 from io import BytesIO
 from random import randint
-from typing import Optional
 
 import numpy as np
 import PyQt6
@@ -128,21 +127,21 @@ class AnswerWidget(QWidget):
         self.setLayout(mainLayout)
 
     @staticmethod
-    def invert(answer: bool) -> Optional[str]:
+    def invert(answer: bool) -> str:
         """Invert an answer.
 
         Args:
             answer (bool): answer to invert.
 
         Returns:
-            Optional[str]: the inverted answer or None.
+            str: the inverted answer.
         """
         if answer == "Verdadero":
             return "Falso"
         elif answer == "Falso":
             return "Verdadero"
 
-        return None
+        return ""
 
     @classmethod
     def is_valid(cls, path: str) -> bool:
