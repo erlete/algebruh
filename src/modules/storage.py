@@ -7,8 +7,6 @@ Authors:
 import json
 from typing import Any, Optional
 
-from .connection import Session
-
 
 def load_json(name: str) -> dict[Any, Any]:
     """Load a JSON file in memory.
