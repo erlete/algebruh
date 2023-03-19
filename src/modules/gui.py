@@ -108,7 +108,7 @@ class MainWidget(QWidget):
         self.copyrightLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.copyrightLabel.setStyleSheet("""
             QLabel {
-                font-size: 8px;
+                font-size: 10px;
             }
         """)
 
@@ -116,6 +116,7 @@ class MainWidget(QWidget):
         mainLayout.addWidget(self.answerLabel)
         mainLayout.addWidget(self.explanationLabel)
         mainLayout.addWidget(self.clearButton)
+        mainLayout.addWidget(self.copyrightLabel)
 
         self.setLayout(mainLayout)
 
