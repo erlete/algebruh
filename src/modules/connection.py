@@ -153,6 +153,14 @@ class Session:
         else:
             self._logger.log("Authentication error.", 2)
 
+    def is_logged_in(self) -> bool:
+        """Determine whether the client has successfully logged into the site.
+
+        Returns:
+            bool: whether the client has successfully logged into the site.
+        """
+        return self._authenticated and self._accessed
+
     def get_attachment(
                 self,
                 x: Union[int, str],

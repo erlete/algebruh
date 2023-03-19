@@ -148,8 +148,13 @@ class MainWidget(QWidget):
 
         Args:
             event (PyQt6.QtGui.QDropEvent): drop event.
+
+        Raises:
+            RuntimeError: if the client is not logged into the site.
         """
-        print(event.mimeData().text())
+        if not self.session.is_logged_in():
+            raise RuntimeError("the client is not logged into the site.")
+
         if self.is_valid(event.mimeData().text()):
 
             url = event.mimeData().urls()[0].url()
