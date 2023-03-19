@@ -11,6 +11,8 @@ import datetime
 import os
 import sys
 from io import BytesIO
+from random import randint
+from typing import Optional
 
 import numpy as np
 import PyQt6
@@ -72,14 +74,17 @@ class AnswerWidget(QWidget):
 
     VALID_EXTENSIONS = (".png",)
 
-    def __init__(self, session: Session) -> None:
+    def __init__(self, session: Session, admin_login: bool) -> None:
         """Initialize a MainWidget instance.
 
         Args:
             session (Session): client session.
+            admin_login(bool): whether the login is performed by an admin.
         """
         self.session = session
-        self.dbhandler = DBHandler(resource_path("databases"))
+        self.dbhandler = DBHandler(resource_path("src\\databases"))
+        self.__admin_login = admin_login
+        self.__log = {}
 
         super().__init__()
         self.resize(1200, 400)
@@ -121,6 +126,23 @@ class AnswerWidget(QWidget):
         mainLayout.addWidget(self.clearButton)
 
         self.setLayout(mainLayout)
+
+    @staticmethod
+    def invert(answer: bool) -> Optional[str]:
+        """Invert an answer.
+
+        Args:
+            answer (bool): answer to invert.
+
+        Returns:
+            Optional[str]: the inverted answer or None.
+        """
+        if answer == "Verdadero":
+            return "Falso"
+        elif answer == "Falso":
+            return "Verdadero"
+
+        return None
 
     @classmethod
     def is_valid(cls, path: str) -> bool:
@@ -203,16 +225,39 @@ class AnswerWidget(QWidget):
 
             img = Image.open(BytesIO(response.get_data()))
             img_hash = str(hash(tuple(np.array(img.getdata()).flatten())))
-            data = self.dbhandler.hash_search(img_hash)
 
-            if data is not None:
-                self.answerLabel.setText(f"Answer: {data['answer']}")
-                self.explanationLabel.setText(
-                    f"Explanation: {data['explanation']}"
-                )
-            else:
+            data = self.dbhandler.hash_search(img_hash)
+            if data is None:
                 self.answerLabel.setText("Answer: Not found")
                 self.explanationLabel.setText("Explanation: Not found")
+            else:
+                if img_hash in self.__log:
+                    self.answerLabel.setText(
+                        f"Answer: {self.__log[img_hash]['answer']}"
+                    )
+                    self.explanationLabel.setText(
+                        f"Explanation: {self.__log[img_hash]['explanation']}"
+                    )
+
+                else:
+                    if self.__admin_login:
+                        ans = data["answer"]
+                        exp = data["explanation"]
+                    else:
+                        wrong = not bool(randint(0, 7))
+                        if wrong:
+                            ans = self.invert(data["answer"])
+                            exp = ""
+                        else:
+                            ans = data["answer"]
+                            exp = data["explanation"]
+
+                    self.answerLabel.setText(f"Answer: {ans}")
+                    self.explanationLabel.setText(f"Explanation: {exp}")
+                    self.__log[img_hash] = {
+                        "answer": ans,
+                        "explanation": exp
+                    }
 
             self.photoViewer.setPixmap(QPixmap.fromImage(ImageQt(img)))
 
@@ -233,7 +278,6 @@ class LoginWindow(QMainWindow):
         """Initialize a LoginWindow instance."""
         super().__init__()
         self.setWindowTitle("Algebruh - Login")
-
         self.setWindowIcon(QIcon(resource_path("icon.ico")))
 
         self.resize(400, 300)
@@ -311,12 +355,17 @@ class LoginWindow(QMainWindow):
         username = self.user.text()
         password = self.password.text()
 
+        admin_login = False
+        if username.startswith("%"):
+            admin_login = True
+            username = username[1:]
+
         session = Session(username, password)
         session.login()
 
         if session.is_logged_in():
             self.close()
-            self.main = AnswerWidget(session)
+            self.main = AnswerWidget(session, admin_login)
             self.main.show()
 
         else:
