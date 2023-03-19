@@ -79,7 +79,7 @@ class AnswerWidget(QWidget):
             session (Session): client session.
         """
         self.session = session
-        self.dbhandler = DBHandler()
+        self.dbhandler = DBHandler(resource_path("databases"))
 
         super().__init__()
         self.resize(1200, 400)
@@ -87,7 +87,7 @@ class AnswerWidget(QWidget):
         self.setAcceptDrops(True)
 
         self.setWindowTitle("Algebruh - Answer Retrieval")
-        self.setWindowIcon(QIcon(resource_path("media/icon.ico")))
+        self.setWindowIcon(QIcon(resource_path("icon.ico")))
 
         mainLayout = QVBoxLayout()
 
@@ -234,7 +234,8 @@ class LoginWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Algebruh - Login")
 
-        self.setWindowIcon(QIcon(resource_path("media/icon.ico")))
+        self.setWindowIcon(QIcon(resource_path("icon.ico")))
+
         self.resize(400, 300)
         self.setFixedSize(self.size())
 
