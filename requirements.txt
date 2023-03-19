@@ -2,3 +2,4 @@ colorama
 mechanize
 numpy
 Pillow
+PyQt6
