@@ -7,6 +7,7 @@ Authors:
     Paulo Sanchez (@erlete)
 """
 
+import datetime
 import sys
 from io import BytesIO
 
@@ -70,16 +71,50 @@ class MainWidget(QWidget):
         self.dbhandler = DBHandler()
 
         super().__init__()
-        self.resize(400, 400)
+        self.resize(1200, 400)
+
         self.setAcceptDrops(True)
 
         mainLayout = QVBoxLayout()
 
         self.photoViewer = ImageLabel()
-        mainLayout.addWidget(self.photoViewer)
-        # add a button that clears the pixmap
+
         self.clearButton = QPushButton("Clear")
         self.clearButton.clicked.connect(self.clear_pixmap)
+
+        self.answerLabel = QLabel("Answer: ")
+        self.answerLabel.setWordWrap(True)
+        self.answerLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.answerLabel.setStyleSheet("""
+            QLabel {
+                font-weight: bold;
+                font-size: 13px;
+            }
+        """)
+
+        self.explanationLabel = QLabel("Explanation: ")
+        self.explanationLabel.setWordWrap(True)
+        self.explanationLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.explanationLabel.setStyleSheet("""
+            QLabel {
+                font-size: 11px;
+            }
+        """)
+
+        year = datetime.datetime.now().year
+        self.copyrightLabel = QLabel(
+            f"© {year} Paulo Sanchez (@erlete). All rights reserved."
+        )
+        self.copyrightLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.copyrightLabel.setStyleSheet("""
+            QLabel {
+                font-size: 8px;
+            }
+        """)
+
+        mainLayout.addWidget(self.photoViewer)
+        mainLayout.addWidget(self.answerLabel)
+        mainLayout.addWidget(self.explanationLabel)
         mainLayout.addWidget(self.clearButton)
 
         self.setLayout(mainLayout)
@@ -99,13 +134,14 @@ class MainWidget(QWidget):
     def clear_pixmap(self) -> None:
         """Clear the pixel map from the window."""
         self.photoViewer.clear()
-        self.resize(400, 400)
         self.photoViewer.setText("\n\nDrag and drop image here\n\n")
         self.photoViewer.setStyleSheet("""
             QLabel {
                 border: 4px dashed #aaa
             }
         """)
+        self.answerLabel.setText("Answer: ")
+        self.explanationLabel.setText("Explanation: ")
 
     def dragEnterEvent(self, event: PyQt6.QtGui.QDragEnterEvent) -> None:
         """Handle the drag enter event.
@@ -164,8 +200,17 @@ class MainWidget(QWidget):
 
             img = Image.open(BytesIO(response.get_data()))
             img_hash = str(hash(tuple(np.array(img.getdata()).flatten())))
+            data = self.dbhandler.hash_search(img_hash)
 
-            print(f"{self.dbhandler.hash_search(img_hash) = }")
+            if data is not None:
+                self.answerLabel.setText(f"Answer: {data['answer']}")
+                self.explanationLabel.setText(
+                    f"Explanation: {data['explanation']}"
+                )
+            else:
+                self.answerLabel.setText("Answer: Not found")
+                self.explanationLabel.setText("Explanation: Not found")
+
             self.photoViewer.setPixmap(QPixmap.fromImage(ImageQt(img)))
 
             event.accept()
