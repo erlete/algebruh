@@ -1,18 +1,20 @@
-import json
+
 import sys
 from io import BytesIO
 
 import mechanize
 import numpy as np
+import PIL
 import PyQt6
 from PIL import Image
+from PIL.ImageQt import ImageQt
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import (QApplication, QLabel, QPushButton, QVBoxLayout,
                              QWidget)
 
-from auth import PASSWORD, USER
 from src.modules.connection import Session
+from src.modules.storage import DBHandler
 
 br = mechanize.Browser()
 
@@ -45,15 +47,17 @@ class ImageLabel(QLabel):
 
 class MainWidget(QWidget):
 
-    with open("src/databases/by_hash.json", mode="r") as fp:
-        DATA = json.load(fp)
-
-    SESSION = Session(USER, PASSWORD+"s", log_level=0)
-    SESSION.login()
-
     VALID_EXTENSIONS = (".png",)
 
-    def __init__(self):
+    def __init__(self, session: Session) -> None:
+        """Initialize a MainWidget instance.
+
+        Args:
+            session (Session): client session.
+        """
+        self.session = session
+        self.dbhandler = DBHandler()
+
         super().__init__()
         self.resize(400, 400)
         self.setAcceptDrops(True)
@@ -137,17 +141,14 @@ class MainWidget(QWidget):
 
             url = event.mimeData().urls()[0].url()
 
-            self.SESSION.browser.open(url)
-            response = self.SESSION.browser.response()
+            self.session.browser.open(url)
+            response = self.session.browser.response()
 
             img = Image.open(BytesIO(response.get_data()))
-            path = f"tmp\\{hash(tuple(np.array(img.getdata()).flatten()))}.png"
+            img_hash = str(hash(tuple(np.array(img.getdata()).flatten())))
 
-            img.save(path)
-            img_hash = hash(tuple(np.array(img.getdata()).flatten()))
-
-            print(f"{self.DATA.get(str(img_hash)) = }")
-            self.set_image(path)
+            print(f"{self.dbhandler.hash_search(img_hash) = }")
+            self.photoViewer.setPixmap(QPixmap.fromImage(ImageQt(img)))
 
             event.accept()
 
@@ -155,16 +156,19 @@ class MainWidget(QWidget):
             event.ignore()
             self.clear_pixmap()
 
-    def set_image(self, file_path: str) -> None:
-        """Set the image to display.
+
+class App:
+
+    def __init__(self, session: Session) -> None:
+        """Initialize an App instance.
 
         Args:
-            file_path (str): path to the image file.
+            session (Session): client session.
         """
-        self.photoViewer.setPixmap(QPixmap(file_path))
+        self.session = session
+        app = QApplication(sys.argv)
+        demo = MainWidget(session)
+        demo.show()
+        app.exec()
 
-
-app = QApplication(sys.argv)
-demo = MainWidget()
-demo.show()
-sys.exit(app.exec())
+App(Session("123", "123"))
