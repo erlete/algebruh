@@ -1,7 +1,7 @@
 """Container module for application classes.
 
 This module contains all application-related classes, used to represent a
-graphical user interface.
+graphical user interface for the programs of the repository.
 
 Authors:
     Paulo Sanchez (@erlete)
