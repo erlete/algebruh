@@ -19,8 +19,8 @@ from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import (QApplication, QLabel, QPushButton, QVBoxLayout,
                              QWidget)
 
-from src.modules.connection import Session
-from src.modules.storage import DBHandler
+from .connection import Session
+from .storage import DBHandler
 
 
 class ImageLabel(QLabel):
@@ -85,16 +85,16 @@ class MainWidget(QWidget):
         self.setLayout(mainLayout)
 
     @classmethod
-    def is_valid(cls, file_path: str) -> bool:
-        """Determine whether the file path is valid.
+    def is_valid(cls, path: str) -> bool:
+        """Determine whether the path is valid.
 
         Args:
-            file_path (str): file path to check.
+            path (str): path to check.
 
         Returns:
-            bool: True if the file path is valid, False otherwise.
+            bool: True if the path is valid, False otherwise.
         """
-        return file_path.endswith(cls.VALID_EXTENSIONS)
+        return path.endswith(cls.VALID_EXTENSIONS) or path.startswith("http")
 
     def clear_pixmap(self) -> None:
         """Clear the pixel map from the window."""
@@ -149,6 +149,7 @@ class MainWidget(QWidget):
         Args:
             event (PyQt6.QtGui.QDropEvent): drop event.
         """
+        print(event.mimeData().text())
         if self.is_valid(event.mimeData().text()):
 
             url = event.mimeData().urls()[0].url()
@@ -186,10 +187,10 @@ class App:
             session (Session): client session.
         """
         self.session = session
+
+    def start(self) -> None:
+        """Execute the application."""
         app = QApplication(sys.argv)
-        demo = MainWidget(session)
+        demo = MainWidget(self.session)
         demo.show()
         app.exec()
-
-
-App(Session("123", "123"))
