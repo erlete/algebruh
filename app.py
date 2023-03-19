@@ -18,8 +18,10 @@ br = mechanize.Browser()
 
 
 class ImageLabel(QLabel):
+    """Label for the image to display."""
 
     def __init__(self):
+        """Initialize an ImageLabel instance."""
         super().__init__()
 
         self.setAcceptDrops(True)
@@ -35,13 +37,10 @@ class ImageLabel(QLabel):
         self.setWordWrap(True)
 
         self.setStyleSheet("""
-            QLabel{
+            QLabel {
                 border: 4px dashed #aaa
             }
         """)
-
-    def setPixmap(self, image):
-        super().setPixmap(image)
 
 
 class MainWidget(QWidget):
@@ -87,7 +86,7 @@ class MainWidget(QWidget):
         self.resize(400, 400)
         self.photoViewer.setText("\n\nDrag and drop image here\n\n")
         self.photoViewer.setStyleSheet("""
-            QLabel{
+            QLabel {
                 border: 4px dashed #aaa
             }
         """)
@@ -98,35 +97,21 @@ class MainWidget(QWidget):
         Args:
             event (PyQt6.QtGui.QDragEnterEvent): drag enter event.
         """
-        print(dir(event.mimeData()))
-        print(f"{event.mimeData() = }")
-        print(f"{event.mimeData().text().endswith('.png') = }")
-
         if self.is_valid(event.mimeData().text()):
             self.photoViewer.setStyleSheet("""
-                QLabel{
-                    border: 4px dashed #9fe05e
+                QLabel {
+                    border: 6px dashed #9fe05e
                 }
             """)
-            event.accept()
+
         else:
             self.photoViewer.setStyleSheet("""
-                QLabel{
-                    border: 4px dashed #6b3033
+                QLabel {
+                    border: 6px dashed #940c13
                 }
             """)
-            event.ignore()
 
-    def dragMoveEvent(self, event: PyQt6.QtGui.QDragMoveEvent) -> None:
-        """Handle the drag move event.
-
-        Args:
-            event (PyQt6.QtGui.QDragMoveEvent): drag move event.
-        """
-        if self.is_valid(event.mimeData().text()):
-            event.accept()
-        else:
-            event.ignore()
+        event.accept()
 
     def dragLeaveEvent(self, event: PyQt6.QtGui.QDragLeaveEvent) -> None:
         """Handle the drag leave event.
@@ -135,10 +120,11 @@ class MainWidget(QWidget):
             event (PyQt6.QtGui.QDragLeaveEvent): drag leave event.
         """
         self.photoViewer.setStyleSheet("""
-            QLabel{
+            QLabel {
                 border: 4px dashed #aaa
             }
         """)
+
         event.accept()
 
     def dropEvent(self, event: PyQt6.QtGui.QDropEvent) -> None:
@@ -164,8 +150,10 @@ class MainWidget(QWidget):
             self.set_image(path)
 
             event.accept()
+
         else:
             event.ignore()
+            self.clear_pixmap()
 
     def set_image(self, file_path: str) -> None:
         """Set the image to display.
