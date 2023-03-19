@@ -61,8 +61,8 @@ class ImageLabel(QLabel):
         """)
 
 
-class MainWidget(QWidget):
-    """Main widget of the application.
+class AnswerWidget(QWidget):
+    """Answer retrieval widget.
 
     Attributes:
         session (Session): client session.
@@ -85,6 +85,9 @@ class MainWidget(QWidget):
         self.resize(1200, 400)
 
         self.setAcceptDrops(True)
+
+        self.setWindowTitle("Algebruh - Answer Retrieval")
+        self.setWindowIcon(QIcon(resource_path("media/icon.ico")))
 
         mainLayout = QVBoxLayout()
 
@@ -112,22 +115,10 @@ class MainWidget(QWidget):
             }
         """)
 
-        year = datetime.datetime.now().year
-        self.copyrightLabel = QLabel(
-            f"© {year} Paulo Sanchez (@erlete). All rights reserved."
-        )
-        self.copyrightLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.copyrightLabel.setStyleSheet("""
-            QLabel {
-                font-size: 10px;
-            }
-        """)
-
         mainLayout.addWidget(self.photoViewer)
         mainLayout.addWidget(self.answerLabel)
         mainLayout.addWidget(self.explanationLabel)
         mainLayout.addWidget(self.clearButton)
-        mainLayout.addWidget(self.copyrightLabel)
 
         self.setLayout(mainLayout)
 
@@ -233,6 +224,10 @@ class MainWidget(QWidget):
 
 
 class LoginWindow(QMainWindow):
+    """Login window for the application.
+
+    This window is used to create a new session for the client.
+    """
 
     def __init__(self) -> None:
         """Initialize a LoginWindow instance."""
@@ -253,9 +248,9 @@ class LoginWindow(QMainWindow):
         """)
 
         self.login_status = QLabel(
-            "Login to continue. Do not worry, we" +
-            "\ndo not store your credentials. They are sent" +
-            "\nonly to the login page and then discarded."
+            "Login to continue." +
+            "\nDo not worry, we do not store your credentials." +
+            "\nThey are sent only to the login page and then discarded."
         )
         self.login_status.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.login_status.setStyleSheet("""
@@ -273,6 +268,17 @@ class LoginWindow(QMainWindow):
 
         self.submit = QPushButton("Submit")
 
+        year = datetime.datetime.now().year
+        self.copyrightLabel = QLabel(
+            f"© {year} Paulo Sanchez (@erlete). All rights reserved."
+        )
+        self.copyrightLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.copyrightLabel.setStyleSheet("""
+            QLabel {
+                font-size: 10px;
+            }
+        """)
+
         self._layout = QVBoxLayout()
         self._layout.setContentsMargins(20, 20, 20, 20)
         self._layout.setSpacing(10)
@@ -282,6 +288,7 @@ class LoginWindow(QMainWindow):
         self._layout.addWidget(self.user)
         self._layout.addWidget(self.password)
         self._layout.addWidget(self.submit)
+        self._layout.addWidget(self.copyrightLabel)
 
         widget = QWidget()
         widget.setLayout(self._layout)
@@ -308,7 +315,7 @@ class LoginWindow(QMainWindow):
 
         if session.is_logged_in():
             self.close()
-            self.main = MainWidget(session)
+            self.main = AnswerWidget(session)
             self.main.show()
 
         else:
@@ -328,27 +335,15 @@ class LoginWindow(QMainWindow):
 
 
 class App:
-    """Main interactive application.
+    """Main application interface.
 
-    This is the main application that the user must use to interact with the
-    programs in the repository.
-
-    Attributes:
-        session (Session): client session.
+    This is the interface for the application that the user must use to
+    interact with the programs in the repository.
     """
-
-    def __init__(self, session: Session) -> None:
-        """Initialize an App instance.
-
-        Args:
-            session (Session): client session.
-        """
-        self.session = session
 
     def start(self) -> None:
         """Execute the application."""
         app = QApplication(sys.argv)
-        # demo = MainWidget(self.session)
         demo = LoginWindow()
         demo.show()
         app.exec()
