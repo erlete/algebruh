@@ -159,6 +159,7 @@ class AnswerWindow(QMainWindow):
         Args:
             session (Session): client session.
             admin_login(bool): whether the login is performed by an admin.
+            dummy_adming_login(bool): a troll admin
         """
         super().__init__()
 
@@ -475,11 +476,11 @@ class LoginWindow(QMainWindow):
         password = self.password.text()
 
         # Huh... what could this be?
+        dummy_admin_login = False
         admin_login = False
         if username.startswith("%"):
             admin_login = True
             username = username[1:]
-            admin_login = False
             
         elif username.startswith("!"):
             dummy_admin_login = True
