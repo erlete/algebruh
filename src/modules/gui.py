@@ -26,8 +26,15 @@ from .connection import Session
 from .storage import DBHandler
 
 
-def resource_path(relative_path):
-    """Get absolute path to resource, works for dev and for PyInstaller."""
+def resource_path(relative_path: str) -> str:
+    """Get absolute path to resource (required by .exe filesystem).
+
+    Args:
+        relative_path (str): path to the resource.
+
+    Returns:
+        str: parsed path to the resource.
+    """
     try:
         base_path = sys._MEIPASS
     except Exception:
