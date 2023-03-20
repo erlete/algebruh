@@ -163,7 +163,7 @@ class AnswerWindow(QMainWindow):
         super().__init__()
 
         self.session = session
-        self.dbhandler = DBHandler(resource_path("src\\databases"))
+        self.dbhandler = DBHandler(resource_path("databases"))
 
         self.__admin_login = admin_login
         self.__log: Dict[str, Any] = {}
