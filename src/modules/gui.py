@@ -55,11 +55,6 @@ class ImageField(QLabel):
         self.setMinimumSize(200, 100)
 
         self.setAcceptDrops(True)
-        self.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.setIndent(4)
-        self.setLineWidth(4)
-        self.setMargin(10)
-        self.setMidLineWidth(4)
         self.setOpenExternalLinks(True)
         self.setWordWrap(True)
 
@@ -148,55 +143,60 @@ class AnswerWidget(QMainWindow):
             session (Session): client session.
             admin_login(bool): whether the login is performed by an admin.
         """
-        self.session = session
-        self.dbhandler = DBHandler(resource_path("databases"))
-        self.__admin_login = admin_login
-        self.__log = {}
-
         super().__init__()
-        self.resize(1200, 400)
 
-        self.setAcceptDrops(True)
+        self.session = session
+        self.dbhandler = DBHandler(resource_path("src\\databases"))
+
+        self.__admin_login = admin_login
+        self.__log: Dict[str, Any] = {}
 
         self.setWindowTitle("Algebruh - Answer Retrieval")
         self.setWindowIcon(QIcon(resource_path("icon.ico")))
 
-        mainLayout = QVBoxLayout()
+        self.setAcceptDrops(True)
+        self.setMinimumSize(800, 300)
 
-        self.photoViewer = ImageLabel()
+        self.setup()
 
+    def setup(self) -> None:
+        """Set up window components."""
+        self.setup_widgets()
+        self.setup_event_handlers()
+        self.setup_layout()
+
+    def setup_widgets(self) -> None:
+        """Set up window widgets."""
+        self.photoViewer = ImageField()
+        self.answerLabel = AnswerField("Answer: ")
+        self.explanationLabel = AnswerField("Explanation: ")
         self.clearButton = QPushButton("Clear")
+
+    def setup_event_handlers(self) -> None:
+        """Set up widget event handlers."""
         self.clearButton.clicked.connect(self.clear_pixmap)
 
-        self.answerLabel = QLabel("Answer: ")
-        self.answerLabel.setWordWrap(True)
-        self.answerLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.answerLabel.setStyleSheet("""
-            QLabel {
-                font-weight: bold;
-                font-size: 13px;
-            }
-        """)
+    def setup_layout(self) -> None:
+        """Set up window layout."""
+        central_wdg, secondary_wdg = QWidget(), QWidget()
+        central_lay, secondary_lay = QVBoxLayout(), QHBoxLayout()
 
-        self.explanationLabel = QLabel("Explanation: ")
-        self.explanationLabel.setWordWrap(True)
-        self.explanationLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        self.explanationLabel.setStyleSheet("""
-            QLabel {
-                font-size: 11px;
-            }
-        """)
+        secondary_lay.addWidget(self.answerLabel)
+        secondary_lay.addWidget(self.explanationLabel)
+        secondary_wdg.setLayout(secondary_lay)
 
-        mainLayout.addWidget(self.photoViewer)
-        mainLayout.addWidget(self.answerLabel)
-        mainLayout.addWidget(self.explanationLabel)
-        mainLayout.addWidget(self.clearButton)
+        central_lay.addWidget(self.photoViewer)
+        central_lay.addWidget(secondary_wdg)
+        central_lay.addWidget(self.clearButton)
+        central_wdg.setLayout(central_lay)
 
-        self.setLayout(mainLayout)
+        self.setCentralWidget(central_wdg)
 
     @staticmethod
     def invert(answer: bool) -> str:
         """Invert an answer.
+
+        What is this method? Why is it here? Who knows...
 
         Args:
             answer (bool): answer to invert.
@@ -206,6 +206,7 @@ class AnswerWidget(QMainWindow):
         """
         if answer == "Verdadero":
             return "Falso"
+
         elif answer == "Falso":
             return "Verdadero"
 
