@@ -69,6 +69,16 @@ class ImageField(QLabel):
             }
         """)
 
+    def clear(self):
+        """Clear image field contents."""
+        super().clear()
+        self.setText("Drag and drop image here")
+        self.setStyleSheet("""
+            QLabel {
+                border: 4px dashed #aaa
+            }
+        """)
+
 
 class AnswerField(QScrollArea):
     """Scrollable text field for the answer.
@@ -85,6 +95,8 @@ class AnswerField(QScrollArea):
             read_only (bool): whether the field is read-only.
         """
         super().__init__()
+
+        self._placeholder_text = placeholder_text
 
         self._text = QTextEdit()
         self._text.setReadOnly(read_only)
@@ -123,6 +135,11 @@ class AnswerField(QScrollArea):
             )
 
         self._text.setText(value)
+
+    def clear(self):
+        """Clear the answer field."""
+        self._text.clear()
+        self._text.setPlaceholderText(self._placeholder_text)
 
 
 class AnswerWidget(QMainWindow):
@@ -167,27 +184,27 @@ class AnswerWidget(QMainWindow):
 
     def setup_widgets(self) -> None:
         """Set up window widgets."""
-        self.photoViewer = ImageField()
-        self.answerLabel = AnswerField("Answer: ")
-        self.explanationLabel = AnswerField("Explanation: ")
-        self.clearButton = QPushButton("Clear")
+        self.image_field = ImageField()
+        self.answer_field = AnswerField("Answer: ")
+        self.explanation_field = AnswerField("Explanation: ")
+        self.clear_button = QPushButton("Clear")
 
     def setup_event_handlers(self) -> None:
         """Set up widget event handlers."""
-        self.clearButton.clicked.connect(self.clear_pixmap)
+        self.clear_button.clicked.connect(self.reset)
 
     def setup_layout(self) -> None:
         """Set up window layout."""
         central_wdg, secondary_wdg = QWidget(), QWidget()
         central_lay, secondary_lay = QVBoxLayout(), QHBoxLayout()
 
-        secondary_lay.addWidget(self.answerLabel)
-        secondary_lay.addWidget(self.explanationLabel)
+        secondary_lay.addWidget(self.answer_field)
+        secondary_lay.addWidget(self.explanation_field)
         secondary_wdg.setLayout(secondary_lay)
 
-        central_lay.addWidget(self.photoViewer)
+        central_lay.addWidget(self.image_field)
         central_lay.addWidget(secondary_wdg)
-        central_lay.addWidget(self.clearButton)
+        central_lay.addWidget(self.clear_button)
         central_wdg.setLayout(central_lay)
 
         self.setCentralWidget(central_wdg)
@@ -224,17 +241,11 @@ class AnswerWidget(QMainWindow):
         """
         return path.endswith(cls.VALID_EXTENSIONS) or path.startswith("http")
 
-    def clear_pixmap(self) -> None:
-        """Clear the pixel map from the window."""
-        self.photoViewer.clear()
-        self.photoViewer.setText("\n\nDrag and drop image here\n\n")
-        self.photoViewer.setStyleSheet("""
-            QLabel {
-                border: 4px dashed #aaa
-            }
-        """)
-        self.answerLabel.setText("Answer: ")
-        self.explanationLabel.setText("Explanation: ")
+    def reset(self) -> None:
+        """Reset contents of all fields."""
+        self.image_field.clear()
+        self.answer_field.clear()
+        self.explanation_field.clear()
 
     def dragEnterEvent(self, event: PyQt6.QtGui.QDragEnterEvent) -> None:
         """Handle the drag enter event.
@@ -243,14 +254,14 @@ class AnswerWidget(QMainWindow):
             event (PyQt6.QtGui.QDragEnterEvent): drag enter event.
         """
         if self.is_valid(event.mimeData().text()):
-            self.photoViewer.setStyleSheet("""
+            self.image_field.setStyleSheet("""
                 QLabel {
                     border: 6px dashed #9fe05e
                 }
             """)
 
         else:
-            self.photoViewer.setStyleSheet("""
+            self.image_field.setStyleSheet("""
                 QLabel {
                     border: 6px dashed #940c13
                 }
@@ -264,7 +275,7 @@ class AnswerWidget(QMainWindow):
         Args:
             event (PyQt6.QtGui.QDragLeaveEvent): drag leave event.
         """
-        self.photoViewer.setStyleSheet("""
+        self.image_field.setStyleSheet("""
             QLabel {
                 border: 4px dashed #aaa
             }
@@ -296,14 +307,14 @@ class AnswerWidget(QMainWindow):
 
             data = self.dbhandler.hash_search(img_hash)
             if data is None:
-                self.answerLabel.setText("Answer: Not found")
-                self.explanationLabel.setText("Explanation: Not found")
+                self.answer_field.setText("Answer: Not found")
+                self.explanation_field.setText("Explanation: Not found")
             else:
                 if img_hash in self.__log:
-                    self.answerLabel.setText(
+                    self.answer_field.setText(
                         f"Answer: {self.__log[img_hash]['answer']}"
                     )
-                    self.explanationLabel.setText(
+                    self.explanation_field.setText(
                         f"Explanation: {self.__log[img_hash]['explanation']}"
                     )
 
@@ -320,20 +331,20 @@ class AnswerWidget(QMainWindow):
                             ans = data["answer"]
                             exp = data["explanation"]
 
-                    self.answerLabel.setText(f"Answer: {ans}")
-                    self.explanationLabel.setText(f"Explanation: {exp}")
+                    self.answer_field.setText(f"Answer: {ans}")
+                    self.explanation_field.setText(f"Explanation: {exp}")
                     self.__log[img_hash] = {
                         "answer": ans,
                         "explanation": exp
                     }
 
-            self.photoViewer.setPixmap(QPixmap.fromImage(ImageQt(img)))
+            self.image_field.setPixmap(QPixmap.fromImage(ImageQt(img)))
 
             event.accept()
 
         else:
             event.ignore()
-            self.clear_pixmap()
+            self.reset()
 
 
 class LoginWindow(QMainWindow):
@@ -463,5 +474,6 @@ class App:
         """Execute the application."""
         app = QApplication(sys.argv)
         demo = LoginWindow()
+        demo = AnswerWidget(Session("1", "1"), True)
         demo.show()
         app.exec()
