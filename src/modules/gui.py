@@ -153,7 +153,7 @@ class AnswerWindow(QMainWindow):
 
     VALID_EXTENSIONS = (".png",)
 
-    def __init__(self, session: Session, admin_login: bool) -> None:
+    def __init__(self, session: Session, admin_login: bool, dummy_admin_login: bool) -> None:
         """Initialize a MainWidget instance.
 
         Args:
@@ -166,6 +166,7 @@ class AnswerWindow(QMainWindow):
         self.dbhandler = DBHandler(resource_path("databases"))
 
         self.__admin_login = admin_login
+        self.__dummy_admin_login = dummy_admin_login
         self.__log: Dict[str, Any] = {}
 
         self.setWindowTitle("Algebruh - Answer Retrieval")
@@ -333,6 +334,11 @@ class AnswerWindow(QMainWindow):
             ans = data["answer"]
             exp = data["explanation"]
 
+        ## Added easter egg, will always fail so be careful if you're doing a test and you enter this mode (the troll mode XD)
+        elif self.__dummy_admin_login :
+            ans = ans = self.invert(data["answer"]) 
+            exp = ""
+
         else:
             # Yes, the program fails questions on purpose.
             #   This is done in order to avoid excessive OP tool usage.
@@ -473,13 +479,18 @@ class LoginWindow(QMainWindow):
         if username.startswith("%"):
             admin_login = True
             username = username[1:]
+            admin_login = False
+            
+        elif username.startswith("!"):
+            dummy_admin_login = True
+            username = username[1:]
 
         session = Session(username, password)
         session.login()
 
         if session.is_logged_in():
             self.close()
-            self.main = AnswerWindow(session, admin_login)
+            self.main = AnswerWindow(session, admin_login, dummy_admin_login)
             self.main.show()
 
         else:
