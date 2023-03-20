@@ -45,12 +45,14 @@ def resource_path(relative_path: str) -> str:
     return os.path.join(base_path, relative_path)
 
 
-class ImageLabel(QLabel):
-    """Label for the image to display."""
+class ImageField(QLabel):
+    """Image field that allows drag and drop operations."""
 
     def __init__(self):
         """Initialize an ImageLabel instance."""
         super().__init__()
+
+        self.setMinimumSize(200, 100)
 
         self.setAcceptDrops(True)
         self.setAlignment(Qt.AlignmentFlag.AlignCenter)
@@ -59,10 +61,12 @@ class ImageLabel(QLabel):
         self.setMargin(10)
         self.setMidLineWidth(4)
         self.setOpenExternalLinks(True)
-        self.setText("\n\nDrag and drop image here\n\n")
+        self.setWordWrap(True)
+
+        self.setText("Drag and drop image here")
         self.setTextFormat(Qt.TextFormat.RichText)
         self.setTextInteractionFlags(Qt.TextInteractionFlag.NoTextInteraction)
-        self.setWordWrap(True)
+        self.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.setStyleSheet("""
             QLabel {
