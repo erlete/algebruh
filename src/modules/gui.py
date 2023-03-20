@@ -75,7 +75,6 @@ class ImageField(QLabel):
         """)
 
 
-class AnswerWidget(QWidget):
 class AnswerField(QScrollArea):
     """Scrollable text field for the answer.
 
@@ -130,6 +129,8 @@ class AnswerField(QScrollArea):
 
         self._text.setText(value)
 
+
+class AnswerWidget(QMainWindow):
     """Answer retrieval widget.
 
     Attributes:
