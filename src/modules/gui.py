@@ -12,15 +12,17 @@ import os
 import sys
 from io import BytesIO
 from random import randint
+from typing import Any, Dict
 
 import numpy as np
 import PyQt6
 from PIL import Image
 from PIL.ImageQt import ImageQt
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QIcon, QPixmap
-from PyQt6.QtWidgets import (QApplication, QLabel, QLineEdit, QMainWindow,
-                             QPushButton, QVBoxLayout, QWidget)
+from PyQt6.QtGui import QFont, QIcon, QPixmap
+from PyQt6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
+                             QMainWindow, QPushButton, QScrollArea, QTextEdit,
+                             QVBoxLayout, QWidget)
 
 from .connection import Session
 from .storage import DBHandler
