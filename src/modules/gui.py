@@ -76,6 +76,60 @@ class ImageField(QLabel):
 
 
 class AnswerWidget(QWidget):
+class AnswerField(QScrollArea):
+    """Scrollable text field for the answer.
+
+    Attributes:
+        text (QTextEdit): the text field.
+    """
+
+    def __init__(self, placeholder_text: str, read_only: bool = True) -> None:
+        """Initialize an AnswerField instance.
+
+        Args:
+            placeholder_text (str): the placeholder text.
+            read_only (bool): whether the field is read-only.
+        """
+        super().__init__()
+
+        self._text = QTextEdit()
+        self._text.setReadOnly(read_only)
+        self._text.setContentsMargins(5, 5, 5, 5)
+        self._text.setPlaceholderText(placeholder_text)
+        self._text.setLineWrapMode(QTextEdit.LineWrapMode.NoWrap)
+
+        self.setWidgetResizable(True)
+        self.setMinimumSize(200, 100)
+
+        self.setAlignment(Qt.AlignmentFlag.AlignLeft)
+
+        self.setWidget(self._text)
+
+    @property
+    def text(self) -> str:
+        """Get the text field.
+
+        Returns:
+            str: the text field.
+        """
+        return self._text.toPlainText()
+
+    @text.setter
+    def text(self, value: str) -> None:
+        """Set the text field.
+
+        Args:
+            value (str): the text field.
+        """
+        if not isinstance(value, str):
+            raise TypeError(
+                "expected type str for"
+                + f" {self.__class__.__name__}.text but got"
+                + f" {type(value).__name__} instead"
+            )
+
+        self._text.setText(value)
+
     """Answer retrieval widget.
 
     Attributes:
