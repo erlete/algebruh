@@ -19,7 +19,7 @@ import PyQt6
 from PIL import Image
 from PIL.ImageQt import ImageQt
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QFont, QIcon, QPixmap
+from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QLineEdit,
                              QMainWindow, QPushButton, QScrollArea, QTextEdit,
                              QVBoxLayout, QWidget)
@@ -38,7 +38,7 @@ def resource_path(relative_path: str) -> str:
         str: parsed path to the resource.
     """
     try:
-        base_path = sys._MEIPASS
+        base_path = sys._MEIPASS  # type: ignore
     except Exception:
         base_path = os.path.abspath(".")
 
@@ -142,7 +142,7 @@ class AnswerField(QScrollArea):
         self._text.setPlaceholderText(self._placeholder_text)
 
 
-class AnswerWidget(QMainWindow):
+class AnswerWindow(QMainWindow):
     """Answer retrieval widget.
 
     Attributes:
@@ -295,56 +295,74 @@ class AnswerWidget(QMainWindow):
         if not self.session.is_logged_in():
             raise RuntimeError("the client is not logged into the site.")
 
-        if self.is_valid(event.mimeData().text()):
-
-            url = event.mimeData().urls()[0].url()
-
-            self.session.browser.open(url)
-            response = self.session.browser.response()
-
-            img = Image.open(BytesIO(response.get_data()))
-            img_hash = str(hash(tuple(np.array(img.getdata()).flatten())))
-
-            data = self.dbhandler.hash_search(img_hash)
-            if data is None:
-                self.answer_field.setText("Answer: Not found")
-                self.explanation_field.setText("Explanation: Not found")
-            else:
-                if img_hash in self.__log:
-                    self.answer_field.setText(
-                        f"Answer: {self.__log[img_hash]['answer']}"
-                    )
-                    self.explanation_field.setText(
-                        f"Explanation: {self.__log[img_hash]['explanation']}"
-                    )
-
-                else:
-                    if self.__admin_login:
-                        ans = data["answer"]
-                        exp = data["explanation"]
-                    else:
-                        wrong = not bool(randint(0, 7))
-                        if wrong:
-                            ans = self.invert(data["answer"])
-                            exp = ""
-                        else:
-                            ans = data["answer"]
-                            exp = data["explanation"]
-
-                    self.answer_field.setText(f"Answer: {ans}")
-                    self.explanation_field.setText(f"Explanation: {exp}")
-                    self.__log[img_hash] = {
-                        "answer": ans,
-                        "explanation": exp
-                    }
-
-            self.image_field.setPixmap(QPixmap.fromImage(ImageQt(img)))
-
-            event.accept()
-
-        else:
+        if not self.is_valid(event.mimeData().text()):
             event.ignore()
             self.reset()
+
+            return None
+
+        event.accept()
+
+        self.session.browser.open(event.mimeData().urls()[0].url())
+        response = self.session.browser.response()
+        img = Image.open(BytesIO(response.get_data()))
+        img_hash = str(hash(tuple(np.array(img.getdata()).flatten())))
+        data = self.dbhandler.hash_search(img_hash)
+
+        self.image_field.setPixmap(QPixmap.fromImage(ImageQt(img)))
+
+        if data is None:
+            self.answer_field.text = "Answer not found!"
+            self.explanation_field.text = "Explanation not found!"
+
+            return None
+
+        if img_hash in self.__log:
+            self.answer_field.text = (
+                f"Answer: {self.__log[img_hash]['answer']}"
+            )
+            self.explanation_field.text = (
+                f"Explanation: {self.__log[img_hash]['explanation']}"
+            )
+
+            return None
+
+        # Wait what? You found the easter egg!
+
+        if self.__admin_login:
+            ans = data["answer"]
+            exp = data["explanation"]
+
+        else:
+            # Yes, the program fails questions on purpose.
+            #   This is done in order to avoid excessive OP tool usage.
+            #   Yes, yes, you want to use it in admin mode too... I get it.
+            #   Just add a % before your email in the login and you will
+            #   be authenticated as admin.
+            #
+            # Example (user vs. admin login)
+            #   john@doe.com
+            #   %john@doe.com
+            #
+            # You tell this to anyone and I will filter your IP to the
+            #   russian mafia.
+
+            wrong = not bool(randint(0, 7))
+
+            if wrong:
+                ans = self.invert(data["answer"])  # Fail on purpose >:)
+                exp = ""
+            else:
+                ans = data["answer"]
+                exp = data["explanation"]
+
+        self.answer_field.text = f"Answer: {ans}"
+        self.explanation_field.text = f"Explanation: {exp}"
+
+        self.__log[img_hash] = {
+            "answer": ans,
+            "explanation": exp
+        }
 
 
 class LoginWindow(QMainWindow):
@@ -362,6 +380,16 @@ class LoginWindow(QMainWindow):
         self.resize(400, 300)
         self.setFixedSize(self.size())
 
+        self.setup()
+
+    def setup(self) -> None:
+        """Set up window widgets."""
+        self.setup_widgets()
+        self.setup_event_handlers()
+        self.setup_layout()
+
+    def setup_widgets(self) -> None:
+        """Set up window widgets."""
         self.header = QLabel("Welcome to Algebruh!")
         self.header.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.header.setStyleSheet("""
@@ -371,11 +399,11 @@ class LoginWindow(QMainWindow):
             }
         """)
 
-        self.login_status = QLabel(
-            "Login to continue." +
-            "\nDo not worry, we do not store your credentials." +
-            "\nThey are sent only to the login page and then discarded."
-        )
+        self.login_status = QLabel("""
+            Login to continue.
+            Do not worry, we do not store your credentials.
+            They are sent only to the login page and then discarded.
+        """.replace("\t", ""))
         self.login_status.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.login_status.setStyleSheet("""
             QLabel {
@@ -386,6 +414,7 @@ class LoginWindow(QMainWindow):
 
         self.user = QLineEdit()
         self.user.setPlaceholderText("Username")
+
         self.password = QLineEdit()
         self.password.setPlaceholderText("Password")
         self.password.setEchoMode(QLineEdit.EchoMode.Password)
@@ -403,23 +432,28 @@ class LoginWindow(QMainWindow):
             }
         """)
 
-        self._layout = QVBoxLayout()
-        self._layout.setContentsMargins(20, 20, 20, 20)
-        self._layout.setSpacing(10)
-
-        self._layout.addWidget(self.header)
-        self._layout.addWidget(self.login_status)
-        self._layout.addWidget(self.user)
-        self._layout.addWidget(self.password)
-        self._layout.addWidget(self.submit)
-        self._layout.addWidget(self.copyrightLabel)
-
-        widget = QWidget()
-        widget.setLayout(self._layout)
-
-        self.setCentralWidget(widget)
-
+    def setup_event_handlers(self) -> None:
+        """Set up widget event handlers."""
         self.submit.clicked.connect(self.login)
+
+    def setup_layout(self) -> None:
+        """Set up window layout."""
+        central_wdg = QWidget()
+        central_lay = QVBoxLayout()
+
+        central_lay.setContentsMargins(20, 20, 20, 20)
+        central_lay.setSpacing(10)
+
+        central_lay.addWidget(self.header)
+        central_lay.addWidget(self.login_status)
+        central_lay.addWidget(self.user)
+        central_lay.addWidget(self.password)
+        central_lay.addWidget(self.submit)
+        central_lay.addWidget(self.copyrightLabel)
+
+        central_wdg.setLayout(central_lay)
+
+        self.setCentralWidget(central_wdg)
 
     def login(self) -> None:
         """Login method for the application.
@@ -434,6 +468,7 @@ class LoginWindow(QMainWindow):
         username = self.user.text()
         password = self.password.text()
 
+        # Huh... what could this be?
         admin_login = False
         if username.startswith("%"):
             admin_login = True
@@ -444,7 +479,7 @@ class LoginWindow(QMainWindow):
 
         if session.is_logged_in():
             self.close()
-            self.main = AnswerWidget(session, admin_login)
+            self.main = AnswerWindow(session, admin_login)
             self.main.show()
 
         else:
@@ -474,6 +509,5 @@ class App:
         """Execute the application."""
         app = QApplication(sys.argv)
         demo = LoginWindow()
-        demo = AnswerWidget(Session("1", "1"), True)
         demo.show()
         app.exec()
