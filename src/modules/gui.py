@@ -337,7 +337,7 @@ class AnswerWindow(QMainWindow):
 
         ## Added easter egg, will always fail so be careful if you're doing a test and you enter this mode (the troll mode XD)
         elif self.__dummy_admin_login :
-            ans = ans = self.invert(data["answer"]) 
+            ans = self.invert(data["answer"]) 
             exp = ""
 
         else:
