@@ -27,7 +27,7 @@ async function setAnsweredQuestions(tag_id, db_path) {
     let count = 0;
 
     for (const key in data) {
-        if (data[key].answer != '') {
+        if (data[key].answer != null) {
             count++;
         }
     }
