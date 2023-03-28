@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  class="h-full">
 
 <head>
   <meta charset="UTF-8">
@@ -13,27 +13,28 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-  <header class="bg-white">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
-        <a href="index.html" class="-m-1.5 p-1.5">
-          <span class="sr-only">Algebruh - Home</span>
-          <img class="h-8 w-auto" src="media/icon.png" alt="">
-        </a>
-      </div>
-      <div class="lg:flex lg:gap-x-12">
-        <a href="index.html" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
-        <a href="usage.html" class="text-sm font-semibold leading-6 text-gray-900">Usage instructions</a>
-        <a href="solver.html" class="text-sm font-semibold leading-6 text-gray-900">Solver</a>
-      </div>
-      <div class="lg:flex lg:flex-1 lg:justify-end">
-      </div>
-    </nav>
-  </header>
+<body class="h-full">
+  <main class="grid min-h-full bg-white px-6 lg:px-8">
 
-  <main class="grid min-h-full place-items-center bg-white py-24 px-6 sm:py-32 lg:px-8">
-    <div class="text-center">
+    <header class="bg-white">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="index.html" class="-m-1.5 p-1.5">
+            <span class="sr-only">Algebruh - Home</span>
+            <img class="h-8 w-auto" src="media/icon.png" alt="">
+          </a>
+        </div>
+        <div class="lg:flex lg:gap-x-24">
+          <a href="index.html" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
+          <a href="usage.html" class="text-sm font-semibold leading-6 text-gray-900">Usage instructions</a>
+          <a href="solver.html" class="text-sm font-semibold leading-6 text-gray-900">Solver</a>
+        </div>
+        <div class="lg:flex lg:flex-1 lg:justify-end">
+        </div>
+      </nav>
+    </header>
+
+    <div class="text-center py-24 sm:py-8">
       <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Alge<em>bruh</em></h1>
       <p class="mt-6 text-base leading-7 text-gray-600">The absurdly simple method to get your Algebra questions right.
       </p>
@@ -46,7 +47,7 @@
             aria-hidden="true">&rarr;</span></a>
       </div>
     </div>
-  </main>
+
 
 
   <div class="bg-white py-8 sm:py-8">
@@ -73,7 +74,7 @@
       </dl>
     </div>
   </div>
-
+</main>
 
 </body>
 
