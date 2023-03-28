@@ -1,7 +1,7 @@
 // Constants:
 const TOTAL_QUESTIONS_TAG = "total_questions";
 const ANSWERED_QUESTIONS_TAG = "answered_questions";
-const DATABASE_PATH = "database.json";
+const DATABASE_PATH = "databases/questions.json";
 
 /**
  * Set the total number of questions in the database to the given tag.
