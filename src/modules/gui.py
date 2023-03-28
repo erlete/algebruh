@@ -187,7 +187,10 @@ class AnswerWindow(QMainWindow):
     def setup_widgets(self) -> None:
         """Set up window widgets."""
         self.image_field = ImageField()
-        self.answer_field = AnswerField("Answer: ")
+        if self.__dummy_admin_login:
+            self.answer_field = AnswerField("Answer (please use the opposite):") 
+        else:
+            self.answer_field = AnswerField("Answer:")
         self.explanation_field = AnswerField("Explanation: ")
         self.clear_button = QPushButton("Clear")
 
