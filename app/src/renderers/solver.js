@@ -28,6 +28,16 @@ async function setup() {
 };
 
 /**
+ * Prevent default browser behavior on drag and drop events.
+ * @date 3/28/2023 - 11:44:25 PM
+ *
+ * @param {*} event - Event object.
+ */
+function preventDefault(event) {
+    event.preventDefault();
+}
+
+/**
  * Handle drop enter event.
  * @date 3/28/2023 - 6:44:44 PM
  *
@@ -78,13 +88,16 @@ function drag(event) {
 function drop(event) {
     event.preventDefault();
 
+    var timeout, valid;
     var url = event.dataTransfer.getData("text");
     var question_id = sanitize(url);
     var data = getFormattedData(question_id);
 
     if (QUESTIONS[question_id]) {
+        timeout = 0;
         data = QUESTIONS[question_id];
     } else {
+        timeout = Math.random() * 1000;
         if (Math.random() < 0.15) {
             if (data.answer == "<b>True</b>") {
                 data.answer = "<b>False</b>";
@@ -95,18 +108,24 @@ function drop(event) {
         }
     }
 
-    document.getElementById("answer").innerHTML = data.answer;
-    document.getElementById("explanation").innerHTML = data.explanation;
-    document.getElementById("text-render").innerHTML = data.text;
+    valid = data.answer != MISSING_ANSWER;
 
-    if (data.answer != MISSING_ANSWER) {
-        document.getElementById("text-render-btn").style.display = "block";
-        document.getElementById("text-render-btn-div").style.display = "block";
-
+    if (valid) {
         if (!QUESTIONS[question_id]) {
             QUESTIONS[question_id] = data;
         }
     }
+
+    setTimeout(() => {
+        document.getElementById("answer").innerHTML = data.answer;
+        document.getElementById("explanation").innerHTML = data.explanation;
+        document.getElementById("text-render").innerHTML = data.text;
+
+        if (valid) {
+            document.getElementById("text-render-btn").style.display = "block";
+            document.getElementById("text-render-btn-div").style.display = "block";
+        }
+    }, timeout);
 }
 
 /**
