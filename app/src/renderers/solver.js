@@ -156,7 +156,7 @@ function getFormattedData(key) {
 };
 
 function renderText() {
-    var timeout = document.getElementById("text-render").innerHTML.length * 10;
+    var timeout = document.getElementById("text-render").innerHTML.length * 6.9420;
 
     setTimeout(() => {
         document.getElementById("text-render-div").style.display = "block";
