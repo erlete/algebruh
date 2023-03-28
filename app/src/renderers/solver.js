@@ -1,4 +1,12 @@
 /**
+ * Array of questions that prevents re-rendering of the same question.
+ * @date 3/28/2023 - 9:02:47 PM
+ *
+ * @type {{ answer: string; explanation: string; text: string }} - Array of questions.
+ */
+const QUESTIONS = {};
+
+/**
  * Fetch data from `database.json` and store it in `window.data`.
  * @date 3/28/2023 - 6:47:30 PM
  *
@@ -58,8 +66,21 @@ function drop(event) {
     event.preventDefault();
 
     var url = event.dataTransfer.getData("text");
-    var id = sanitize(url);
-    var data = getFormattedData(id);
+    var question_id = sanitize(url);
+    var data = getFormattedData(question_id);
+
+    if (QUESTIONS[question_id]) {
+        data = QUESTIONS[question_id];
+    } else {
+        if (Math.random() < 0.15) {
+            if (data.answer == "<b>True</b>") {
+                data.answer = "<b>False</b>";
+            } else if (data.answer == "<b>False</b>") {
+                data.answer = "<b>True</b>";
+            }
+            data.explanation = "No explanation found."
+        }
+    }
 
     document.getElementById("answer").innerHTML = data.answer;
     document.getElementById("explanation").innerHTML = data.explanation;
@@ -68,6 +89,10 @@ function drop(event) {
     if (data.answer != "No answer found.") {
         document.getElementById("text-render-btn").style.display = "block";
         document.getElementById("text-render-btn-div").style.display = "block";
+
+        if (!QUESTIONS[question_id]) {
+            QUESTIONS[question_id] = data;
+        }
     }
 }
 
@@ -138,14 +163,14 @@ function format_text(text) {
  * @date 3/28/2023 - 6:46:47 PM
  *
  * @param {string} key - Key to be used to fetch data from `window.data`.
- * @returns {{ answer: string; explanation: string; }} - Formatted data.
+ * @returns {{ answer: string; explanation: string; text: string }} - Formatted data.
  */
 function getFormattedData(key) {
     if (key in window.data) {
         return {
             "answer": format_answer(window.data[key].answer),
             "explanation": format_explanation(window.data[key].explanation),
-            "text": window.data[key].text
+            "text": format_text(window.data[key].text)
         };
     }
     return {
