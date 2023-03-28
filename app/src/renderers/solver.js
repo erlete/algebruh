@@ -1,3 +1,12 @@
+// Constants:
+const DEFAULT_ANSWER = "No image detected.";
+const DEFAULT_EXPLANATION = "No image detected.";
+const DEFAULT_TEXT = "No image detected.";
+
+const MISSING_ANSWER = "No answer found.";
+const MISSING_EXPLANATION = "No explanation found.";
+const MISSING_TEXT = "No text found.";
+
 /**
  * Array of questions that prevents re-rendering of the same question.
  * @date 3/28/2023 - 9:02:47 PM
@@ -24,8 +33,9 @@ async function setup() {
  */
 function dropEnter(event) {
     event.preventDefault();
-    document.getElementById("answer").innerHTML = "No image detected.";
-    document.getElementById("explanation").innerHTML = "No image detected.";
+    document.getElementById("answer").innerHTML = DEFAULT_ANSWER;
+    document.getElementById("explanation").innerHTML = DEFAULT_EXPLANATION;
+    document.getElementById("text-render").innerHTML = DEFAULT_TEXT;
 
     document.getElementById("text-render-div").style.display = "none";
     document.getElementById("text-render-btn-div").style.display = "none";
@@ -39,8 +49,9 @@ function dropEnter(event) {
  */
 function dropLeave(event) {
     event.preventDefault();
-    document.getElementById("answer").innerHTML = "No image detected.";
-    document.getElementById("explanation").innerHTML = "No image detected.";
+    document.getElementById("answer").innerHTML = DEFAULT_ANSWER;
+    document.getElementById("explanation").innerHTML = DEFAULT_EXPLANATION;
+    document.getElementById("text-render").innerHTML = DEFAULT_TEXT;
 
     document.getElementById("text-render-div").style.display = "none";
     document.getElementById("text-render-btn-div").style.display = "none";
@@ -78,7 +89,7 @@ function drop(event) {
             } else if (data.answer == "<b>False</b>") {
                 data.answer = "<b>True</b>";
             }
-            data.explanation = "No explanation found."
+            data.explanation = MISSING_ANSWER
         }
     }
 
@@ -86,7 +97,7 @@ function drop(event) {
     document.getElementById("explanation").innerHTML = data.explanation;
     document.getElementById("text-render").innerHTML = data.text;
 
-    if (data.answer != "No answer found.") {
+    if (data.answer != MISSING_ANSWER) {
         document.getElementById("text-render-btn").style.display = "block";
         document.getElementById("text-render-btn-div").style.display = "block";
 
@@ -121,7 +132,7 @@ function sanitize(url) {
  */
 function format_answer(answer) {
     if (answer == null || answer == undefined) {
-        return "No answer found.";
+        return MISSING_ANSWER;
     }
     answer = answer.toString();
     return `<b>${answer.charAt(0).toUpperCase()}${answer.substring(1)}</b>`;
@@ -136,7 +147,7 @@ function format_answer(answer) {
  */
 function format_explanation(explanation) {
     if (explanation == null || explanation == undefined) {
-        return "No explanation found.";
+        return MISSING_EXPLANATION;
     }
     explanation = explanation.toString();
     return `<b>${explanation.charAt(0).toUpperCase()}${explanation.substring(1)}</b>`;
@@ -152,7 +163,7 @@ function format_explanation(explanation) {
  */
 function format_text(text) {
     if (text == null || text == undefined) {
-        return "No text found.";
+        return MISSING_TEXT;
     }
     text = text.toString();
     return `<b>${text.charAt(0).toUpperCase()}${text.substring(1)}</b>`;
