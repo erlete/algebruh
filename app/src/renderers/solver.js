@@ -3,7 +3,6 @@
  * @date 3/28/2023 - 6:47:30 PM
  *
  * @async
- * @returns {*}
  */
 async function setup() {
     window.data = await (await fetch("database.json")).json();

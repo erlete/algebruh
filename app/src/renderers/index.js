@@ -3,9 +3,8 @@
  * @date 3/28/2023 - 6:53:12 PM
  *
  * @async
- * @param {*} tag_id
- * @param {*} db_path
- * @returns {*}
+ * @param {string} tag_id - ID of the tag to set the total number of questions to.
+ * @param {string} db_path - Path to the database.
  */
 async function setTotalQuestions(tag_id, db_path) {
     const data = await(await fetch(db_path)).json();
@@ -19,9 +18,8 @@ async function setTotalQuestions(tag_id, db_path) {
  * @date 3/28/2023 - 6:53:26 PM
  *
  * @async
- * @param {*} tag_id
- * @param {*} db_path
- * @returns {*}
+ * @param {string} tag_id - ID of the tag to set the total number of answered questions to.
+ * @param {string} db_path - Path to the database.
  */
 async function setAnsweredQuestions(tag_id, db_path) {
     const data = await(await fetch(db_path)).json();
