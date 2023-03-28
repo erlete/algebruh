@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <script defer src="renderers/solver.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .hidden {
+      display: none;
+    }
+
+  </style>
 </head>
 
 <body>
@@ -55,10 +62,12 @@
           </div>
         </div>
       </div>
+
       <div class="overflow-hidden bg-white shadow sm:rounded-lg">
         <div class="px-4 py-5 sm:px-6">
           <h3 class="text-base font-semibold leading-6 text-gray-900">Question data</h3>
         </div>
+
         <div class="border-t border-gray-200">
           <dl>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -66,18 +75,34 @@
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer">No image detected.
               </dd>
             </div>
+
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500"><b>Explanation</b></dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation">No image
                 detected.</dd>
             </div>
+
+            <div id="text-render-btn-div" class="hidden">
+              <div class="bg-gray-50 py-3 sm:flex sm:flex-row justify-left">
+                <button id="text-render-btn" type="button" onclick="renderText()"
+                  class="inline-flex w-full rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto">Render
+                  text (OCR)</button>
+              </div>
+            </div>
+
+            <div id="text-render-div" class="hidden">
+              <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500"><b>Text render</b></dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="text-render"></dd>
+              </div>
+            </div>
+
           </dl>
         </div>
       </div>
 
     </div>
   </div>
-
 </body>
 
 </html>
