@@ -2,7 +2,7 @@
   "name": "algebruh",
   "productName": "Algebruh",
   "version": "1.0.0",
-  "description": "Algebruh is an image reader with graphical user interface that allows users to fetch pre-set answers to questions in a quick, efficient way.",
+  "description": "The absurdly simple method to get your Algebra questions right.",
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
