@@ -1,0 +1,2110 @@
+{
+    "2": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "3": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "4": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "5": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "6": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "7": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "8": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "9": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "10": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "11": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "12": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "13": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "14": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "15": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "16": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "17": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "18": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "19": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "20": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "21": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "22": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "23": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "24": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "25": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "26": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "27": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "28": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "29": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "30": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "31": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "32": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "33": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "34": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "35": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "36": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "37": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "38": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "39": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "40": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "41": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "42": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "43": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "44": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "45": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "46": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "47": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "48": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "49": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "50": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "51": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "52": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "53": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "54": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "55": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "56": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "57": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "58": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "59": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "60": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "61": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "62": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "63": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "64": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "65": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "66": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "67": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "68": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "69": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "70": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "71": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "72": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "73": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "74": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "75": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "76": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "77": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "78": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "79": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "80": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "81": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "82": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "83": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "84": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "85": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "86": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "87": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "88": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "89": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "90": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "91": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "92": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "93": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "94": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "95": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "96": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "97": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "98": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "99": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "100": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "150": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "200": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "250": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "300": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "350": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "400": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "450": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "110": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "120": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "130": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "140": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "160": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "170": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "180": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "190": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "210": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "220": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "230": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "240": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "260": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "270": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "280": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "290": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "310": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "320": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "330": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "340": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "360": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "370": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "380": {
+        "answer": "",
+        "explanation": ""
+    },
+    "390": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "410": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "420": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "430": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "440": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "460": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "470": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "480": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "490": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "500": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "510": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "520": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "501": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "502": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "503": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "504": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "505": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "506": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "507": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "508": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "509": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "511": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "512": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "513": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "514": {
+        "answer": "",
+        "explanation": ""
+    },
+    "515": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "516": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "517": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "518": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "519": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "521": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "522": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "523": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "524": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "525": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "526": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "527": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "528": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "101": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "102": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "103": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "104": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "105": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "106": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "107": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "108": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "109": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "111": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "112": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "113": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "114": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "115": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "116": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "117": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "118": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "119": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "121": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "122": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "123": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "124": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "125": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "126": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "127": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "128": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "129": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "131": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "132": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "133": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "134": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "135": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "136": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "137": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "138": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "139": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "141": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "142": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "143": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "144": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "145": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "146": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "147": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "148": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "149": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "151": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "152": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "153": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "154": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "155": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "156": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "157": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "158": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "159": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "161": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "162": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "163": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "164": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "165": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "166": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "167": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "168": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "169": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "171": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "172": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "173": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "174": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "175": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "176": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "177": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "178": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "179": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "181": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "182": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "183": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "184": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "185": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "186": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "187": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "188": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "189": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "191": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "192": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "193": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "194": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "195": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "196": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "197": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "198": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "199": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "201": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "202": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "203": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "204": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "205": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "206": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "207": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "208": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "209": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "211": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "212": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "213": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "214": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "215": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "216": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "217": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "218": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "219": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "221": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "222": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "223": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "224": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "225": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "226": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "227": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "228": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "229": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "231": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "232": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "233": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "234": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "235": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "236": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "237": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "238": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "239": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "241": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "242": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "243": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "244": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "245": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "246": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "247": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "248": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "249": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "251": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "252": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "253": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "254": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "255": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "256": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "257": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "258": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "259": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "261": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "262": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "263": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "264": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "265": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "266": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "267": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "268": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "269": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "271": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "272": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "273": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "274": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "275": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "276": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "277": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "278": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "279": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "281": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "282": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "283": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "284": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "285": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "286": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "287": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "288": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "289": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "291": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "292": {
+        "answer": "",
+        "explanation": ""
+    },
+    "293": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "294": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "295": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "296": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "297": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "298": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "299": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "301": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "302": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "303": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "304": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "305": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "306": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "307": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "308": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "309": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "311": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "312": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "313": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "314": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "315": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "316": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "317": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "318": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "319": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "321": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "322": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "323": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "324": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "325": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "326": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "327": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "328": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "329": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "331": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "332": {
+        "answer": "",
+        "explanation": ""
+    },
+    "333": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "334": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "335": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "336": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "337": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "338": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "339": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "341": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "342": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "343": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "344": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "345": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "346": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "347": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "348": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "349": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "351": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "352": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "353": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "354": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "355": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "356": {
+        "answer": "",
+        "explanation": ""
+    },
+    "357": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "358": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "359": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "361": {
+        "answer": "",
+        "explanation": ""
+    },
+    "362": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "363": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "364": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "365": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "366": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "367": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "368": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "369": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "371": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "372": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "373": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "374": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "375": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "376": {
+        "answer": "",
+        "explanation": ""
+    },
+    "377": {
+        "answer": "",
+        "explanation": ""
+    },
+    "378": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "379": {
+        "answer": "",
+        "explanation": ""
+    },
+    "381": {
+        "answer": "",
+        "explanation": ""
+    },
+    "382": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "383": {
+        "answer": "",
+        "explanation": ""
+    },
+    "384": {
+        "answer": "",
+        "explanation": ""
+    },
+    "385": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "386": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "387": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "388": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "389": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "391": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "392": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "393": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "394": {
+        "answer": "",
+        "explanation": ""
+    },
+    "395": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "396": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "397": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "398": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "399": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "401": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "402": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "403": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "404": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "405": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "406": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "407": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "408": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "409": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "411": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "412": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "413": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "414": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "415": {
+        "answer": "",
+        "explanation": ""
+    },
+    "416": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "417": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "418": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "419": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "421": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "422": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "423": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "424": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "425": {
+        "answer": "",
+        "explanation": ""
+    },
+    "426": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "427": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "428": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "429": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "431": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "432": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "433": {
+        "answer": "",
+        "explanation": ""
+    },
+    "434": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "435": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "436": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "437": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "438": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "439": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "441": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "442": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "443": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "444": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "445": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "446": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "447": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "448": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "449": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "451": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "452": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "453": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "454": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "455": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "456": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "457": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "458": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "459": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "461": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "462": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "463": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "464": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "465": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "466": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "467": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "468": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "469": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "471": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "472": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "473": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "474": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "475": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "476": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "477": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "478": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "479": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "481": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "482": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "483": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "484": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "485": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "486": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "487": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "488": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "489": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "491": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "492": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "493": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "494": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "495": {
+        "answer": "Falso",
+        "explanation": ""
+    },
+    "496": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "497": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "498": {
+        "answer": "Verdadero",
+        "explanation": ""
+    },
+    "499": {
+        "answer": "Verdadero",
+        "explanation": ""
+    }
+}
