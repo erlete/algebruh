@@ -16,26 +16,33 @@
     .hidden {
       display: none;
     }
-
   </style>
 </head>
 
+<!-- Body with prevented tab opening on file drop: -->
 <body ondragenter="preventDefault(event)" ondrop="preventDefault(event)" ondragover="preventDefault(event)">
+
+  <!-- Header and navigation bar: -->
   <header class="bg-white">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+
+      <!-- Logo image: -->
       <div class="flex lg:flex-1">
         <a href="index.html" class="-m-1.5 p-1.5">
           <span class="sr-only">Algebruh</span>
           <img class="h-8 w-auto" src="media/icon.png" alt="">
         </a>
       </div>
+
+      <!-- Navigation links: -->
       <div class="lg:flex lg:gap-x-24">
         <a href="index.html" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
         <a href="usage.html" class="text-sm font-semibold leading-6 text-gray-900">Usage instructions</a>
         <a href="solver.html" class="text-sm font-semibold leading-6 text-gray-900">Solver</a>
       </div>
-      <div class="lg:flex lg:flex-1 lg:justify-end">
-      </div>
+
+      <div class="lg:flex lg:flex-1 lg:justify-end"></div>
+
     </nav>
   </header>
 
@@ -44,9 +51,9 @@
       <div class="mx-auto max-w-7xl lg:text-center">
         <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Any questions?</p>
 
+        <!-- Drag and drop area: -->
         <div class="bg-white p7 rounded w-9/12 mx-auto py-12">
-          <div x-data="dataFileDnD()"
-            class="relative flex flex-col text-gray-400 border border-gray-200 rounded shadow sm:rounded-lg">
+          <div class="relative flex flex-col text-gray-400 border border-gray-200 rounded shadow sm:rounded-lg">
             <div>
 
               <div id="div1" ondrop="drop(event)" ondragover="dropEnter(event)" ondragleave="dropLeave(event)"
@@ -61,8 +68,10 @@
             </div>
           </div>
         </div>
+
       </div>
 
+      <!-- Results area: -->
       <div class="overflow-hidden bg-white shadow sm:rounded-lg">
         <div class="px-4 py-5 sm:px-6">
           <h3 class="text-base font-semibold leading-6 text-gray-900">Question data</h3>
@@ -70,18 +79,21 @@
 
         <div class="border-t border-gray-200">
           <dl>
+            <!-- Answer area: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500"><b>Answer</b></dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer">No image detected.
               </dd>
             </div>
 
+            <!-- Explanation area: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500"><b>Explanation</b></dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation">No image
                 detected.</dd>
             </div>
 
+            <!-- Text render button area: -->
             <div id="text-render-btn-div" class="hidden">
               <div class="bg-gray-50 py-3 sm:flex sm:flex-row justify-left">
                 <button id="text-render-btn" type="button" onclick="renderText()"
@@ -90,6 +102,7 @@
               </div>
             </div>
 
+            <!-- Text render area: -->
             <div id="text-render-div" class="hidden">
               <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt class="text-sm font-medium text-gray-500"><b>Text render</b></dt>
@@ -100,9 +113,9 @@
           </dl>
         </div>
       </div>
-
     </div>
   </div>
+
 </body>
 
 </html>

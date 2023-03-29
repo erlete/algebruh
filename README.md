@@ -1,6 +1,6 @@
 # Algebruh: the absurdly simple method to get your Algebra questions right
 
-_**Note**: parts of this documentation are intended for developers alone. In order to learn how to use the application, install it and execute it. All required instructions are contained inside it._
+_**Note**: parts of this documentation are intended for developers alone. In order to learn how to use the application, just install it and execute it. All required instructions are contained inside it._
 
 ## Download
 
@@ -20,6 +20,4 @@ Once downloaded, the setup executable will install the web application and a sho
 
 **The author does not guarantee the correct operation of the software in any scenario excluded from the internal testing process. The author will not be liable for any repercusions the usage of this software might have on the user.**
 
-**The source code is available for inspection and vulnerability reports. The source code is available for commercial use, patent use, private use, modification and distribution on the conditions stated in the _GNU Affero General Public License v3.0_, available [here](LICENSE).**
-
-**The author will not be liable for any usage of the information of the user in any case. This tool serves only a site onnection purpose, yet how said site uses the information of the user is not the author's responsability.**
+**The source code is available for inspection and vulnerability reports, as well as for commercial use, patent use, private use, modification and distribution on the conditions stated in the _GNU Affero General Public License v3.0_, available [here](LICENSE).**
