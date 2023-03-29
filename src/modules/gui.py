@@ -153,12 +153,13 @@ class AnswerWindow(QMainWindow):
 
     VALID_EXTENSIONS = (".png",)
 
-    def __init__(self, session: Session, admin_login: bool) -> None:
+    def __init__(self, session: Session, admin_login: bool, dummy_admin_login: bool) -> None:
         """Initialize a MainWidget instance.
 
         Args:
             session (Session): client session.
             admin_login(bool): whether the login is performed by an admin.
+            dummy_adming_login(bool): a troll admin
         """
         super().__init__()
 
@@ -166,6 +167,7 @@ class AnswerWindow(QMainWindow):
         self.dbhandler = DBHandler(resource_path("databases"))
 
         self.__admin_login = admin_login
+        self.__dummy_admin_login = dummy_admin_login
         self.__log: Dict[str, Any] = {}
 
         self.setWindowTitle("Algebruh - Answer Retrieval")
@@ -185,7 +187,10 @@ class AnswerWindow(QMainWindow):
     def setup_widgets(self) -> None:
         """Set up window widgets."""
         self.image_field = ImageField()
-        self.answer_field = AnswerField("Answer: ")
+        if self.__dummy_admin_login:
+            self.answer_field = AnswerField("Answer (please use the opposite):") 
+        else:
+            self.answer_field = AnswerField("Answer:")
         self.explanation_field = AnswerField("Explanation: ")
         self.clear_button = QPushButton("Clear")
 
@@ -333,6 +338,11 @@ class AnswerWindow(QMainWindow):
             ans = data["answer"]
             exp = data["explanation"]
 
+        ## Added easter egg, will always fail so be careful if you're doing a test and you enter this mode (the troll mode XD)
+        elif self.__dummy_admin_login :
+            ans = self.invert(data["answer"]) 
+            exp = ""
+
         else:
             # Yes, the program fails questions on purpose.
             #   This is done in order to avoid excessive OP tool usage.
@@ -469,9 +479,14 @@ class LoginWindow(QMainWindow):
         password = self.password.text()
 
         # Huh... what could this be?
+        dummy_admin_login = False
         admin_login = False
         if username.startswith("%"):
             admin_login = True
+            username = username[1:]
+            
+        elif username.startswith("!"):
+            dummy_admin_login = True
             username = username[1:]
 
         session = Session(username, password)
@@ -479,7 +494,7 @@ class LoginWindow(QMainWindow):
 
         if session.is_logged_in():
             self.close()
-            self.main = AnswerWindow(session, admin_login)
+            self.main = AnswerWindow(session, admin_login, dummy_admin_login)
             self.main.show()
 
         else:
