@@ -14,7 +14,8 @@
 			"dependsOn": [
 				"NPM: Install",
 				"CSS: Compile"
-			]
+			],
+			"dependsOrder": "sequence"
 		},
 		{
 			"type": "npm",
