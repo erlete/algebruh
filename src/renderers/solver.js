@@ -88,40 +88,17 @@ function drag(event) {
 function drop(event) {
     event.preventDefault();
 
-    var timeout, valid;
+    var timeout;
     var url = event.dataTransfer.getData("text");
-    var question_id = sanitize(url);
+    var question_id = getFileIndex(url);
     var data = getFormattedData(question_id);
-
-    if (QUESTIONS[question_id]) {
-        timeout = 0;
-        data = QUESTIONS[question_id];
-    } else {
-        timeout = Math.random() * 1000;
-        if (Math.random() < 0.15) {
-            if (data.answer == "<b>True</b>") {
-                data.answer = "<b>False</b>";
-            } else if (data.answer == "<b>False</b>") {
-                data.answer = "<b>True</b>";
-            }
-            data.explanation = MISSING_ANSWER
-        }
-    }
-
-    valid = data.answer != MISSING_ANSWER;
-
-    if (valid) {
-        if (!QUESTIONS[question_id]) {
-            QUESTIONS[question_id] = data;
-        }
-    }
 
     setTimeout(() => {
         document.getElementById("answer").innerHTML = data.answer;
         document.getElementById("explanation").innerHTML = data.explanation;
         document.getElementById("text-render").innerHTML = data.text;
 
-        if (valid) {
+        if (data.answer != MISSING_ANSWER) {
             document.getElementById("text-render-btn").style.display = "block";
             document.getElementById("text-render-btn-div").style.display = "block";
         }
@@ -135,7 +112,7 @@ function drop(event) {
  * @param {string} url - URL to extract file index from.
  * @returns {string} - Extracted file index.
  */
-function sanitize(url) {
+function getFileIndex(url) {
     var match = url.match(/download_[0]*(\d*)/);
 
     if (match) {
