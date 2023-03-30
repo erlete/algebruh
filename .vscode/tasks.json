@@ -1,0 +1,50 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "make",
+			"problemMatcher": [],
+			"label": "NPM: Build",
+			"detail": "Build the app with electron-forge make",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": [
+				"NPM: Install",
+				"CSS: Compile"
+			],
+			"dependsOrder": "sequence"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"group": "none",
+			"problemMatcher": [],
+			"label": "NPM: Install",
+			"detail": "Install dependencies with npm install",
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"label": "NPM: Start",
+			"detail": "Start a live demo of the app with electron-forge start"
+		},
+		{
+			"label": "CSS: Compile",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"tailwindcss",
+				"-i",
+				".\\src\\styles\\template.css",
+				"-o",
+				".\\src\\styles\\output.css"
+			],
+			"problemMatcher": [],
+			"detail": "Compile Tailwind CSS output file"
+		}
+	]
+}
