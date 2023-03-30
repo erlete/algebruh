@@ -1,45 +1,40 @@
 // Constants:
 const TOTAL_QUESTIONS_TAG = "total_questions";
 const ANSWERED_QUESTIONS_TAG = "answered_questions";
+const GUARANTEED_GRADE_TAG = "guaranteed_grade";
 const DATABASE_PATH = "databases/questions.json";
 
 /**
- * Set the total number of questions in the database to the given tag.
- * @date 3/28/2023 - 6:53:12 PM
+ * Set up dynamic elements in the index page.
+ * @date 3/30/2023 - 1:00:43 PM
  *
  * @async
- * @param {string} tag_id - ID of the tag to set the total number of questions to.
- * @param {string} db_path - Path to the database.
+ * @returns {*}
  */
-async function setTotalQuestions(tag_id, db_path) {
-    const data = await (await fetch(db_path)).json();
-    const totalQuestions = document.getElementById(tag_id);
+async function setup() {
+    /// Target tags:
+    const totalQuestionsTag = document.getElementById(TOTAL_QUESTIONS_TAG);
+    const answeredQuestionsTag = document.getElementById(ANSWERED_QUESTIONS_TAG);
+    const gradePercentageTag = document.getElementById(GUARANTEED_GRADE_TAG);
 
-    totalQuestions.innerHTML = Object.keys(data).length;
-}
+    // Fetch data from the database:
+    data = await (await fetch(DATABASE_PATH)).json();
 
-/**
- * Set the total number of answered questions in the database to the given tag.
- * @date 3/28/2023 - 6:53:26 PM
- *
- * @async
- * @param {string} tag_id - ID of the tag to set the total number of answered questions to.
- * @param {string} db_path - Path to the database.
- */
-async function setAnsweredQuestions(tag_id, db_path) {
-    const data = await (await fetch(db_path)).json();
-    const answeredQuestions = document.getElementById(tag_id);
-    let count = 0;
+    // Set up tag content:
+    const totalQuestions = Object.keys(data).length;
+    let answeredQuestions = 0;
 
     for (const key in data) {
         if (data[key].answer != null) {
-            count++;
+            answeredQuestions++;
         }
     }
 
-    answeredQuestions.innerHTML = count;
+    totalQuestionsTag.innerHTML = totalQuestions;
+    answeredQuestionsTag.innerHTML = answeredQuestions;
+    gradePercentageTag.innerHTML = (answeredQuestions / totalQuestions) * 100;
+    gradePercentageTag.innerHTML = Math.round(gradePercentageTag.innerHTML * 100) / 100;
 }
 
-// Set up dynamic data for the page:
-setTotalQuestions(TOTAL_QUESTIONS_TAG, DATABASE_PATH);
-setAnsweredQuestions(ANSWERED_QUESTIONS_TAG, DATABASE_PATH);
+// Run setup script:
+setup();
