@@ -2633,5 +2633,10 @@
         "answer": true,
         "explanation": null,
         "text": "Preguntar si el sistema correspondiente a una matriz ampliada |a; a2 a3 b| tiene alguna soluci6n es lo mismo que preguntar si b esta en el conjunto generado Gen{aj, a2, a3}."
+    },
+    "529": {
+        "answer": false,
+        "explanation": null,
+        "text": "Si A es una matriz n x n, entonces A es diagonalizable si tiene n vectores propios."
     }
 }
