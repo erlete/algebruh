@@ -1648,9 +1648,9 @@
         "text": "Si A es diagonalizable, entonces es inversible."
     },
     "332": {
-        "answer": null,
+        "answer": false,
         "explanation": null,
-        "text": "Si A es una matriz n x n, entonces A es diagonalizable si tiene 1 vectores propios."
+        "text": "Si A es una matriz n x n, entonces A es diagonalizable si tiene n vectores propios."
     },
     "333": {
         "answer": false,
@@ -2631,10 +2631,5 @@
         "answer": true,
         "explanation": null,
         "text": "Si B = {vi,..., vn} es una base de R” entonces para todo i = 1,..., n el vector de coordenadas de vj respecto a la base B es e;: [vig = ei."
-    },
-    "529": {
-        "answer": false,
-        "explanation": null,
-        "text": "Si A es una matriz n x n, entonces A es diagonalizable si tiene n vectores propios."
     }
 }
