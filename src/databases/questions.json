@@ -1448,7 +1448,7 @@
         "text": "Toda matriz de cambio de base es una matriz inversible y toda matriz inversible es una matriz de cambio de base."
     },
     "292": {
-        "answer": null,
+        "answer": false,
         "explanation": null,
         "text": "Si A = |v, ... vn] es una matriz cuadrada inversible y B es el conjunto formado por las columnas de A (B = {vj,...,Vn}) entonces B es una base de R\" y A es la matriz de cambio de base de la base canonica de R\" a B."
     },
@@ -1768,7 +1768,7 @@
         "text": "Si A es una matriz n x n entonces A” puede escribirse como una combinaci6n lineal de potencias mas bajas de A."
     },
     "356": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "vev = |v."
     },
@@ -1793,7 +1793,7 @@
         "text": "Si los vectores vj,...,V») generan un subespacio W y si x es ortogonal a cada v; para 1 } S j P j=1,...,p entonces x pertenece a W+."
     },
     "361": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "u:'v—v-u=0."
     },
@@ -1868,12 +1868,12 @@
         "text": "Toda matriz ortogonal es inversible."
     },
     "376": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Si z es ortogonal a u; y a uz y W = Gen{uy, up}, entonces z pertenece a wt."
     },
     "377": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Para cada y y cada subespacio W, el vector y — proyy y es ortogonal a W."
     },
@@ -1883,17 +1883,17 @@
         "text": "La proyeccion ortogonal de y sobre un subespacio W de R\" puede depender en algunos casos de la base ortogonal de W usada para calcularla."
     },
     "379": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Si y pertenece a un subespacio W, entonces la proyeccion ortogonal de y sobre W es el propio y."
     },
     "380": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Si las columnas de una matriz 1 x p, U, son ortonormales entonces uutly es la proyeccién ortogonal de y sobre el espacio columna de U."
     },
     "381": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Si W es un subespacio de R\" y v pertenece tanto a W como a W-~, entonces v es el vector cero."
     },
@@ -1903,12 +1903,12 @@
         "text": "Si y = Z| + Z2, donde z; esta en un subespacio W y z2 esta en W~ entonces z; es la proyeccién ortogonal de y sobre W."
     },
     "383": {
-        "answer": null,
+        "answer": false,
         "explanation": null,
         "text": "La aproximacién 6ptoma de y por vectores de un subespacio W es el vector y — proyy y-"
     },
     "384": {
-        "answer": null,
+        "answer": false,
         "explanation": null,
         "text": "Si las columnas de una matriz 1 x p, U, son ortonormales entonces UuuU'x =x para todo xER\"."
     },
@@ -1958,7 +1958,7 @@
         "text": "Si un vector x € R” no pertenece a un subespacio H C R” entonces x — proy;;(x) no puede ser cero."
     },
     "394": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Si A es una matriz m x n, entonces todo vector x € R” se puede poner como suma x = p+u donde p € FilA yu € Nul A."
     },
@@ -2558,7 +2558,7 @@
         "text": "Un subespacio de R” es cualquier conjunto H tal que (i) el vector cero estd en H, (ii) si uy v estén en H, u+v esté en H, y (iii) sic es un ntimero y u esté en H, cu esta en H."
     },
     "514": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Si x es un vector de un espacio vectorial V y si B es una base de V que tiene n vectores entonces [x] es un vector de R”."
     },
