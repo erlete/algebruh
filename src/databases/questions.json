@@ -2475,12 +2475,12 @@
     "497": {
         "answer": true,
         "explanation": null,
-        "text": "Siu y v son vectores distintos de cero, Gen{u, vj contiene la recta que pasa por u y por el origen."
+        "text": "Si u y v son vectores distintos de cero, Gen{u, vj contiene la recta que pasa por u y por el origen."
     },
     "498": {
         "answer": true,
         "explanation": null,
-        "text": "Si uy v son vectores distintos ambos no nulos, Gen{u, v} contiene la recta que pasa por u y por v."
+        "text": "Si u y v son vectores distintos ambos no nulos, Gen{u, v} contiene la recta que pasa por u y por v."
     },
     "499": {
         "answer": true,
