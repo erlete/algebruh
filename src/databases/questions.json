@@ -1953,7 +1953,7 @@
         "text": "Si L es una recta de R\" que pasa por el origen y si vy es la proyecci6n ortogonal de v sobre L entonces ||v — vy|| es la distancia de v a L."
     },
     "393": {
-        "answer": false,
+        "answer": true,
         "explanation": null,
         "text": "Si un vector x € R” no pertenece a un subespacio H C R” entonces x — proy;;(x) no puede ser cero."
     },
