@@ -2063,7 +2063,7 @@
         "text": "Si L es una recta de R\" que pasa por el origen y si vy es la proyeccién ortogonal de v sobre L entonees ||v — vy|| es la distancia de v a L."
     },
     "415": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Si un vector x € R\" no pertenece a un subespacio H C R\" entonces x — proy;,;( ser cero.  ) no puede"
     },
