@@ -1979,12 +1979,12 @@
     },
     "398": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Podría ser uno de los vectores del conjunto ortogonal igual a cero.",
         "text": "Si W = Gen{x1,X2,x3} donde x1, x2,x3 son linealmente independientes y si {v1,v2,V3} eS un conjunto ortogonal en W entonces {v1,v2,v3} es una base de W."
     },
     "399": {
         "answer": true,
-        "explanation": null,
+        "explanation": "Porque cada vector de W es igual a su propia proyecci ón ortogonal sobre W.",
         "text": "Si x no pertenece a un subespacio W, entonces x — proyy x es distinto de cero."
     },
     "400": {
@@ -2014,7 +2014,7 @@
     },
     "405": {
         "answer": true,
-        "explanation": null,
+        "explanation": "Porque en ese caso las ecuaciones normales son un sistema compatible determinado por tener una matriz de coeficientes (A traspuesta por A) inversible.",
         "text": "Si las columnas de A son linealmente independientes, entonces el problema de minimos cuadrados de la ecuaci6n Ax = b tiene exactamente una soluci6n."
     },
     "406": {
@@ -2034,7 +2034,7 @@
     },
     "409": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Sólo si las columnas de A son independientes, es decir, si A traspuesta por A es inversible.",
         "text": "Si X es una solucién del problema de minimos cuadrados de Ax = b, entonces % = (ATA) 'ATb."
     },
     "410": {
@@ -2044,7 +2044,7 @@
     },
     "411": {
         "answer": true,
-        "explanation": null,
+        "explanation": "En este caso, como Q traspuesta por Q es la identidad, las ecuaciones normales son equivalentes al sistema \"(R traspuesta) por R por x\" = \"(R traspuesta) por (Q traspuesta) por b\". Pero R (y R traspuesta) es inversible, por lo que la soluci ón es la indicada.",
         "text": "Si A tiene una factorizacion QR, A = QR, entonces la mejor forma de hallar la solucion del problema de minimos cuadrados de Ax = b es calcular X = R~'Q™b."
     },
     "412": {
@@ -2074,7 +2074,7 @@
     },
     "417": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Sólo si las columnas de la matriz de coeficientes son linealmente independientes.",
         "text": "La solucién del problema de minimos cuadrados de cualquier sistema de ecuaciones lineales es tinica."
     },
     "418": {
