@@ -35,14 +35,36 @@
 		{
 			"label": "CSS: Compile",
 			"type": "shell",
-			"command": "npx",
-			"args": [
-				"tailwindcss",
-				"-i",
-				".\\src\\styles\\template.css",
-				"-o",
-				".\\src\\styles\\output.css"
-			],
+			"osx": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					"./src/styles/template.css",
+					"-o",
+					"./src/styles/output.css"
+				]
+			},
+			"linux": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					"./src/styles/template.css",
+					"-o",
+					"./src/styles/output.css"
+				]
+			},
+			"windows": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					".\\src\\styles\\template.css",
+					"-o",
+					".\\src\\styles\\output.css"
+				]
+			},
 			"problemMatcher": [],
 			"detail": "Compile Tailwind CSS output file"
 		}
