@@ -33,7 +33,7 @@ async function setup() {
     totalQuestionsTag.innerHTML = totalQuestions;
     answeredQuestionsTag.innerHTML = answeredQuestions;
     gradePercentageTag.innerHTML = (answeredQuestions / totalQuestions) * 100;
-    gradePercentageTag.innerHTML = Math.round(gradePercentageTag.innerHTML * 100) / 100;
+    gradePercentageTag.innerHTML = `${Math.round(gradePercentageTag.innerHTML * 100) / 100} %`;
 }
 
 // Run setup script:
