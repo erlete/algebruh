@@ -12,37 +12,37 @@
   <script defer src="renderers/index.js"></script>
 </head>
 
-<body class="h-full">
+<body class="h-full items-center">
+
+  <!-- Header and navigation bar: -->
+  <header class="bg-white">
+    <nav class="m-8 flex max-w-7xl items-center justify-between" aria-label="Global">
+
+      <!-- Logo image: -->
+      <div class="flex-1 items-center">
+        <a href="index.html">
+          <span class="sr-only">Algebruh</span>
+          <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
+        </a>
+      </div>
+
+      <!-- Navigation links: -->
+      <div class="flex gap-x-12 sm:gap-x-24 text-center">
+        <a href="index.html" class="text-base text-center text-gray-900 font-semibold"><u>Home</u></a>
+        <a href="usage.html" class="text-base text-center text-gray-900 font-semibold">Instructions</a>
+        <a href="solver.html" class="text-base text-center text-gray-900 font-semibold">Solver</a>
+      </div>
+
+      <div class="flex-1 justify-center"></div>
+
+    </nav>
+  </header>
 
   <!-- Main section that includes the landing page: -->
-  <main class="grid min-h-full bg-white">
-
-    <!-- Header and navigation bar: -->
-    <header class="bg-white">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between p-8" aria-label="Global">
-
-        <!-- Logo image: -->
-        <div class="flex-1 items-center">
-          <a href="index.html">
-            <span class="sr-only">Algebruh</span>
-            <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
-          </a>
-        </div>
-
-        <!-- Navigation links: -->
-        <div class="flex gap-x-24 text-center">
-          <a href="index.html" class="text-base text-center text-gray-900 font-semibold"><u>Home</u></a>
-          <a href="usage.html" class="text-base text-center text-gray-900 font-semibold">Instructions</a>
-          <a href="solver.html" class="text-base text-center text-gray-900 font-semibold">Solver</a>
-        </div>
-
-        <div class="flex-1 justify-center"></div>
-
-      </nav>
-    </header>
+  <main class="grid bg-white">
 
     <!-- Title and slogan: -->
-    <div class="text-center py-24 sm:py-8">
+    <div class="text-center m-16">
 
       <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
         Alge<em>bruh</em>
@@ -66,7 +66,7 @@
     </div>
 
     <!-- Statistics: -->
-    <div class="bg-white">
+    <div class="bg-white m-16">
       <div class="max-w-7xl">
         <dl class="grid grid-cols-1 sm:grid-cols-3 text-center">
 

@@ -13,31 +13,31 @@
 
 <body class="h-full">
 
+  <!-- Header and navigation bar: -->
+  <header class="bg-white">
+    <nav class="m-8 flex max-w-7xl items-center justify-between" aria-label="Global">
+
+      <!-- Logo image: -->
+      <div class="flex-1 items-center">
+        <a href="index.html">
+          <span class="sr-only">Algebruh</span>
+          <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
+        </a>
+      </div>
+
+      <!-- Navigation links: -->
+      <div class="flex gap-x-12 sm:gap-x-24 text-center">
+        <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Home</a>
+        <a href="usage.html" class="text-base text-center text-gray-900 font-semibold"><u>Instructions</u></a>
+        <a href="solver.html" class="text-base text-center text-gray-900 font-semibold">Solver</a>
+      </div>
+
+      <div class="flex-1 justify-center"></div>
+
+    </nav>
+  </header>
+
   <main class="grid min-h-full bg-white">
-
-    <!-- Header and navigation bar: -->
-    <header class="bg-white">
-      <nav class="mx-auto flex max-w-7xl items-center justify-between p-8" aria-label="Global">
-
-        <!-- Logo image: -->
-        <div class="flex-1 items-center">
-          <a href="index.html">
-            <span class="sr-only">Algebruh</span>
-            <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
-          </a>
-        </div>
-
-        <!-- Navigation links: -->
-        <div class="flex gap-x-24 text-center">
-          <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Home</a>
-          <a href="usage.html" class="text-base text-center text-gray-900 font-semibold"><u>Instructions</u></a>
-          <a href="solver.html" class="text-base text-center text-gray-900 font-semibold">Solver</a>
-        </div>
-
-        <div class="flex-1 justify-center"></div>
-
-      </nav>
-    </header>
 
     <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
 
@@ -82,7 +82,7 @@
 
         <!-- Side image: -->
         <div
-          class="-mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+          class="h-0 w-auto sm:h-auto -mt-12 -ml-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
             src="media/solver.png" alt="">
         </div>
