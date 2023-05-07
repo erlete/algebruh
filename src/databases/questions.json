@@ -731,7 +731,7 @@
     },
     "148": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Deber\u00eda decir que es una combinaci\u00f3n lineal de las columnas de A usando como coeficientes los elementos de la columna correspondiente de B.",
         "text": "Toda columna de AB es una combinacion lineal de las columnas de B usando como coeficientes los elementos de la columna correspondiente de A."
     },
     "149": {
@@ -751,7 +751,7 @@
     },
     "152": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Deber\u00eda decir A B igual a la matriz cuyas columnas son A b_1, A b_2, A b_3.",
         "text": "Si A y B son matrices 3 x 3 y B = [b; bo bs], entonces AB = [Ab + Ab + Abs]."
     },
     "153": {
@@ -761,12 +761,12 @@
     },
     "154": {
         "answer": false,
-        "explanation": null,
+        "explanation": "No en general. S\u00f3lo se cumplir\u00eda si B y C conmutan.",
         "text": "La igualdad (AB)C = (AC)B se cumple para cualesquiera matrices A, B,C para las que los productos indicados est\u00e9n definidos."
     },
     "155": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Deber\u00eda decir (A B) traspuesta igual a B traspuesta por A traspuesta.",
         "text": "La igualdad (AB)' = A\u2019 B\" se cumple para cualesquiera matrices A y B para las que el producto AB est\u00e9 definido."
     },
     "156": {
@@ -811,7 +811,7 @@
     },
     "164": {
         "answer": true,
-        "explanation": null,
+        "explanation": "Es la definici \u00f3n de matriz inversa.",
         "text": "Para que una matriz B sea inversa de A, ambas ecuaciones AB = I y BA = I deben ser ciertas."
     },
     "165": {
@@ -851,12 +851,12 @@
     },
     "172": {
         "answer": true,
-        "explanation": null,
+        "explanation": "Es una matriz con un pivote en cada fila y en cada columna.",
         "text": "Si A se puede reducir por filas a la matriz identidad, entonces A es inversible."
     },
     "173": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Deber\u00eda decir \"tambi\u00e9n reducen la identidad n por n a la inversa de A\".",
         "text": "Si A es una matriz inversible n x n, entonces las operaciones elementales de filas que reducen A a la identidad I, tambi\u00e9n reducen A~! a I)."
     },
     "174": {
@@ -881,7 +881,7 @@
     },
     "178": {
         "answer": false,
-        "explanation": null,
+        "explanation": "S\u00f3lo si A es cuadrada. Si esto no se sabe, es necesario tambi\u00e9n que BA = I.",
         "text": "Para que una matriz B sea inversa de una matriz A, es suficiente que la ecuaci\u00e9n AB = I sea cierta."
     },
     "179": {
@@ -901,7 +901,7 @@
     },
     "182": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Ser\u00eda verdadero si dijese ad = bc.",
         "text": "SiA=(4 \u00b0), y ab = cd, entonces A no es inversible."
     },
     "183": {
@@ -956,12 +956,12 @@
     },
     "193": {
         "answer": true,
-        "explanation": null,
+        "explanation": "Porque las dos primeras columnas de AB son el resultado respectivo del producto de A por dos vectores iguales.",
         "text": "Si las dos primeras columnas de B son iguales y AB existe tambi\u00e9n sus dos primeras columnas son iguales."
     },
     "194": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Ser\u00edan iguales las dos primeras columnas de AB.",
         "text": "Si las dos primeras columnas de B son iguales y BA existe tambi\u00e9n sus dos primeras columnas son iguales."
     },
     "195": {
@@ -976,12 +976,12 @@
     },
     "197": {
         "answer": true,
-        "explanation": null,
+        "explanation": "Ocurre lo mismo porque es igual al producto de A por el vector cero.",
         "text": "Si AB existe y la segunda columna de B es toda cero, lo mismo ocurre con la segunda columna de AB."
     },
     "198": {
         "answer": false,
-        "explanation": null,
+        "explanation": "Si la \u00faltima columna de B es b_n y es distinta de cero, y si la \u00faltima columna de AB es cero, tenemos Ab_n = 0, lo cual, por ser b_n distinto de cero, es una relaci\u00f3n de dependencia lineal entre las columnas de A. Luego las columnas de A son linealmente dependientes.",
         "text": "si AB existe y la ultima columna de AB es completamente cero, pero B por si sola no tiene ninguna columna de ceros entonces las columnas de A son necesariamente independientes."
     },
     "199": {
@@ -1001,12 +1001,12 @@
     },
     "202": {
         "answer": true,
-        "explanation": null,
+        "explanation": "Para cualquier soluci \u00f3n x de Ax = 0 se cumple x = Ix = C Ax = C 0 = 0.",
         "text": "Si CA = I, (la matriz identidad n x n) entonces la ecuaci6n Ax = 0 tiene tinicamente la soluci6n trivial."
     },
     "203": {
         "answer": true,
-        "explanation": null,
+        "explanation": "La identidad (AD)b = b le \u00edda como A(Db) = b expresa que Db es una soluci\u00f3n de Ax = b.",
         "text": "Si AD = I, (la matriz identidad m x m) entonces para todo b en R\", la ecuaci6\u00e9n Ax = b tiene alguna soluci6n."
     },
     "204": {
