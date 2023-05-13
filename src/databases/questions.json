@@ -2275,7 +2275,7 @@
         "text": "Una forma cuadratica definida positiva puede transformarse en una forma definida negativa mediante un cambio de variable x = Py definido por una matriz ortogonal P."
     },
     "457": {
-        "answer": false,
+        "answer": true,
         "explanation": null,
         "text": "Toda forma cuadratica indefinida es isotr\u00e9pica."
     },
