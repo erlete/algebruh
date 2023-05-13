@@ -2285,7 +2285,7 @@
         "text": "Toda forma cuadratica indefinida es degenerada."
     },
     "459": {
-        "answer": false,
+        "answer": true,
         "explanation": null,
         "text": "Toda forma cuadratica semidefinida 0 es definida 0 es degenerada."
     },
