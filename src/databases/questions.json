@@ -2115,7 +2115,7 @@
         "text": "La dimension de cualquier subespacio propio de una matriz real sim\u00e9trica es igual a la multiplicidad algebraica de su correspondiente autovalor."
     },
     "425": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Para cualquier matriz sim\u00e9trica n x n, A, si x,y \u20ac R\" entonces (Ax)-y = x-(Ay)."
     },
@@ -2155,7 +2155,7 @@
         "text": "Si v es un vector no nulo de R\", entonces vv! es una matriz n x 1 de rango igual a 1."
     },
     "433": {
-        "answer": null,
+        "answer": true,
         "explanation": null,
         "text": "Toda matriz sim\u00e9trica n x n es igual a una combinaci6n lineal de n matrices de rango 1."
     },
@@ -2275,7 +2275,7 @@
         "text": "Una forma cuadratica definida positiva puede transformarse en una forma definida negativa mediante un cambio de variable x = Py definido por una matriz ortogonal P."
     },
     "457": {
-        "answer": false,
+        "answer": true,
         "explanation": null,
         "text": "Toda forma cuadratica indefinida es isotr\u00e9pica."
     },
@@ -2285,7 +2285,7 @@
         "text": "Toda forma cuadratica indefinida es degenerada."
     },
     "459": {
-        "answer": false,
+        "answer": true,
         "explanation": null,
         "text": "Toda forma cuadratica semidefinida 0 es definida 0 es degenerada."
     },
