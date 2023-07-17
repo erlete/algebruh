@@ -10,14 +10,6 @@ const MISSING_TEXT = "No text found.";
 const DATABASE_PATH = "databases/questions.json";
 
 /**
- * Array of questions that prevents re-rendering of the same question.
- * @date 3/28/2023 - 9:02:47 PM
- *
- * @type {{ answer: string; explanation: string; text: string }} - Array of questions.
- */
-const QUESTIONS = {};
-
-/**
  * Fetch data from the database and store it in `window.data`.
  * @date 3/28/2023 - 6:47:30 PM
  *

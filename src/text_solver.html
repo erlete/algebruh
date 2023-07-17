@@ -9,7 +9,8 @@
     <title>Algebruh - Image Solver</title>
 
     <link rel="stylesheet" href="styles/output.css">
-    <script defer src="renderers/text__solver.js"></script>
+    <script defer src="renderers/text_solver.js"></script>
+    <script defer src="modules/difflib-browser.js"></script>
 </head>
 
 <!-- Body with prevented tab opening on file drop: -->
@@ -34,7 +35,7 @@
                 <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Home</a>
                 <a href="usage.html" class="text-base text-center text-gray-900 font-semibold">Instructions</a>
                 <a href="image_solver.html" class="text-base text-center text-gray-900 font-semibold">Image
-                        Solver</a>
+                    Solver</a>
                 <a href="text_solver.html" class="text-base text-center text-gray-900 font-semibold"><b>Text
                         Solver</b></a>
             </div>
@@ -61,10 +62,11 @@
                         </div>
                     </div>
                     <div class="flex items-center justify-center">
-                        <input type="submit" value="Submit"
+                        <input type="button" value="Submit" onclick="onSubmit()"
                             class="rounded-md bg-indigo-600 px-3 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                         </p>
                     </div>
+
                 </div>
 
                 <!-- Results area: -->
@@ -90,23 +92,19 @@
                                     detected.</dd>
                             </div>
 
-                            <!-- Text render button area: -->
-                            <div id="text-render-btn-div" class="hidden">
-                                <div class="bg-gray-50 py-3 sm:flex sm:flex-row justify-left">
-                                    <button id="text-render-btn" type="button" onclick="renderText()"
-                                        class="inline-flex w-full rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto">Render
-                                        text (OCR)</button>
-                                </div>
+                            <!-- Text match area: -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500"><b>Match</b></dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match">No text
+                                    detected.</dd>
                             </div>
 
-                            <!-- Text render area: -->
-                            <div id="text-render-div" class="hidden">
-                                <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                    <dt class="text-sm font-medium text-gray-500"><b>Text render</b></dt>
-                                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="text-render"></dd>
-                                </div>
+                            <!-- Confidence area: -->
+                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                <dt class="text-sm font-medium text-gray-500"><b>Confidence</b></dt>
+                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence">No text
+                                    detected.</dd>
                             </div>
-
                         </dl>
                     </div>
                 </div>
