@@ -4,6 +4,43 @@ const MISSING_MESSAGE = "No suitable match found";
 
 const DATABASE_PATH = "databases/questions.json";
 
+const TESSERACT_STATUS_TRANSLATION = {
+    "loading tesseract core": "Cargando núcleo de Tesseract",
+    "initializing tesseract": "Inicializando Tesseract",
+    "initialized tesseract": "Tesseract inicializado",
+    "loading language traineddata": "Cargando datos de entrenamiento de idioma",
+    "loading language traineddata (from cache)": "Cargando datos de entrenamiento de idioma (desde caché)",
+    "loaded language traineddata": "Datos de entrenamiento de idioma cargados",
+    "initializing api": "Inicializando API",
+    "initialized api": "API inicializada",
+    "recognizing text": "Reconociendo texto"
+}
+
+const INFO = {
+    "imageInput": "",
+    "tesseractProgress": "",
+    "tesseractStatus": ""
+}
+
+function updateProgress(message) {
+    document.getElementById("tesseract-status").innerHTML = TESSERACT_STATUS_TRANSLATION[message.status] || message.status;
+    document.getElementById("tesseract-progress").innerHTML = `(${Math.round(message.progress * 10000) / 100}%)`;
+    document.getElementById("tesseract-progress-bar").value = message.progress;
+
+    if (message.status === "recognizing text" && message.progress === 1) {
+        document.getElementById("tesseract-progress").innerHTML = "";
+        document.getElementById("tesseract-status").innerHTML = "Reconocimiento de texto completado";
+    }
+}
+
+Tesseract.recognize(
+    "https://tesseract.projectnaptha.com/img/eng_bw.png",
+    "eng",
+    { logger: message => updateProgress(message) }
+).then(({ data: { text } }) => {
+    document.getElementById("tesseract-rendered-text").innerHTML = text;
+})
+
 /**
  * Prevent default browser behavior on drag and drop events.
  * @date 3/28/2023 - 11:44:25 PM
@@ -177,6 +214,18 @@ function renderText() {
         document.getElementById("text-render-div").style.display = "block";
         document.getElementById("text-render-btn-div").style.display = "none";
     }, timeout);
+}
+
+/**
+ * Display alert tooltip.
+ * @date 8/11/2023 - 7:00:46 PM
+ *
+ * @param {string} field - Field name.
+ */
+function showTooltip(field) {
+    if (Object.keys(INFO).includes(field)) {
+        alert(INFO[field]);
+    }
 }
 
 /**
