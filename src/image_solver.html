@@ -10,11 +10,13 @@
 
   <link rel="stylesheet" href="styles/output.css">
   <script defer src="renderers/image_solver.js"></script>
-  <script src='https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+  <!-- Tesseract OCR import -->
+  <script src="modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
 </head>
 
-<body class="h-full items-center bg-gray-200" ondragenter="preventDefault(event)" ondrop="preventDefault(event)"
-  ondragover="preventDefault(event)">
+<body class="h-full items-center bg-gray-200" ondragenter="event.preventDefault()" ondrop="event.preventDefault()"
+  ondragover="event.preventDefault()">
 
   <header class="bg-gray-200 shadow-lg rounded-lg mb-6">
     <nav class="p-6 flex items-center justify-between" aria-label="Global">
@@ -49,17 +51,18 @@
           <div class="border-t border-gray-200">
             <!-- Image input: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="text-sm font-medium text-gray-500">
+              <dt class="mt-1 text-sm font-medium text-gray-500">
                 <span class="info-btn text-base" onclick="showTooltip('imageInput')">🛈 </span>
                 <span><b>Búsqueda:</b></span>
               </dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                 <!-- Drag and drop area: -->
                 <div class="bg-white p7 rounded">
-                  <div class="shadow-inner relative flex flex-col text-gray-400 border border-gray-200 rounded shadow sm:rounded-lg">
+                  <div
+                    class="shadow-inner relative flex flex-col text-gray-400 border border-gray-200 rounded shadow rounded-lg">
                     <div>
 
-                      <div id="div1" ondrop="drop(event)" ondragover="dropEnter(event)" ondragleave="dropLeave(event)"
+                      <div id="div1" ondrop="drop(event)" ondragover="dropEnter(event)"
                         class="flex flex-col items-center justify-center py-5 text-center">
                         <svg class="w-6 h-6 text-current-50" xmlns="http://www.w3.org/2000/svg" fill="none"
                           viewBox="0 0 24 24" stroke="currentColor">
@@ -73,34 +76,52 @@
                 </div>
               </dd>
             </div>
+            <!-- Confidence threshold input: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="mt-1 text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="showTooltip('confidenceThresholdInput')">🛈</span>
+                <b>Confianza mínima (<span id="confidence-threshold-value"></span>%)</b>
+              </dt>
+              <dd class="mt-1 flex items-center justify-center sm:col-span-2 sm:mt-0">
+                <input class="w-full" type="range" id="confidence-threshold" name="confidence-threshold" min="1"
+                  max="100" value="75" step="0.1" oninput="updateConfidenceThreshold()">
+              </dd>
+            </div>
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <!-- Status: -->
               <dt class="mt-1 text-sm font-medium text-gray-500">
                 <span class="info-btn text-base" onclick="showTooltip('tesseractStatus')">🛈 </span>
                 <b>Estado</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 font-bold sm:col-span-2 sm:mt-0"><span id="tesseract-status">En espera</span> <span id="tesseract-progress"></span></dd>
-
-              <!-- Progress: -->
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="showTooltip('tesseractProgress')">🛈 </span>
-                <b>Progreso</b>
-              </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><progress class="html5 round-lg shadow-inner w-full" id="tesseract-progress-bar" max="1" value="0"></progress></dd>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><span id="tesseract-status"></span><span id="tesseract-progress"></span>
+              </dd>
+              <dd class="mt-1 text-sm text-gray-900 font-bold sm:col-span-2 sm:mt-0">
+                <progress class="html5 round-lg shadow-inner w-full" id="tesseract-progress-bar" max="1"
+                  value="0"></progress>
+              </dd>
             </div>
           </div>
         </div>
 
         <!-- Output: -->
-        <div class="overflow-hidden bg-white shadow sm:rounded-lg mt-6">
+        <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
           <div class="px-4 py-5 sm:px-6 shadow-inner">
             <h3 class="text-base font-bold leading-6 text-gray-900">Resultados de la búsqueda</h3>
           </div>
 
           <div class="border-t border-gray-200">
-            <!-- Match: -->
+            <!-- Scanned: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="text-sm font-medium text-gray-500">
+              <dt class="mt-1 text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="showTooltip('scannedText')">🛈 </span>
+                <b>Texto escaneado</b>
+              </dt>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="scannedText"></dd>
+            </div>
+
+            <!-- Match: -->
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="mt-1 text-sm font-medium text-gray-500">
                 <span class="info-btn text-base" onclick="showTooltip('match')">🛈 </span>
                 <b>Coincidencia</b>
               </dt>
@@ -108,8 +129,8 @@
             </div>
 
             <!-- Confidence: -->
-            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="text-sm font-medium text-gray-500">
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="mt-1 text-sm font-medium text-gray-500">
                 <span class="info-btn text-base" onclick="showTooltip('confidence')">🛈 </span>
                 <b>Confianza</b>
               </dt>
@@ -117,17 +138,17 @@
             </div>
 
             <!-- Answer: -->
-            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="text-sm font-medium text-gray-500">
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="mt-1 text-sm font-medium text-gray-500">
                 <span class="info-btn text-base" onclick="showTooltip('answer')">🛈 </span>
                 <b>Respuesta</b>
               </dt>
-              <dd class=" mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
             </div>
 
             <!-- Explanation: -->
-            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="text-sm font-medium text-gray-500">
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="mt-1 text-sm font-medium text-gray-500">
                 <span class="info-btn text-base" onclick="showTooltip('explanation')">🛈 </span>
                 <b>Explicación</b>
               </dt>
