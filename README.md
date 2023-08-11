@@ -1,4 +1,4 @@
-# Algebruh: the absurdly simple method to get your Algebra questions right
+# Algebruh: the simplest method to get your Algebra questions right
 
 _**Note**: parts of this documentation are intended for developers alone. In order to learn how to use the application, just install it and execute it. All required instructions are contained inside it._
 
