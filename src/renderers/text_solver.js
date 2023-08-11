@@ -89,7 +89,7 @@ function getFormattedData(text, confidenceThreshold) {
         "confidence": MISSING_MESSAGE
     } : {
         "answer": formatAnswer(bestMatch.data.answer),
-        "explanation": bold(bestMatch.data.explanation),
+        "explanation": formatExplanation(bestMatch.data.explanation),
         "match": bold(bestMatch.data.text),
         "confidence": bold(bestMatch.confidence)
     }
@@ -104,6 +104,17 @@ function getFormattedData(text, confidenceThreshold) {
  */
 function formatAnswer(answer) {
     return bold(answer ? "Verdadero" : "Falso");
+}
+
+/**
+ * Format explanation to readable text.
+ * @date 8/11/2023 - 7:21:33 PM
+ *
+ * @param {string} explanation - Explanation. {@link null} if not available.
+ * @returns {string} - Formatted explanation.
+ */
+function formatExplanation(explanation) {
+    return explanation !== null ? bold(explanation) : MISSING_MESSAGE;
 }
 
 /**
