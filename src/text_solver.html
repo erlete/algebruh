@@ -77,10 +77,28 @@
                 <!-- Output: -->
                 <div class="overflow-hidden bg-white shadow sm:rounded-lg mt-6">
                     <div class="px-4 py-5 sm:px-6 shadow-inner">
-                        <h3 class="text-base font-bold leading-6 text-gray-900">Datos de la pregunta</h3>
+                        <h3 class="text-base font-bold leading-6 text-gray-900">Resultados de la búsqueda</h3>
                     </div>
 
                     <div class="border-t border-gray-200">
+                        <!-- Match: -->
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base" onclick="showTooltip('match')">🛈 </span>
+                                <b>Coindidencia</b>
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
+                        </div>
+
+                        <!-- Confidence: -->
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base" onclick="showTooltip('confidence')">🛈 </span>
+                                <b>Confianza</b>
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
+                        </div>
+
                         <!-- Answer: -->
                         <div
                             class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner flex items-center justify-between">
@@ -98,24 +116,6 @@
                                 <b>Explicación</b>
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
-                        </div>
-
-                        <!-- Match: -->
-                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner">
-                            <dt class="text-sm font-medium text-gray-500">
-                                <span class="info-btn text-base" onclick="showTooltip('match')">🛈 </span>
-                                <b>Coindidencia</b>
-                            </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
-                        </div>
-
-                        <!-- Confidence: -->
-                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner">
-                            <dt class="text-sm font-medium text-gray-500">
-                                <span class="info-btn text-base" onclick="showTooltip('confidence')">🛈 </span>
-                                <b>Confianza</b>
-                            </dt>
-                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
                         </div>
                     </div>
                 </div>
