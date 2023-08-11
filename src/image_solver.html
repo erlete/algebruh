@@ -12,15 +12,11 @@
   <script defer src="renderers/image_solver.js"></script>
 </head>
 
-<!-- Body with prevented tab opening on file drop: -->
-
-<body class="h-full items-center" ondragenter="preventDefault(event)" ondrop="preventDefault(event)"
+<body class="h-full items-center bg-gray-200" ondragenter="preventDefault(event)" ondrop="preventDefault(event)"
   ondragover="preventDefault(event)">
 
-  <!-- Header and navigation bar: -->
-  <header class="bg-white">
-    <nav class="m-8 flex items-center justify-between" aria-label="Global">
-
+  <header class="bg-gray-200 shadow-lg rounded-lg mb-6">
+    <nav class="p-6 flex items-center justify-between" aria-label="Global">
       <!-- Logo image: -->
       <div class="flex-1 items-center">
         <a href="index.html">
@@ -32,24 +28,23 @@
       <!-- Navigation links: -->
       <div class="flex gap-x-12 sm:gap-x-24 text-center">
         <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Inicio</a>
-        <a href="image_solver.html" class="text-base text-center text-gray-900 font-semibold"><b>Modo Imagen</b></a>
+        <a href="image_solver.html" class="text-base text-center text-gray-900 font-extrabold">Modo Imagen</a>
         <a href="text_solver.html" class="text-base text-center text-gray-900 font-semibold">Modo Texto</a>
       </div>
 
       <div class="flex-1 justify-center"></div>
-
     </nav>
   </header>
 
-  <main class="grid min-h-full bg-white">
+  <main class="grid min-h-full bg-gray-200">
 
-    <div class="bg-white py-16">
+    <div class="bg-gray-200 py-16">
       <div class="mx-auto px-6 lg:px-8">
         <div class="mx-auto text-center">
           <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Buscador por imagen</p>
 
           <!-- Drag and drop area: -->
-          <div class="bg-white p7 rounded w-9/12 mx-auto py-12">
+          <div class="bg-gray-200 p7 rounded w-9/12 mx-auto py-12">
             <div class="relative flex flex-col text-gray-400 border border-gray-200 rounded shadow sm:rounded-lg">
               <div>
 
