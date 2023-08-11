@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="es" class="h-full">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Algebruh - Image Solver</title>
+  <title>Algebruh - Modo Imagen</title>
 
   <link rel="stylesheet" href="styles/output.css">
   <script defer src="renderers/image_solver.js"></script>
@@ -31,10 +31,10 @@
 
       <!-- Navigation links: -->
       <div class="flex gap-x-12 sm:gap-x-24 text-center">
-        <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Home</a>
-        <a href="usage.html" class="text-base text-center text-gray-900 font-semibold">Instructions</a>
-        <a href="image_solver.html" class="text-base text-center text-gray-900 font-semibold"><b>Image Solver</b></a>
-        <a href="Text_solver.html" class="text-base text-center text-gray-900 font-semibold">Text Solver</a>
+        <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Inicio</a>
+        <a href="usage.html" class="text-base text-center text-gray-900 font-semibold">Instrucciones</a>
+        <a href="image_solver.html" class="text-base text-center text-gray-900 font-semibold"><b>Modo Imagen</b></a>
+        <a href="text_solver.html" class="text-base text-center text-gray-900 font-semibold">Modo Texto</a>
       </div>
 
       <div class="flex-1 justify-center"></div>
@@ -47,7 +47,7 @@
     <div class="bg-white py-16">
       <div class="mx-auto px-6 lg:px-8">
         <div class="mx-auto text-center">
-          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Drop your questions here!</p>
+          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Buscador por imagen</p>
 
           <!-- Drag and drop area: -->
           <div class="bg-white p7 rounded w-9/12 mx-auto py-12">
@@ -61,7 +61,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                       d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <p class="m-2">Drag and drop the image to this area.</p>
+                  <p class="m-2">Arrastra aquí tu imagen</p>
                 </div>
               </div>
             </div>
@@ -72,38 +72,36 @@
         <!-- Results area: -->
         <div class="overflow-hidden bg-white shadow sm:rounded-lg">
           <div class="px-4 py-5 sm:px-6">
-            <h3 class="text-base font-semibold leading-6 text-gray-900">Question data</h3>
+            <h3 class="text-base font-semibold leading-6 text-gray-900">Datos de la pregunta</h3>
           </div>
 
           <div class="border-t border-gray-200">
             <dl>
-              <!-- Answer area: -->
+              <!-- Respuesta area: -->
               <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500"><b>Answer</b></dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer">No image detected.
-                </dd>
+                <dt class="text-sm font-medium text-gray-500"><b>Respuesta</b></dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
               </div>
 
-              <!-- Explanation area: -->
+              <!-- Explicación area: -->
               <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                <dt class="text-sm font-medium text-gray-500"><b>Explanation</b></dt>
-                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation">No image
-                  detected.</dd>
+                <dt class="text-sm font-medium text-gray-500"><b>Explicación</b></dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
               </div>
 
               <!-- Text render button area: -->
               <div id="text-render-btn-div" class="hidden">
                 <div class="bg-gray-50 py-3 sm:flex sm:flex-row justify-left">
                   <button id="text-render-btn" type="button" onclick="renderText()"
-                    class="inline-flex w-full rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto">Render
-                    text (OCR)</button>
+                    class="inline-flex w-full rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto">Escanear
+                    texto (OCR)</button>
                 </div>
               </div>
 
               <!-- Text render area: -->
               <div id="text-render-div" class="hidden">
                 <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                  <dt class="text-sm font-medium text-gray-500"><b>Text render</b></dt>
+                  <dt class="text-sm font-medium text-gray-500"><b>Texto escaneado</b></dt>
                   <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="text-render"></dd>
                 </div>
               </div>
