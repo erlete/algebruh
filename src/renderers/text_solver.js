@@ -1,17 +1,7 @@
-// Constants:
-const DEFAULT = {
-    "answer": "No text detected",
-    "explanation": "No text detected",
-    "match": "No text detected",
-    "confidence": "No text detected"
-}
-const MISSING = {
-    "answer": "No answer found",
-    "explanation": "No explanation found",
-    "match": "No match found",
-    "confidence": ""
-}
-const KEYS = Object.keys(DEFAULT);
+const KEYS = ["answer", "explanation", "match", "confidence"];
+const DEFAULT_MESSAGE = "No text detected";
+const MISSING_MESSAGE = "No suitable match found";
+
 const DATABASE_PATH = "databases/questions.json";
 
 /**
@@ -19,20 +9,21 @@ const DATABASE_PATH = "databases/questions.json";
  * @date 8/11/2023 - 3:07:19 AM
  */
 function updateForm() {
-    // Clear form:
-    for (let key of KEYS) {
-        document.getElementById(key).innerHTML = DEFAULT[key];
-    }
-
-    // Input data:
-    const text = document.getElementById("search_text").value;
+    const searchText = document.getElementById("search-text").value;
     const confidenceThreshold = document.getElementById("confidence-threshold").value;
     document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
 
-    // Output data:
-    const data = getFormattedData(text, confidenceThreshold);
-    for (let key of KEYS) {
-        document.getElementById(key).innerHTML = data[key];
+    if (searchText !== "") {
+        const outputData = getFormattedData(searchText, confidenceThreshold);
+
+        for (let key of KEYS) {
+            document.getElementById(key).innerHTML = outputData[key];
+        }
+    } else {
+        // Clear form:
+        for (let key of KEYS) {
+            document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
+        }
     }
 }
 
@@ -45,23 +36,19 @@ function updateForm() {
  * @returns {{ data: Object; confidence: string; }} - Best match data and confidence.
  */
 function getBestMatch(text, confidenceThreshold) {
-    // Get match map:
-    let matches = Object.keys(window.data).map((key) => {
-        return {
-            "id": key,
-            "text": window.data[key].text,
-            "similarity": new difflib.SequenceMatcher(null, window.data[key].text, text).ratio()
-        };
-    });
+    let matchArray = Object.keys(window.data).map(key => ({
+        "id": key,
+        "text": window.data[key].text,
+        "similarity": new difflib.SequenceMatcher(null, window.data[key].text, text).ratio()
+    }));
 
     // Filter by confidence threshold and sort from higher to lower ratio:
-    matches = matches.filter(match => match.similarity >= confidenceThreshold / 100);
-    matches.sort((a, b) => b.similarity - a.similarity);
+    matchArray = matchArray.filter(match => match.similarity >= confidenceThreshold / 100);
+    matchArray.sort((a, b) => b.similarity - a.similarity);
 
-    return matches.length === 0 ? null : {
-        "data": window.data[matches[0].id],
-        // Set confidence over 100% with two decimal places
-        "confidence": `${Math.round(matches[0].similarity * 10000) / 100}%`
+    return matchArray.length === 0 ? null : {
+        "data": window.data[matchArray[0].id],
+        "confidence": `${Math.round(matchArray[0].similarity * 10000) / 100}%`
     };
 }
 
@@ -73,20 +60,26 @@ function getBestMatch(text, confidenceThreshold) {
  * @returns {string} - Bold text.
  */
 function bold(text) {
-    return text !== null && text !== undefined ? `<b>${text}</b>` : text
+    return text !== null && text !== undefined ? `<b>${text}</b>` : text;
 }
 
 /**
- * Format data from `window.data` using a given key.
- * @date 3/28/2023 - 6:46:47 PM
+ * Format form data.
+ * @date 8/11/2023 - 5:22:08 AM
  *
- * @param {string} text - Key to be used to fetch data from `window.data`.
- * @returns {{ answer: string; explanation: string; text: string }} - Formatted data.
+ * @param {string} text - Input text.
+ * @param {number} confidenceThreshold - Confidence threshold.
+ * @returns {{ answer: string; explanation: string; match: string; confidence: string; }} - Formatted data.
  */
 function getFormattedData(text, confidenceThreshold) {
     const bestMatch = getBestMatch(text, confidenceThreshold);
 
-    return bestMatch === null ? MISSING : {
+    return bestMatch === null ? {
+        "answer": MISSING_MESSAGE,
+        "explanation": MISSING_MESSAGE,
+        "match": MISSING_MESSAGE,
+        "confidence": MISSING_MESSAGE
+    } : {
         "answer": bold(bestMatch.data.answer),
         "explanation": bold(bestMatch.data.explanation),
         "match": bold(bestMatch.data.text),
@@ -95,14 +88,19 @@ function getFormattedData(text, confidenceThreshold) {
 };
 
 /**
- * Fetch data from the database and store it in `window.data`.
- * @date 3/28/2023 - 6:47:30 PM
+ * Set up form fields and window data.
+ * @date 8/11/2023 - 5:22:45 AM
  *
  * @async
+ * @returns {Promise<void>}
  */
 async function setup() {
+    // Clear form:
+    for (let key of KEYS) {
+        document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
+    }
+
     window.data = await (await fetch(DATABASE_PATH)).json();
 };
 
-// Fetch data and store it in `window.data`:
 setup();
