@@ -1,6 +1,14 @@
 const KEYS = ["answer", "explanation", "match", "confidence"];
-const DEFAULT_MESSAGE = "No text detected";
-const MISSING_MESSAGE = "No suitable match found";
+const DEFAULT_MESSAGE = "Introduce tu búsqueda para procesar resultados";
+const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
+const INFO = {
+    "textInput": "Introduce la pregunta que quieres resolver. Tu búsqueda debe ser lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la búsqueda, mayor será la probabilidad de obtener un resultado satisfactorio.",
+    "confidenceThresholdInput": "Usa este slider para ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
+    "answer": "Este campo contiene la respuesta a la coincidencia aproximada a tu pregunta. Recuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
+    "explanation": "Este campo contiene la explicación de la respuesta, si existe en la base de datos.",
+    "match": "Este campo contiene la coincidencia encontrada más aproximada a tu búsqueda.",
+    "confidence": "Este campo contiene el porcentaje de similitud entre tu búsqueda y la mejor coincidencia encontrada."
+}
 
 const DATABASE_PATH = "databases/questions.json";
 
@@ -80,12 +88,35 @@ function getFormattedData(text, confidenceThreshold) {
         "match": MISSING_MESSAGE,
         "confidence": MISSING_MESSAGE
     } : {
-        "answer": bold(bestMatch.data.answer),
+        "answer": formatAnswer(bestMatch.data.answer),
         "explanation": bold(bestMatch.data.explanation),
         "match": bold(bestMatch.data.text),
         "confidence": bold(bestMatch.confidence)
     }
 };
+
+/**
+ * Format answer to readable text.
+ * @date 8/11/2023 - 7:00:21 PM
+ *
+ * @param {boolean} answer - Answer.
+ * @returns {string} - Formatted answer.
+ */
+function formatAnswer(answer) {
+    return bold(answer ? "Verdadero" : "Falso");
+}
+
+/**
+ * Display alert tooltip.
+ * @date 8/11/2023 - 7:00:46 PM
+ *
+ * @param {string} field - Field name.
+ */
+function showTooltip(field) {
+    if (Object.keys(INFO).includes(field)) {
+        alert(INFO[field]);
+    }
+}
 
 /**
  * Set up form fields and window data.
@@ -99,6 +130,9 @@ async function setup() {
     for (let key of KEYS) {
         document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
     }
+
+    const confidenceThreshold = document.getElementById("confidence-threshold").value;
+    document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
 
     window.data = await (await fetch(DATABASE_PATH)).json();
 };
