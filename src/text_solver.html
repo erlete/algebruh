@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full">
+<html lang="es" class="h-full prevent-select">
 
 <head>
     <meta charset="UTF-8">
@@ -10,18 +10,13 @@
 
     <link rel="stylesheet" href="styles/output.css">
     <script defer src="renderers/text_solver.js"></script>
-    <script defer src="modules/difflib-browser.js"></script>
+    <script defer src="modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
 </head>
 
-<!-- Body with prevented tab opening on file drop: -->
-
-<body class="h-full items-center" ondragenter="preventDefault(event)" ondrop="preventDefault(event)"
-    ondragover="preventDefault(event)">
-
+<body class="h-full items-center bg-gray-200">
     <!-- Header and navigation bar: -->
-    <header class="bg-white">
-        <nav class="m-8 flex items-center justify-between" aria-label="Global">
-
+    <header class="bg-gray-200 shadow-lg rounded-lg mb-6">
+        <nav class="p-6 flex items-center justify-between" aria-label="Global">
             <!-- Logo image: -->
             <div class="flex-1 items-center">
                 <a href="index.html">
@@ -34,76 +29,99 @@
             <div class="flex gap-x-12 sm:gap-x-24 text-center">
                 <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Inicio</a>
                 <a href="image_solver.html" class="text-base text-center text-gray-900 font-semibold">Modo Imagen</a>
-                <a href="text_solver.html" class="text-base text-center text-gray-900 font-semibold"><b>Modo
-                        Texto</b></a>
+                <a href="text_solver.html" class="text-base text-center text-gray-900 font-extrabold">Modo Texto</a>
             </div>
 
             <div class="flex-1 justify-center"></div>
-
         </nav>
     </header>
 
-    <main class="grid min-h-full bg-white">
-
-        <div class="bg-white py-16">
-            <div class="mx-auto px-6 lg:px-8">
-                <div class="mx-auto text-center">
-                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Buscador por texto</p>
-
-                    <!-- Text search area: -->
-                    <div>
-                        <div class="relative rounded-md shadow-sm m-16 mx-32 mb-8 items-center">
-                            <input type="text" name="search-text" id="search-text" oninput="updateForm()"
-                                class="block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                                placeholder="Escribe aquí tu pregunta">
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <div>
-                            <input type="range" id="confidence-threshold" name="confidence-threshold" min="1" max="100"
-                                value="75" step="0.5" oninput="updateForm()">
-                            <p id="confidence-threshold-value"></p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Results area: -->
-                <div class="overflow-hidden bg-white shadow sm:rounded-lg">
-                    <div class="px-4 py-5 sm:px-6">
-                        <h3 class="text-base font-semibold leading-6 text-gray-900">Datos de la pregunta</h3>
+    <main class="grid min-h-full bg-gray-200">
+        <div class="py-6">
+            <div class="mx-12">
+                <!-- Input: -->
+                <div class="overflow-hidden bg-white shadow rounded-lg">
+                    <div class="px-4 py-5 sm:px-6 shadow-inner">
+                        <h3 class="text-base font-bold tracking-tigh leading-6 text-gray-900">Buscador por texto</h3>
                     </div>
 
                     <div class="border-t border-gray-200">
-                        <dl>
-                            <!-- Respuesta area: -->
-                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Respuesta</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
-                            </div>
+                        <!-- Text input: -->
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base" onclick="showTooltip('textInput')">🛈 </span>
+                                <span><b>Búsqueda:</b></span>
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                                <input type="text" name="search-text" id="search-text" oninput="updateForm()"
+                                    class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                                    placeholder="Escribe aquí tu pregunta">
+                            </dd>
+                        </div>
 
-                            <!-- Explicación area: -->
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Explicación</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
-                            </div>
+                        <!-- Confidence threshold input: -->
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base"
+                                    onclick="showTooltip('confidenceThresholdInput')">🛈</span>
+                                <b>Confianza mínima (<span id="confidence-threshold-value"></span>%)</b>
+                            </dt>
+                            <dd class="flex items-center justify-center">
+                                <input class="w-full" type="range" id="confidence-threshold" name="confidence-threshold"
+                                    min="1" max="100" value="75" step="0.1" oninput="updateForm()">
+                            </dd>
+                        </div>
+                    </div>
+                </div>
 
-                            <!-- Text match area: -->
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Coindidencia</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
-                            </div>
+                <!-- Output: -->
+                <div class="overflow-hidden bg-white shadow sm:rounded-lg mt-6">
+                    <div class="px-4 py-5 sm:px-6 shadow-inner">
+                        <h3 class="text-base font-bold leading-6 text-gray-900">Datos de la pregunta</h3>
+                    </div>
 
-                            <!-- Confianza area: -->
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Confianza</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
-                            </div>
-                        </dl>
+                    <div class="border-t border-gray-200">
+                        <!-- Answer: -->
+                        <div
+                            class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner flex items-center justify-between">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base" onclick="showTooltip('answer')">🛈 </span>
+                                <b>Respuesta</b>
+                            </dt>
+                            <dd class=" mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
+                        </div>
+
+                        <!-- Explanation: -->
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base" onclick="showTooltip('explanation')">🛈 </span>
+                                <b>Explicación</b>
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
+                        </div>
+
+                        <!-- Match: -->
+                        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base" onclick="showTooltip('match')">🛈 </span>
+                                <b>Coindidencia</b>
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
+                        </div>
+
+                        <!-- Confidence: -->
+                        <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6 shadow-inner">
+                            <dt class="text-sm font-medium text-gray-500">
+                                <span class="info-btn text-base" onclick="showTooltip('confidence')">🛈 </span>
+                                <b>Confianza</b>
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 </body>
 
