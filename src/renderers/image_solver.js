@@ -1,17 +1,8 @@
+const KEYS = ["answer", "explanation", "text-render"];
 const DEFAULT_MESSAGE = "No image detected";
 const MISSING_MESSAGE = "No suitable match found";
 
 const DATABASE_PATH = "databases/questions.json";
-
-/**
- * Fetch data from the database and store it in `window.data`.
- * @date 3/28/2023 - 6:47:30 PM
- *
- * @async
- */
-async function setup() {
-    window.data = await (await fetch(DATABASE_PATH)).json();
-};
 
 /**
  * Prevent default browser behavior on drag and drop events.
@@ -31,9 +22,10 @@ function preventDefault(event) {
  */
 function dropEnter(event) {
     event.preventDefault();
-    document.getElementById("answer").innerHTML = DEFAULT_MESSAGE;
-    document.getElementById("explanation").innerHTML = DEFAULT_MESSAGE;
-    document.getElementById("text-render").innerHTML = DEFAULT_MESSAGE;
+
+    for (let key of KEYS) {
+        document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
+    }
 
     document.getElementById("text-render-div").style.display = "none";
     document.getElementById("text-render-btn-div").style.display = "none";
@@ -47,9 +39,9 @@ function dropEnter(event) {
  */
 function dropLeave(event) {
     event.preventDefault();
-    document.getElementById("answer").innerHTML = DEFAULT_MESSAGE;
-    document.getElementById("explanation").innerHTML = DEFAULT_MESSAGE;
-    document.getElementById("text-render").innerHTML = DEFAULT_MESSAGE;
+    for (let key of KEYS) {
+        document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
+    }
 
     document.getElementById("text-render-div").style.display = "none";
     document.getElementById("text-render-btn-div").style.display = "none";
@@ -137,7 +129,6 @@ function format_explanation(explanation) {
     return `<b>${explanation.charAt(0).toUpperCase()}${explanation.substring(1)}</b>`;
 }
 
-
 /**
  * Format text.
  * @date 3/28/2023 - 7:39:29 PM
@@ -175,6 +166,10 @@ function getFormattedData(key) {
     };
 };
 
+/**
+ * Render question text.
+ * @date 8/11/2023 - 5:59:52 AM
+ */
 function renderText() {
     var timeout = document.getElementById("text-render").innerHTML.length * 6.9420;
 
@@ -184,5 +179,20 @@ function renderText() {
     }, timeout);
 }
 
-// Fetch data and store it in `window.data`:
+/**
+ * Set up form fields and window data.
+ * @date 8/11/2023 - 5:59:23 AM
+ *
+ * @async
+ * @returns {Promise<void>}
+ */
+async function setup() {
+    // Clear form:
+    for (let key of KEYS) {
+        document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
+    }
+
+    window.data = await (await fetch(DATABASE_PATH)).json();
+};
+
 setup();
