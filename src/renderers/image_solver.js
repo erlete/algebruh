@@ -12,14 +12,14 @@ let lastInput = null;
  * @param {Object} message - Message from Tesseract.
  */
 function updateTesseractProgress(message) {
-    document.getElementById("tesseract-status").innerHTML = bold(TESSERACT_STATUS_TRANSLATION[message.status] || message.status);
-    document.getElementById("tesseract-progress").innerHTML = bold(` (${Math.round(message.progress * 10000) / 100}%)`);
-    document.getElementById("tesseract-progress-bar").value = message.progress;
+    document.getElementById("tesseractStatus").innerHTML = bold(TESSERACT_STATUS_TRANSLATION[message.status] || message.status);
+    document.getElementById("tesseractProgress").innerHTML = bold(` (${Math.round(message.progress * 10000) / 100}%)`);
+    document.getElementById("tesseractProgressBar").value = message.progress;
 
     // If the process has finished, display final message:
     if (message.status === "recognizing text" && message.progress === 1) {
-        document.getElementById("tesseract-progress").innerHTML = "";
-        document.getElementById("tesseract-status").innerHTML = bold("Reconocimiento de texto completado");
+        document.getElementById("tesseractProgress").innerHTML = "";
+        document.getElementById("tesseractStatus").innerHTML = bold("Reconocimiento de texto completado");
     }
 }
 
@@ -40,7 +40,7 @@ function getResults(event) {
     ).then(({ data: { text } }) => {
         text = text.trim();
         document.getElementById("text").innerHTML = text;
-        const confidenceThreshold = document.getElementById("confidence-threshold").value;
+        const confidenceThreshold = document.getElementById("confidenceThreshold").value;
 
         // If the text is not empty, process it, else display missing data message:
         if (text !== "") {
@@ -68,13 +68,13 @@ function resetView() {
     }
 
     // Set dynamic range input value:
-    const confidenceThreshold = document.getElementById("confidence-threshold").value;
-    document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
+    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
+    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
 
     // Reset tesseract progress:
-    document.getElementById("tesseract-progress").innerHTML = "";
-    document.getElementById("tesseract-status").innerHTML = DEFAULT_MESSAGE;
-    document.getElementById("tesseract-progress-bar").value = 0;
+    document.getElementById("tesseractProgress").innerHTML = "";
+    document.getElementById("tesseractStatus").innerHTML = DEFAULT_MESSAGE;
+    document.getElementById("tesseractProgressBar").value = 0;
 }
 
 // Main function:

@@ -10,9 +10,9 @@ let lastInput = null;
  * @date 8/12/2023 - 3:46:49 AM
  */
 function getResults() {
-    const text = document.getElementById("search-text").value;
-    const confidenceThreshold = document.getElementById("confidence-threshold").value;
-    document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
+    const text = document.getElementById("input").value;
+    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
+    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
 
     // If the text is not empty, process it, else display default message:
     if (text !== "") {
@@ -39,8 +39,8 @@ function resetView() {
     }
 
     // Set dynamic range input value:
-    const confidenceThreshold = document.getElementById("confidence-threshold").value;
-    document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
+    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
+    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
 }
 
 // Main function:

@@ -150,8 +150,8 @@ function getFormattedData(text, confidenceThreshold) {
  * @date 8/12/2023 - 3:12:55 AM
  */
 function updateMatchThreshold() {
-    const confidenceThreshold = document.getElementById("confidence-threshold").value;
-    document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
+    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
+    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
 
     // If there has been any previous input, filter the result:
     if (lastInput !== null) {

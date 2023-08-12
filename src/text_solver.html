@@ -54,7 +54,7 @@
                 <span><b>Búsqueda:</b></span>
               </dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                <input type="text" name="search-text" id="search-text" oninput="getResults()"
+                <input type="text" name="input" id="input" oninput="getResults()"
                   class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
                   placeholder="Escribe aquí tu pregunta">
               </dd>
@@ -64,10 +64,10 @@
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500">
                 <span class="info-btn text-base" onclick="displayTooltip('confidenceThreshold', 'textSolver')">🛈</span>
-                <b>Confianza mínima (<span id="confidence-threshold-value"></span>%)</b>
+                <b>Confianza mínima (<span id="confidenceThresholdValue"></span>%)</b>
               </dt>
               <dd class="flex items-center justify-center sm:col-span-2 sm:mt-0">
-                <input class="w-full" type="range" id="confidence-threshold" name="confidence-threshold" min="1"
+                <input class="w-full" type="range" id="confidenceThreshold" name="confidenceThreshold" min="1"
                   max="100" value="75" step="0.1" oninput="updateMatchThreshold()">
               </dd>
             </div>
