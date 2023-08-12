@@ -2,6 +2,26 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "PHP: Start local server",
+			"type": "shell",
+			"windows": {
+				"command": "cd src && php",
+				"args": [
+					"-S",
+					"localhost:8888"
+				]
+			},
+			"detail": "Start a PHP local server for content preview.",
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			}
+		},
+		{
 			"type": "npm",
 			"script": "make",
 			"problemMatcher": [],
