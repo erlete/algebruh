@@ -96,11 +96,11 @@ function formatExplanation(explanation) {
  */
 function getBestMatch(text, confidenceThreshold) {
     // Generate match array:
-    let matchArray = Object.keys(window.data).map(key => ({
-        "text": window.data[key].text,
-        "confidence": new difflib.SequenceMatcher(null, window.data[key].text, text).ratio(),
-        "answer": window.data[key].answer,
-        "explanation": window.data[key].explanation
+    let matchArray = Object.entries(window.data).map((questionData) => ({
+        "text": questionData[0],
+        "confidence": new difflib.SequenceMatcher(null, questionData[0], text).ratio(),
+        "answer": questionData[1].answer,
+        "explanation": questionData[1].explanation
     }));
 
     // Filter by confidence threshold and sort from higher to lower ratio:
