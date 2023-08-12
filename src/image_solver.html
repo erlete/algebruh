@@ -52,11 +52,13 @@
           <div class="border-t border-gray-200">
             <!-- Image input: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('input', 'imageSolver')">🛈 </span>
-                <span><b>Búsqueda:</b></span>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('input', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Búsqueda</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                 <!-- Drag and drop area: -->
                 <div class="bg-white p7 rounded">
                   <div
@@ -79,24 +81,29 @@
             </div>
             <!-- Confidence threshold input: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('confidenceThreshold', 'imageSolver')">🛈</span>
-                <b>Confianza mínima (<span id="confidenceThresholdValue"></span>%)</b>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('confidenceThreshold', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Confianza mínima (<span id="confidenceThresholdValue"></span>%)</b>
               </dt>
-              <dd class="mt-1 flex items-center justify-center sm:col-span-2 sm:mt-0">
-                <input class="w-full" type="range" id="confidenceThreshold" name="confidenceThreshold" min="1"
-                  max="100" value="75" step="0.1" oninput="updateMatchThreshold()">
+              <dd class="flex items-center justify-center sm:col-span-2 sm:mt-0">
+                <input class="w-full" type="range" id="confidenceThreshold" name="confidenceThreshold" min="1" max="100"
+                  value="75" step="0.1" oninput="updateMatchThreshold()">
               </dd>
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <!-- Status: -->
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('tesseractStatus', 'imageSolver')">🛈 </span>
-                <b>Estado</b>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('tesseractStatus', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Estado</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0"><span id="tesseractStatus"></span><span id="tesseractProgress"></span>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0"><span id="tesseractStatus"></span><span
+                  id="tesseractProgress"></span>
               </dd>
-              <dd class="mt-1 text-sm text-gray-900 font-bold sm:col-span-2 sm:mt-0">
+              <dd class="text-sm text-gray-900 font-bold sm:col-span-2 sm:mt-0">
                 <progress class="html5 round-lg shadow-inner w-full" id="tesseractProgressBar" max="1"
                   value="0"></progress>
               </dd>
@@ -113,47 +120,57 @@
           <div class="border-t border-gray-200">
             <!-- Scanned: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('text', 'imageSolver')">🛈 </span>
-                <b>Texto escaneado</b>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('text', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Texto escaneado</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="text"></dd>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="text"></dd>
             </div>
 
             <!-- Match: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('match', 'imageSolver')">🛈 </span>
-                <b>Coincidencia</b>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('match', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Coincidencia</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
             </div>
 
             <!-- Confidence: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('confidence', 'imageSolver')">🛈 </span>
-                <b>Confianza</b>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('confidence', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Confianza</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
             </div>
 
             <!-- Answer: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('answer', 'imageSolver')">🛈 </span>
-                <b>Respuesta</b>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('answer', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Respuesta</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
             </div>
 
             <!-- Explanation: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="displayTooltip('explanation', 'imageSolver')">🛈 </span>
-                <b>Explicación</b>
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('explanation', 'imageSolver')">
+                  <img src="media/information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Explicación</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
             </div>
           </div>
         </div>
