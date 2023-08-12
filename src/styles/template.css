@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom */
+
 .hidden {
     display: none;
-}
-
-.info-btn:hover {
-    color: orange;
-    transition: .2s ease-in all;
 }
 
 .prevent-select {
