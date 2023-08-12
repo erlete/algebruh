@@ -7,15 +7,15 @@
         "answer": false,
         "explanation": null
     },
-    "El conjunto soluci6n de un sistema de ecuaciones lineales que tenga las inc6gnitas x1,...,Xn es una lista de ntmeros s1,...,S; que hace de cada ecuacién del sistema un enunciado verdadero cuando las incégnitas x1,...,X se sustituyen por los valores s1,...,Sn-": {
+    "El conjunto solución de un sistema de ecuaciones lineales que tenga las incógnitas x1,...,Xn es una lista de números s1,...,Sn que hace de cada ecuación del sistema un enunciado verdadero cuando las incógnitas x1,...,Xn se sustituyen por los valores s1,...,Sn": {
         "answer": false,
         "explanation": null
     },
-    "Las dos preguntas fundamentales acerca de un sistema de ecuaciones lineales son preguntas sobre la existencia y la unicidad de solucién.": {
+    "Las dos preguntas fundamentales acerca de un sistema de ecuaciones lineales son preguntas sobre la existencia y la unicidad de solución.": {
         "answer": true,
         "explanation": null
     },
-    "Las operaciones elementales de fila realizadas sobre la matriz (ampliada) de un sistema de ecuaciones lineales no cambian nunca el conjunto solucién del sistema.": {
+    "Las operaciones elementales de fila realizadas sobre la matriz (ampliada) de un sistema de ecuaciones lineales no cambian nunca el conjunto solución del sistema.": {
         "answer": true,
         "explanation": null
     },
@@ -23,15 +23,15 @@
         "answer": false,
         "explanation": null
     },
-    "Un sistema incompatible tiene mas de una solucién.": {
+    "Un sistema incompatible tiene mas de una solución.": {
         "answer": false,
         "explanation": null
     },
-    "Dos sistemas de ecuaciones lineales son equivalentes si y sdlo si ambos tienen el mismo conjunto soluci6n.": {
+    "Dos sistemas de ecuaciones lineales son equivalentes si y solo si ambos tienen el mismo conjunto solución.": {
         "answer": true,
         "explanation": null
     },
-    "Una soluci6én particular de un sistema de ecuaciones lineales que tenga las incdégnitas X1,.-+,Xn es una lista de nimeros s1,...,S; que hace de cada ecuacién del sistema un enun- ciado verdadero cuando las incégnitas x1,...,X, se sustituyen por los valores $1,...,Sy-": {
+    "Una solución particular de un sistema de ecuaciones lineales que tenga las incógnitas X1,...,Xn es una lista de números s1,...,Sn que hace de cada ecuación del sistema un enunciado verdadero cuando las incógnitas x1,...,Xn se sustituyen por los valores s1,...,Sy": {
         "answer": true,
         "explanation": null
     },
@@ -47,15 +47,15 @@
         "answer": false,
         "explanation": null
     },
-    "El algoritmo de reducci6n por filas se aplica solamente a matrices ampliadas de sistemas de ecuaciones lineales.": {
+    "El algoritmo de reducción por filas se aplica solamente a matrices ampliadas de sistemas de ecuaciones lineales.": {
         "answer": false,
         "explanation": null
     },
-    "Una incdgnita basica de un sistema de ecuaciones lineales es una incégnita que corresponde a una columna pivote en la matriz de coeficientes.": {
+    "Una incógnita basica de un sistema de ecuaciones lineales es una incógnita que corresponde a una columna pivote en la matriz de coeficientes.": {
         "answer": true,
         "explanation": null
     },
-    "Resolver un sistema de ecuaciones lineales es lo mismo que encontrar las ecuaciones paramétricas de su conjunto solucién.": {
+    "Resolver un sistema de ecuaciones lineales es lo mismo que encontrar las ecuaciones paramétricas de su conjunto solución.": {
         "answer": true,
         "explanation": null
     },
@@ -63,23 +63,23 @@
         "answer": false,
         "explanation": null
     },
-    "La forma escalonada de una matriz es tnica.": {
+    "La forma escalonada de una matriz es única.": {
         "answer": false,
         "explanation": null
     },
-    "En una matriz, las posiciones pivote dependen de si se usan 0 no intercambios de fila en el proceso de eliminaci6n.": {
+    "En una matriz, las posiciones pivote dependen de si se usan o no intercambios de fila en el proceso de eliminación.": {
         "answer": false,
         "explanation": null
     },
-    "La reducci6n de una matriz a forma escalonada es la fase progresiva del proceso de reducci6n por filas.": {
+    "La reducción de una matriz a forma escalonada es la fase progresiva del proceso de reducción por filas.": {
         "answer": true,
         "explanation": null
     },
-    "Si un sistema tiene variables libres, entonces el conjunto solucién contiene muchas solucio- nes.": {
+    "Si un sistema tiene variables libres, entonces el conjunto solución contiene muchas soluciones.": {
         "answer": false,
         "explanation": null
     },
-    "Una solucién general de un sistema es una descripcién explicita de todas las soluciones del sistema.": {
+    "Una solución general de un sistema es una descripción explicita de todas las soluciones del sistema.": {
         "answer": true,
         "explanation": null
     },
@@ -87,7 +87,7 @@
         "answer": false,
         "explanation": null
     },
-    "Dos matrices son equivalentes por filas si y solo si tienen el mismo ntimero de pivotes y en las mismas posiciones.": {
+    "Dos matrices son equivalentes por filas si y solo si tienen el mismo número de pivotes y en las mismas posiciones.": {
         "answer": false,
         "explanation": null
     },
@@ -99,11 +99,11 @@
         "answer": false,
         "explanation": null
     },
-    "Un ejemplo de una combinacion lineal de los vectores v1 y v2 es el vector 5Y1-": {
+    "Un ejemplo de una combinacion lineal de los vectores v1 y v2 es el vector 5v1": {
         "answer": true,
         "explanation": null
     },
-    "El conjunto solucién del sistema cuya matriz ampliada soluci6n de la ecuaci6n vectorial x, a; + x2a2 + x3a3 = b.  1 a2 a3 b] es igual al conjunto": {
+    "El conjunto solución del sistema cuya matriz ampliada solución de la ecuación vectorial x, a; + x2a2 + x3a3 = b.  1 a2 a3 b] es igual al conjunto": {
         "answer": true,
         "explanation": null
     },
