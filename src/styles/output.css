@@ -767,10 +767,6 @@ select {
   height: 100%;
 }
 
-.min-h-full {
-  min-height: 100%;
-}
-
 .w-6 {
   width: 1.5rem;
 }
