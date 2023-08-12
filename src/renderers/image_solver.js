@@ -1,5 +1,4 @@
-const DATABASE_PATH = "databases/questions.json";
-const KEYS = ["answer", "explanation", "match", "confidence", "scannedText"];
+const KEYS = ["answer", "explanation", "match", "confidence", "text"];
 const DEFAULT_MESSAGE = "Arrastra una imagen para procesar resultados";
 const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
 
@@ -23,10 +22,10 @@ const INFO = {
     "explanation": "",
     "match": "",
     "confidence": "",
-    "scannedText": ""
+    "text": ""
 }
 
-let lastScan = null;
+let lastInput = null;
 
 function updateProgress(message) {
     document.getElementById("tesseract-status").innerHTML = bold(TESSERACT_STATUS_TRANSLATION[message.status] || message.status);
@@ -65,8 +64,8 @@ function drop(event) {
         { logger: message => updateProgress(message) }
     ).then(({ data: { text } }) => {
         text = text.trim();
-        lastScan = text;
-        document.getElementById("scannedText").innerHTML = text;
+        lastInput = text;
+        document.getElementById("text").innerHTML = text;
 
         const confidenceThreshold = document.getElementById("confidence-threshold").value;
 
@@ -84,70 +83,6 @@ function drop(event) {
         }
     })
 }
-
-function updateConfidenceThreshold() {
-    const confidenceThreshold = document.getElementById("confidence-threshold").value;
-    document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
-
-    if (lastScan !== null) {
-        const outputData = getFormattedData(lastScan, confidenceThreshold);
-
-        for (let key of KEYS) {
-            document.getElementById(key).innerHTML = outputData[key];
-        }
-    }
-}
-
-/**
- * Get the best match for the given text and confidence threshold.
- * @date 8/11/2023 - 3:06:02 AM
- *
- * @param {string} text
- * @param {number} confidenceThreshold
- * @returns {{ data: Object; confidence: string; }} - Best match data and confidence.
- */
-function getBestMatch(text, confidenceThreshold) {
-    let matchArray = Object.keys(window.data).map(key => ({
-        "id": key,
-        "text": window.data[key].text,
-        "similarity": new difflib.SequenceMatcher(null, window.data[key].text, text).ratio()
-    }));
-
-    // Filter by confidence threshold and sort from higher to lower ratio:
-    matchArray = matchArray.filter(match => match.similarity >= confidenceThreshold / 100);
-    matchArray.sort((a, b) => b.similarity - a.similarity);
-
-    return matchArray.length === 0 ? null : {
-        "data": window.data[matchArray[0].id],
-        "confidence": `${Math.round(matchArray[0].similarity * 10000) / 100}%`
-    };
-}
-
-/**
- * Format form data.
- * @date 8/11/2023 - 5:22:08 AM
- *
- * @param {string} text - Input text.
- * @param {number} confidenceThreshold - Confidence threshold.
- * @returns {{ answer: string; explanation: string; match: string; confidence: string; }} - Formatted data.
- */
-function getFormattedData(text, confidenceThreshold) {
-    const bestMatch = getBestMatch(text, confidenceThreshold);
-
-    return bestMatch === null ? {
-        "scannedText": bold(text),
-        "match": MISSING_MESSAGE,
-        "confidence": MISSING_MESSAGE,
-        "answer": MISSING_MESSAGE,
-        "explanation": MISSING_MESSAGE
-    } : {
-        "scannedText": bold(text),
-        "match": bold(bestMatch.data.text),
-        "confidence": bold(bestMatch.confidence),
-        "answer": formatAnswer(bestMatch.data.answer),
-        "explanation": formatExplanation(bestMatch.data.explanation)
-    }
-};
 
 function resetView() {
     // Clear form:

@@ -10,7 +10,7 @@
 
   <link rel="stylesheet" href="styles/output.css">
   <script defer src="renderers/image_solver.js"></script>
-  <script defer src="modules/commons.js"></script>
+  <script src="modules/commons.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
   <!-- Tesseract OCR import -->
   <script src="modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
@@ -114,10 +114,10 @@
             <!-- Scanned: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="mt-1 text-sm font-medium text-gray-500">
-                <span class="info-btn text-base" onclick="showTooltip('scannedText')">🛈 </span>
+                <span class="info-btn text-base" onclick="showTooltip('text')">🛈 </span>
                 <b>Texto escaneado</b>
               </dt>
-              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="scannedText"></dd>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="text"></dd>
             </div>
 
             <!-- Match: -->

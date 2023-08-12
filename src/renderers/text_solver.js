@@ -1,4 +1,3 @@
-const DATABASE_PATH = "databases/questions.json";
 const KEYS = ["answer", "explanation", "match", "confidence"];
 const DEFAULT_MESSAGE = "Introduce tu búsqueda para procesar resultados";
 const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
@@ -12,12 +11,15 @@ const INFO = {
     "confidence": "Este campo contiene el porcentaje de similitud entre tu búsqueda y la mejor coincidencia encontrada."
 }
 
+let lastInput = null;
+
 /**
  * Update the form on new inputs.
  * @date 8/11/2023 - 3:07:19 AM
  */
 function updateForm() {
     const searchText = document.getElementById("search-text").value;
+    lastInput = searchText;
     const confidenceThreshold = document.getElementById("confidence-threshold").value;
     document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
 
@@ -34,55 +36,6 @@ function updateForm() {
         }
     }
 }
-
-/**
- * Get the best match for the given text and confidence threshold.
- * @date 8/11/2023 - 3:06:02 AM
- *
- * @param {string} text
- * @param {number} confidenceThreshold
- * @returns {{ data: Object; confidence: string; }} - Best match data and confidence.
- */
-function getBestMatch(text, confidenceThreshold) {
-    let matchArray = Object.keys(window.data).map(key => ({
-        "id": key,
-        "text": window.data[key].text,
-        "similarity": new difflib.SequenceMatcher(null, window.data[key].text, text).ratio()
-    }));
-
-    // Filter by confidence threshold and sort from higher to lower ratio:
-    matchArray = matchArray.filter(match => match.similarity >= confidenceThreshold / 100);
-    matchArray.sort((a, b) => b.similarity - a.similarity);
-
-    return matchArray.length === 0 ? null : {
-        "data": window.data[matchArray[0].id],
-        "confidence": `${Math.round(matchArray[0].similarity * 10000) / 100}%`
-    };
-}
-
-/**
- * Format form data.
- * @date 8/11/2023 - 5:22:08 AM
- *
- * @param {string} text - Input text.
- * @param {number} confidenceThreshold - Confidence threshold.
- * @returns {{ answer: string; explanation: string; match: string; confidence: string; }} - Formatted data.
- */
-function getFormattedData(text, confidenceThreshold) {
-    const bestMatch = getBestMatch(text, confidenceThreshold);
-
-    return bestMatch === null ? {
-        "answer": MISSING_MESSAGE,
-        "explanation": MISSING_MESSAGE,
-        "match": MISSING_MESSAGE,
-        "confidence": MISSING_MESSAGE
-    } : {
-        "answer": formatAnswer(bestMatch.data.answer),
-        "explanation": formatExplanation(bestMatch.data.explanation),
-        "match": bold(bestMatch.data.text),
-        "confidence": bold(bestMatch.confidence)
-    }
-};
 
 function resetView() {
     // Clear form:
