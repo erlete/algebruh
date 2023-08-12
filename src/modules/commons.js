@@ -34,8 +34,10 @@ function getBestMatch(text, confidenceThreshold) {
     matchArray.sort((a, b) => b.similarity - a.similarity);
 
     return matchArray.length === 0 ? null : {
-        "data": window.data[matchArray[0].id],
-        "confidence": `${Math.round(matchArray[0].similarity * 10000) / 100}%`
+        "text": matchArray[0].text,
+        "confidence": `${Math.round(matchArray[0].similarity * 10000) / 100}%`,
+        "answer": window.data[matchArray[0].id].answer,
+        "explanation": window.data[matchArray[0].id].explanation
     };
 }
 
@@ -52,16 +54,16 @@ function getFormattedData(text, confidenceThreshold) {
 
     return bestMatch === null ? {
         "text": bold(text),
-        "answer": MISSING_MESSAGE,
-        "explanation": MISSING_MESSAGE,
         "match": MISSING_MESSAGE,
-        "confidence": MISSING_MESSAGE
+        "confidence": MISSING_MESSAGE,
+        "answer": MISSING_MESSAGE,
+        "explanation": MISSING_MESSAGE
     } : {
         "text": bold(text),
-        "answer": formatAnswer(bestMatch.data.answer),
-        "explanation": formatExplanation(bestMatch.data.explanation),
-        "match": bold(bestMatch.data.text),
-        "confidence": bold(bestMatch.confidence)
+        "match": bold(bestMatch.text),
+        "confidence": bold(bestMatch.confidence),
+        "answer": formatAnswer(bestMatch.answer),
+        "explanation": formatExplanation(bestMatch.explanation)
     }
 };
 
