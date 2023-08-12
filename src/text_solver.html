@@ -1,113 +1,127 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="es" class="h-full prevent-select">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Algebruh - Image Solver</title>
+  <title>Algebruh - Modo Imagen</title>
 
-    <link rel="stylesheet" href="styles/output.css">
-    <script defer src="renderers/text_solver.js"></script>
-    <script defer src="modules/difflib-browser.js"></script>
+  <link rel="stylesheet" href="styles/output.css">
+  <script defer src="renderers/text_solver.js"></script>
+  <script src="modules/commons.js"></script>
+  <script src="modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
 </head>
 
-<!-- Body with prevented tab opening on file drop: -->
+<body class="h-full items-center bg-gray-200">
+  <!-- Header and navigation bar: -->
+  <header class="bg-gray-200 shadow-lg rounded-lg mb-6">
+    <nav class="p-6 flex items-center justify-between" aria-label="Global">
+      <!-- Logo image: -->
+      <div class="flex-1 items-center">
+        <a href="index.html">
+          <span class="sr-only">Algebruh</span>
+          <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
+        </a>
+      </div>
 
-<body class="h-full items-center" ondragenter="preventDefault(event)" ondrop="preventDefault(event)"
-    ondragover="preventDefault(event)">
+      <!-- Navigation links: -->
+      <div class="flex gap-x-12 sm:gap-x-24 text-center">
+        <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Inicio</a>
+        <a href="image_solver.html" class="text-base text-center text-gray-900 font-semibold">Modo Imagen</a>
+        <a href="text_solver.html" class="text-base text-center text-gray-900 font-extrabold">Modo Texto</a>
+      </div>
 
-    <!-- Header and navigation bar: -->
-    <header class="bg-white">
-        <nav class="m-8 flex items-center justify-between" aria-label="Global">
+      <div class="flex-1 justify-center"></div>
+    </nav>
+  </header>
 
-            <!-- Logo image: -->
-            <div class="flex-1 items-center">
-                <a href="index.html">
-                    <span class="sr-only">Algebruh</span>
-                    <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
-                </a>
+  <main class="grid bg-gray-200">
+    <div class="py-6">
+      <div class="mx-12">
+        <!-- Input: -->
+        <div class="overflow-hidden bg-white shadow rounded-lg">
+          <div class="px-4 py-5 sm:px-6 shadow-inner">
+            <h3 class="text-base font-bold tracking-tigh leading-6 text-gray-900">Buscador por texto</h3>
+          </div>
+
+          <div class="border-t border-gray-200">
+            <!-- Text input: -->
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="displayTooltip('input', 'textSolver')">🛈 </span>
+                <span><b>Búsqueda:</b></span>
+              </dt>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <input type="text" name="input" id="input" oninput="getResults()"
+                  class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                  placeholder="Escribe aquí tu pregunta">
+              </dd>
             </div>
 
-            <!-- Navigation links: -->
-            <div class="flex gap-x-12 sm:gap-x-24 text-center">
-                <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Home</a>
-                <a href="usage.html" class="text-base text-center text-gray-900 font-semibold">Instructions</a>
-                <a href="image_solver.html" class="text-base text-center text-gray-900 font-semibold">Image
-                    Solver</a>
-                <a href="text_solver.html" class="text-base text-center text-gray-900 font-semibold"><b>Text
-                        Solver</b></a>
+            <!-- Confidence threshold input: -->
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="displayTooltip('confidenceThreshold', 'textSolver')">🛈</span>
+                <b>Confianza mínima (<span id="confidenceThresholdValue"></span>%)</b>
+              </dt>
+              <dd class="flex items-center justify-center sm:col-span-2 sm:mt-0">
+                <input class="w-full" type="range" id="confidenceThreshold" name="confidenceThreshold" min="1"
+                  max="100" value="75" step="0.1" oninput="updateMatchThreshold()">
+              </dd>
             </div>
-
-            <div class="flex-1 justify-center"></div>
-
-        </nav>
-    </header>
-
-    <main class="grid min-h-full bg-white">
-
-        <div class="bg-white py-16">
-            <div class="mx-auto px-6 lg:px-8">
-                <div class="mx-auto text-center">
-                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Insert question text
-                        here!</p>
-
-                    <!-- Text search area: -->
-                    <div>
-                        <div class="relative rounded-md shadow-sm m-16 mx-32 mb-8 items-center">
-                            <input type="text" name="search-text" id="search-text" oninput="updateForm()"
-                                class="block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
-                                placeholder="...">
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center">
-                        <div>
-                            <input type="range" id="confidence-threshold" name="confidence-threshold" min="1" max="100"
-                                value="75" step="0.5" oninput="updateForm()">
-                            <p id="confidence-threshold-value"></p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Results area: -->
-                <div class="overflow-hidden bg-white shadow sm:rounded-lg">
-                    <div class="px-4 py-5 sm:px-6">
-                        <h3 class="text-base font-semibold leading-6 text-gray-900">Question data</h3>
-                    </div>
-
-                    <div class="border-t border-gray-200">
-                        <dl>
-                            <!-- Answer area: -->
-                            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Answer</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
-                            </div>
-
-                            <!-- Explanation area: -->
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Explanation</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
-                            </div>
-
-                            <!-- Text match area: -->
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Match</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
-                            </div>
-
-                            <!-- Confidence area: -->
-                            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                                <dt class="text-sm font-medium text-gray-500"><b>Confidence</b></dt>
-                                <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
-                            </div>
-                        </dl>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </main>
+
+        <!-- Output: -->
+        <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
+          <div class="px-4 py-5 sm:px-6 shadow-inner">
+            <h3 class="text-base font-bold leading-6 text-gray-900">Resultados de la búsqueda</h3>
+          </div>
+
+          <div class="border-t border-gray-200">
+            <!-- Match: -->
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="displayTooltip('match', 'textSolver')">🛈 </span>
+                <b>Coincidencia</b>
+              </dt>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
+            </div>
+
+            <!-- Confidence: -->
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="displayTooltip('confidence', 'textSolver')">🛈 </span>
+                <b>Confianza</b>
+              </dt>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
+            </div>
+
+            <!-- Answer: -->
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="displayTooltip('answer', 'textSolver')">🛈 </span>
+                <b>Respuesta</b>
+              </dt>
+              <dd class=" mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
+            </div>
+
+            <!-- Explanation: -->
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500">
+                <span class="info-btn text-base" onclick="displayTooltip('explanation', 'textSolver')">🛈 </span>
+                <b>Explicación</b>
+              </dt>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
 </body>
 
 </html>

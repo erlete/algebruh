@@ -1,7 +1,7 @@
-// Constants:
 const TOTAL_QUESTIONS_TAG = "total_questions";
 const ANSWERED_QUESTIONS_TAG = "answered_questions";
 const GUARANTEED_GRADE_TAG = "guaranteed_grade";
+
 const DATABASE_PATH = "databases/questions.json";
 
 /**
@@ -12,7 +12,6 @@ const DATABASE_PATH = "databases/questions.json";
  * @returns {*}
  */
 async function setup() {
-    /// Target tags:
     const totalQuestionsTag = document.getElementById(TOTAL_QUESTIONS_TAG);
     const answeredQuestionsTag = document.getElementById(ANSWERED_QUESTIONS_TAG);
     const gradePercentageTag = document.getElementById(GUARANTEED_GRADE_TAG);
@@ -36,5 +35,4 @@ async function setup() {
     gradePercentageTag.innerHTML = `${Math.round(gradePercentageTag.innerHTML * 100) / 100} %`;
 }
 
-// Run setup script:
 setup();
