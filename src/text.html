@@ -9,7 +9,7 @@
   <title>Algebruh - Modo Imagen</title>
 
   <link rel="stylesheet" href="styles/output.css">
-  <script defer src="renderers/text_solver.js"></script>
+  <script defer src="renderers/text.js"></script>
   <script src="modules/commons.js"></script>
   <script src="modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
 </head>
@@ -28,9 +28,9 @@
 
       <!-- Navigation links: -->
       <div class="flex gap-x-12 sm:gap-x-24 text-center">
-        <a href="index.html" class="text-base text-center text-gray-900 font-semibold">Inicio</a>
-        <a href="image.html" class="text-base text-center text-gray-900 font-semibold">Modo Imagen</a>
-        <a href="text.html" class="text-base text-center text-gray-900 font-extrabold">Modo Texto</a>
+        <a href="index.html" class="text-base text-center text-gray-900">Inicio</a>
+        <a href="image.html" class="text-base text-center text-gray-900">Modo Imagen</a>
+        <a href="text.html" class="text-base text-center text-gray-900 underline">Modo Texto</a>
       </div>
 
       <div class="flex-1 justify-center"></div>
@@ -38,7 +38,7 @@
   </header>
 
   <main class="grid bg-gray-200">
-    <div class="py-6">
+    <div class="py-6 mb-6">
       <div class="mx-12">
         <!-- Input: -->
         <div class="overflow-hidden bg-white shadow rounded-lg">
@@ -50,7 +50,7 @@
             <!-- Text input: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('input', 'imageSolver')">
+                <span class="inline-block" onclick="displayTooltip('input', 'textSolver')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Búsqueda</b>
@@ -65,7 +65,7 @@
             <!-- Confidence threshold input: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('confidenceThreshold', 'imageSolver')">
+                <span class="inline-block" onclick="displayTooltip('confidenceThreshold', 'textSolver')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Confianza mínima (<span id="confidenceThresholdValue"></span>%)</b>
@@ -88,7 +88,7 @@
             <!-- Match: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('match', 'imageSolver')">
+                <span class="inline-block" onclick="displayTooltip('match', 'textSolver')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Coincidencia</b>
@@ -99,7 +99,7 @@
             <!-- Confidence: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block text-base" onclick="displayTooltip('confidence', 'imageSolver')">
+                <span class="inline-block text-base" onclick="displayTooltip('confidence', 'textSolver')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b>Confianza</b>
@@ -110,7 +110,7 @@
             <!-- Answer: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('answer', 'imageSolver')">
+                <span class="inline-block" onclick="displayTooltip('answer', 'textSolver')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Respuesta</b>
@@ -121,7 +121,7 @@
             <!-- Explanation: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('explanation', 'imageSolver')">
+                <span class="inline-block" onclick="displayTooltip('explanation', 'textSolver')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Explicación</b>
