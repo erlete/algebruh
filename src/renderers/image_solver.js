@@ -1,8 +1,7 @@
+const DATABASE_PATH = "databases/questions.json";
 const KEYS = ["answer", "explanation", "match", "confidence", "scannedText"];
 const DEFAULT_MESSAGE = "Arrastra una imagen para procesar resultados";
 const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
-
-const DATABASE_PATH = "databases/questions.json";
 
 const TESSERACT_STATUS_TRANSLATION = {
     "loading tesseract core": "Cargando núcleo de Tesseract",
@@ -100,18 +99,6 @@ function updateConfidenceThreshold() {
 }
 
 /**
- * Display alert tooltip.
- * @date 8/11/2023 - 7:00:46 PM
- *
- * @param {string} field - Field name.
- */
-function showTooltip(field) {
-    if (Object.keys(INFO).includes(field)) {
-        alert(INFO[field]);
-    }
-}
-
-/**
  * Get the best match for the given text and confidence threshold.
  * @date 8/11/2023 - 3:06:02 AM
  *
@@ -134,16 +121,6 @@ function getBestMatch(text, confidenceThreshold) {
         "data": window.data[matchArray[0].id],
         "confidence": `${Math.round(matchArray[0].similarity * 10000) / 100}%`
     };
-}
-/**
- * Convert text to bold.
- * @date 8/11/2023 - 3:05:43 AM
- *
- * @param {string} text
- * @returns {string} - Bold text.
- */
-function bold(text) {
-    return text !== null && text !== undefined ? `<b>${text}</b>` : text;
 }
 
 /**
@@ -172,28 +149,6 @@ function getFormattedData(text, confidenceThreshold) {
     }
 };
 
-/**
- * Format answer to readable text.
- * @date 8/11/2023 - 7:00:21 PM
- *
- * @param {boolean} answer - Answer.
- * @returns {string} - Formatted answer.
- */
-function formatAnswer(answer) {
-    return bold(answer ? "Verdadero" : "Falso");
-}
-
-/**
- * Format explanation to readable text.
- * @date 8/11/2023 - 7:21:33 PM
- *
- * @param {string} explanation - Explanation. {@link null} if not available.
- * @returns {string} - Formatted explanation.
- */
-function formatExplanation(explanation) {
-    return explanation !== null ? bold(explanation) : MISSING_MESSAGE;
-}
-
 function resetView() {
     // Clear form:
     for (let key of KEYS) {
@@ -204,6 +159,7 @@ function resetView() {
     const confidenceThreshold = document.getElementById("confidence-threshold").value;
     document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
 
+    // Reset tesseract progress:
     document.getElementById("tesseract-progress").innerHTML = "";
     document.getElementById("tesseract-status").innerHTML = DEFAULT_MESSAGE;
     document.getElementById("tesseract-progress-bar").value = 0;
