@@ -39,16 +39,4 @@ function resetView() {
     document.getElementById("confidence-threshold-value").innerHTML = confidenceThreshold;
 }
 
-/**
- * Set up form fields and window data.
- * @date 8/11/2023 - 5:22:45 AM
- *
- * @async
- * @returns {Promise<void>}
- */
-async function setup() {
-    resetView();
-    window.data = await (await fetch(DATABASE_PATH)).json();
-};
-
 setup();

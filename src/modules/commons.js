@@ -34,6 +34,19 @@ const TESSERACT_STATUS_TRANSLATION = {
     "recognizing text": "Reconociendo texto"
 }
 
+// Data fetching functions:
+
+/**
+ * Fetch data from the database and assign it to the global variable `window.data`.
+ * @date 8/12/2023 - 3:44:08 AM
+ *
+ * @async
+ * @returns {Promise<void>} - Database fetch promise.
+ */
+async function setup() {
+    window.data = await (await fetch(DATABASE_PATH)).json();
+};
+
 // Data format functions:
 
 /**

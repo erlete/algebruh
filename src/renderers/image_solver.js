@@ -77,16 +77,4 @@ function resetView() {
     document.getElementById("tesseract-progress-bar").value = 0;
 }
 
-/**
- * Set up form fields and window data.
- * @date 8/11/2023 - 5:59:23 AM
- *
- * @async
- * @returns {Promise<void>}
- */
-async function setup() {
-    resetView();
-    window.data = await (await fetch(DATABASE_PATH)).json();
-};
-
 setup();
