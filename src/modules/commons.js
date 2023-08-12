@@ -4,23 +4,23 @@ const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
 
 const INFO = {
     "textSolver": {
-        "input": "Introduce la pregunta que quieres resolver. Tu búsqueda debe ser lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la búsqueda, mayor será la probabilidad de obtener un resultado satisfactorio.",
-        "confidenceThreshold": "Usa este slider para ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
-        "match": "Este campo contiene la coincidencia encontrada más aproximada a tu búsqueda.",
-        "confidence": "Este campo contiene el porcentaje de similitud entre tu búsqueda y la mejor coincidencia encontrada.",
-        "answer": "Este campo contiene la respuesta a la coincidencia aproximada a tu pregunta.\n\nRecuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
-        "explanation": "Este campo contiene la explicación de la respuesta, si existe en la base de datos."
+        "input": "Aquí deberás escribir la pregunta que quieras resolver. Intenta que sea lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la pregunta, mayor será la probabilidad de obtener un resultado satisfactorio.",
+        "confidenceThreshold": "Con este selector puedes ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
+        "match": "Aquí podrás ver la coincidencia de la base de datos más parecida a la pregunta que has introducido.",
+        "confidence": "Aquí podrás ver el porcentaje de coincidencia de tu búsqueda con la mejor coincidencia encontrada en la base de datos.",
+        "answer": "Este campo contiene la respuesta a la coincidencia encontrada en la base de datos.\n\nRecuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
+        "explanation": "Este campo contiene la explicación de la respuesta, en caso de que exista en la base de datos."
     },
     "imageSolver": {
-        "input": "Arrastra una imagen de la pregunta que quieras buscar. Sirven capturas de pantalla, imagenes, etc.\n\nRecuerda encuadrar lo máximo posible el texto a buscar y reducir las posibilidades de falsos reconocimientos.",
-        "confidenceThreshold": "Usa este slider para ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
+        "input": "Aquí deberás arrastrar una imagen de la pregunta que quieras buscar. Sirven capturas de pantalla e imagenes guardadas pero no siempre funciona con imagenes de páginas web directamente.\n\nRecuerda encuadrar lo máximo posible el texto a buscar, reduciendo así las posibilidades de falsos reconocimientos.",
+        "confidenceThreshold": "Con este selector puedes ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
         "text": "Este campo contiene el texto escaneado de la imagen.",
-        "match": "Este campo contiene la coincidencia encontrada más aproximada a tu búsqueda.",
-        "confidence": "Este campo contiene el porcentaje de similitud entre tu búsqueda y la mejor coincidencia encontrada.",
-        "answer": "Este campo contiene la respuesta a la coincidencia aproximada a tu pregunta.\n\nRecuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
-        "explanation": "Este campo contiene la explicación de la respuesta, si existe en la base de datos.",
-        "tesseractStatus": "Este campo contiene el estado de reconocimiento de texto de Tesseract.",
-        "tesseractProgress": "Este campo contiene el progreso de cada estado de procesamiento de Tesseract."
+        "match": "Aquí podrás ver la coincidencia de la base de datos más parecida a la pregunta que has introducido.",
+        "confidence": "Aquí podrás ver el porcentaje de coincidencia de tu búsqueda con la mejor coincidencia encontrada en la base de datos.",
+        "answer": "Este campo contiene la respuesta a la coincidencia encontrada en la base de datos.\n\nRecuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
+        "explanation": "Este campo contiene la explicación de la respuesta, en caso de que exista en la base de datos.",
+        "tesseractStatus": "Este campo contiene el estado actual de reconocimiento de texto de Tesseract (OCR).",
+        "tesseractProgress": "Este campo contiene el progreso de cada estado de procesamiento de Tesseract (OCR)."
     }
 }
 
@@ -96,11 +96,11 @@ function formatExplanation(explanation) {
  */
 function getBestMatch(text, confidenceThreshold) {
     // Generate match array:
-    let matchArray = Object.keys(window.data).map(key => ({
-        "text": window.data[key].text,
-        "confidence": new difflib.SequenceMatcher(null, window.data[key].text, text).ratio(),
-        "answer": window.data[key].answer,
-        "explanation": window.data[key].explanation
+    let matchArray = Object.entries(window.data).map((questionData) => ({
+        "text": questionData[0],
+        "confidence": new difflib.SequenceMatcher(null, questionData[0], text).ratio(),
+        "answer": questionData[1].answer,
+        "explanation": questionData[1].explanation
     }));
 
     // Filter by confidence threshold and sort from higher to lower ratio:
