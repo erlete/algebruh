@@ -1245,10 +1245,6 @@ p[data-value]:after {
          column-gap: 6rem;
   }
 
-  .sm\:rounded-lg {
-    border-radius: 0.5rem;
-  }
-
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
