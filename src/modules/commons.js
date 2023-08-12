@@ -1,5 +1,7 @@
 const DATABASE_PATH = "databases/questions.json";
 
+const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
+
 const INFO = {
     "textSolver": {
         "input": "Introduce la pregunta que quieres resolver. Tu búsqueda debe ser lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la búsqueda, mayor será la probabilidad de obtener un resultado satisfactorio.",
