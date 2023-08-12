@@ -1,22 +1,32 @@
-# Algebruh: the simplest method to get your Algebra questions right
+# Algebruh
 
-_**Note**: parts of this documentation are intended for developers alone. In order to learn how to use the application, just install it and execute it. All required instructions are contained inside it._
+Algebruh is an algebra question solver platform. It implements OCR and textual pattern matching technologies to provide with answers to plenty of questions stored in a database.
 
-## Download
+_**Note**: parts of this documentation are intended for developers alone. All platform usage instructions are located in the web/webapp itself._
 
-The latest release of the application is available on the [releases](https://github.com/erlete/algebruh/releases) tab of the repository. Access to the desired release and download the _setup_ executable linked to it.
+## Accessing the platform
 
-_**Warning**: versions up to [v1.1.0-legacy](https://github.com/erlete/algebruh/releases/tag/v1.1.0-legacy) (included) are deprecated and kept as legacy code. There will be no active support for said versions. Issues related to them will be automatically discarded and PRs might not be reviewed._
+There are two ways to benefit from the Algebruh platform tools:
 
-## Installation
+### Webpage access
+
+The easiest way to access the platform is to use [the webpage](https://algebruh.erlete.org). It does not require any specific operating system, architecture or dependencies to work.
+
+### Webapp access
+
+The second wat to access the platform is to use the webapp, whose installer files are available in the [releases](https://github.com/erlete/algebruh/releases) section of the GitHub repository.
+
+You can either download the executable installer or the whole installation directory, in case the first one raises security alerts on your operating system (probably because of the lack of digital signature).
 
 _The application is only available for the Windows x64 OS. Further implementations for different OSs and architectures are not planned, yet under specific circumstances, they could be feasible._
 
-Once downloaded, the setup executable will install the web application and a shortcut will be available on the Desktop. The setup is required to create a single executable entry point, instead of a directory with multiple related files.
+#### Deprecation notice
+
+Versions up to [v1.1.0-legacy](https://github.com/erlete/algebruh/releases/tag/v1.1.0-legacy) (included) are deprecated and kept as legacy code. There will be no active support for said versions. Issues related to them will be automatically discarded and PRs might not be reviewed.
 
 ## Disclaimer
 
-**This software serves as educative tool for the author, as well as a tool for users to learn how to answer questions correctly. The software is provided "as is", without warranty of any kind, and shall not be related to any external entities and/or their products.**
+**This software serves as educative tool for the author, as well as a method for users to learn how to answer algebra questions correctly. The software is provided "as is", without warranty of any kind, and shall not be related to any external entities, their products and/or activities.**
 
 **The author does not guarantee the correct operation of the software in any scenario excluded from the internal testing process. The author will not be liable for any repercusions the usage of this software might have on the user.**
 
