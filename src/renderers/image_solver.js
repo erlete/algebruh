@@ -2,29 +2,6 @@ const KEYS = ["answer", "explanation", "match", "confidence", "text"];
 const DEFAULT_MESSAGE = "Arrastra una imagen para procesar resultados";
 const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
 
-const TESSERACT_STATUS_TRANSLATION = {
-    "loading tesseract core": "Cargando núcleo de Tesseract",
-    "initializing tesseract": "Inicializando Tesseract",
-    "initialized tesseract": "Tesseract inicializado",
-    "loading language traineddata": "Cargando datos de entrenamiento de idioma",
-    "loading language traineddata (from cache)": "Cargando datos de entrenamiento de idioma (desde caché)",
-    "loaded language traineddata": "Datos de entrenamiento de idioma cargados",
-    "initializing api": "Inicializando API",
-    "initialized api": "API inicializada",
-    "recognizing text": "Reconociendo texto"
-}
-
-const INFO = {
-    "imageInput": "",
-    "tesseractProgress": "",
-    "tesseractStatus": "",
-    "answer": "",
-    "explanation": "",
-    "match": "",
-    "confidence": "",
-    "text": ""
-}
-
 let lastInput = null;
 
 function updateProgress(message) {

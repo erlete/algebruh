@@ -50,7 +50,7 @@
                         <!-- Text input: -->
                         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
                             <dt class="text-sm font-medium text-gray-500">
-                                <span class="info-btn text-base" onclick="displayTooltip('textInput')">🛈 </span>
+                                <span class="info-btn text-base" onclick="displayTooltip('input', 'textSolver')">🛈 </span>
                                 <span><b>Búsqueda:</b></span>
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -64,7 +64,7 @@
                         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
                             <dt class="text-sm font-medium text-gray-500">
                                 <span class="info-btn text-base"
-                                    onclick="displayTooltip('confidenceThresholdInput')">🛈</span>
+                                    onclick="displayTooltip('confidenceThreshold', 'textSolver')">🛈</span>
                                 <b>Confianza mínima (<span id="confidence-threshold-value"></span>%)</b>
                             </dt>
                             <dd class="flex items-center justify-center sm:col-span-2 sm:mt-0">
@@ -85,7 +85,7 @@
                         <!-- Match: -->
                         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
                             <dt class="text-sm font-medium text-gray-500">
-                                <span class="info-btn text-base" onclick="displayTooltip('match')">🛈 </span>
+                                <span class="info-btn text-base" onclick="displayTooltip('match', 'textSolver')">🛈 </span>
                                 <b>Coincidencia</b>
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="match"></dd>
@@ -94,7 +94,7 @@
                         <!-- Confidence: -->
                         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
                             <dt class="text-sm font-medium text-gray-500">
-                                <span class="info-btn text-base" onclick="displayTooltip('confidence')">🛈 </span>
+                                <span class="info-btn text-base" onclick="displayTooltip('confidence', 'textSolver')">🛈 </span>
                                 <b>Confianza</b>
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
@@ -103,7 +103,7 @@
                         <!-- Answer: -->
                         <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
                             <dt class="text-sm font-medium text-gray-500">
-                                <span class="info-btn text-base" onclick="displayTooltip('answer')">🛈 </span>
+                                <span class="info-btn text-base" onclick="displayTooltip('answer', 'textSolver')">🛈 </span>
                                 <b>Respuesta</b>
                             </dt>
                             <dd class=" mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="answer"></dd>
@@ -112,7 +112,7 @@
                         <!-- Explanation: -->
                         <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
                             <dt class="text-sm font-medium text-gray-500">
-                                <span class="info-btn text-base" onclick="displayTooltip('explanation')">🛈 </span>
+                                <span class="info-btn text-base" onclick="displayTooltip('explanation', 'textSolver')">🛈 </span>
                                 <b>Explicación</b>
                             </dt>
                             <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="explanation"></dd>

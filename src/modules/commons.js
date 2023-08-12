@@ -1,5 +1,39 @@
 const DATABASE_PATH = "databases/questions.json";
 
+const INFO = {
+    "textSolver": {
+        "input": "Introduce la pregunta que quieres resolver. Tu búsqueda debe ser lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la búsqueda, mayor será la probabilidad de obtener un resultado satisfactorio.",
+        "confidenceThreshold": "Usa este slider para ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
+        "match": "Este campo contiene la coincidencia encontrada más aproximada a tu búsqueda.",
+        "confidence": "Este campo contiene el porcentaje de similitud entre tu búsqueda y la mejor coincidencia encontrada.",
+        "answer": "Este campo contiene la respuesta a la coincidencia aproximada a tu pregunta.\n\nRecuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
+        "explanation": "Este campo contiene la explicación de la respuesta, si existe en la base de datos."
+    },
+    "imageSolver": {
+        "input": "Arrastra una imagen de la pregunta que quieras buscar. Sirven capturas de pantalla, imagenes, etc.\n\nRecuerda encuadrar lo máximo posible el texto a buscar y reducir las posibilidades de falsos reconocimientos.",
+        "confidenceThreshold": "Usa este slider para ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
+        "text": "Este campo contiene el texto escaneado de la imagen.",
+        "match": "Este campo contiene la coincidencia encontrada más aproximada a tu búsqueda.",
+        "confidence": "Este campo contiene el porcentaje de similitud entre tu búsqueda y la mejor coincidencia encontrada.",
+        "answer": "Este campo contiene la respuesta a la coincidencia aproximada a tu pregunta.\n\nRecuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
+        "explanation": "Este campo contiene la explicación de la respuesta, si existe en la base de datos.",
+        "tesseractStatus": "Este campo contiene el estado de reconocimiento de texto de Tesseract.",
+        "tesseractProgress": "Este campo contiene el progreso de cada estado de procesamiento de Tesseract."
+    }
+}
+
+const TESSERACT_STATUS_TRANSLATION = {
+    "loading tesseract core": "Cargando núcleo de Tesseract",
+    "initializing tesseract": "Inicializando Tesseract",
+    "initialized tesseract": "Tesseract inicializado",
+    "loading language traineddata": "Cargando datos de entrenamiento de idioma",
+    "loading language traineddata (from cache)": "Cargando datos de entrenamiento de idioma (desde caché)",
+    "loaded language traineddata": "Datos de entrenamiento de idioma cargados",
+    "initializing api": "Inicializando API",
+    "initialized api": "API inicializada",
+    "recognizing text": "Reconociendo texto"
+}
+
 // Data format functions:
 
 /**
@@ -23,7 +57,6 @@ function bold(text) {
 function formatAnswer(answer) {
     return bold(answer ? "Verdadero" : "Falso");
 }
-
 
 /**
  * Convert explanation to bold or show missing message.
@@ -118,13 +151,20 @@ function updateMatchThreshold() {
 // Auxiliary functions:
 
 /**
- * Display information tooltip alert.
- * @date 8/12/2023 - 3:08:04 AM
+ * Display tooltip with information for the given element and page.
+ * @date 8/12/2023 - 3:35:21 AM
  *
- * @param {string} elementID - Element ID to show the tooltip for.
+ * @param {string} elementID - ID of the element to display tooltip for.
+ * @param {string} pageID - ID of the page where the element is located.
  */
-function displayTooltip(elementID) {
-    if (Object.keys(INFO).includes(elementID)) {
-        alert(INFO[elementID]);
+function displayTooltip(elementID, pageID) {
+    if (Object.keys(INFO).includes(pageID)) {
+        if (Object.keys(INFO[pageID]).includes(elementID)) {
+            alert(INFO[pageID][elementID]);
+        } else {
+            console.warn(`No info for element ${elementID} in page ${pageID}`);
+        }
+    } else {
+        console.warn(`No info for page ${pageID}`);
     }
 }
