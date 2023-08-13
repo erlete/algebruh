@@ -22,7 +22,7 @@
 			}
 		},
 		{
-			"label": "PHP: Start local server (DevTools mode)",
+			"label": "[DevTools] PHP: Start local server",
 			"type": "shell",
 			"windows": {
 				"command": "echo Site available at http://localhost:8889/devtools/index.html && php",
@@ -103,6 +103,42 @@
 					".\\src\\styles\\template.css",
 					"-o",
 					".\\src\\styles\\output.css"
+				]
+			},
+			"problemMatcher": [],
+			"detail": "Compile Tailwind CSS output file"
+		},
+		{
+			"label": "[DevTools] CSS: Compile",
+			"type": "shell",
+			"osx": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					"./devtools/styles/template.css",
+					"-o",
+					"./devtools/styles/output.css"
+				]
+			},
+			"linux": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					"./devtools/styles/template.css",
+					"-o",
+					"./devtools/styles/output.css"
+				]
+			},
+			"windows": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					".\\devtools\\styles\\template.css",
+					"-o",
+					".\\devtools\\styles\\output.css"
 				]
 			},
 			"problemMatcher": [],
