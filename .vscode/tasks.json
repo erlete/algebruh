@@ -25,7 +25,7 @@
 			"label": "PHP: Start local server (DevTools mode)",
 			"type": "shell",
 			"windows": {
-				"command": "cd devtools && php",
+				"command": "echo Site available at http://localhost:8889/devtools/index.html && php",
 				"args": [
 					"-S",
 					"localhost:8889"
