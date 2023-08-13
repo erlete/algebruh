@@ -8,7 +8,7 @@
 
   <title>Algebruh - Developer Mode</title>
 
-  <link rel="stylesheet" href="styles/output.css">
+  <link rel="stylesheet" href="./styles/output.css">
   <script defer src="index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
   <script src="modules/difflib-browser.js"></script>
@@ -17,7 +17,7 @@
 
 <body class="h-full items-center bg-gray-200">
   <main class="grid bg-gray-200">
-    <div class="py-6">
+    <div class="py-6 mb-6">
       <div class="mx-12">
         <!-- Input: -->
         <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
@@ -29,7 +29,7 @@
             <!-- Text input: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('input', 'textSolver')">
+                <span class="inline-block" onclick="displayTooltip('input', 'devTools')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Búsqueda</b>
@@ -44,7 +44,7 @@
             <!-- Confidence: -->
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block text-base" onclick="displayTooltip('confidence', 'textSolver')">
+                <span class="inline-block text-base" onclick="displayTooltip('confidence', 'devTools')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b>Confianza</b>
@@ -64,7 +64,7 @@
             <!-- Match: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('input', 'textSolver')">
+                <span class="inline-block" onclick="displayTooltip('text', 'devTools')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Enunciado</b>
@@ -78,7 +78,7 @@
             <!-- Answer: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('answer', 'textSolver')">
+                <span class="inline-block" onclick="displayTooltip('answer', 'devTools')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Respuesta</b>
@@ -97,7 +97,7 @@
             <!-- Explanation: -->
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
               <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('input', 'textSolver')">
+                <span class="inline-block" onclick="displayTooltip('explanation', 'devTools')">
                   <img src="media/information.svg" alt="Information button">
                 </span>
                 <b class="mt-0.5">Explanation</b>
@@ -112,7 +112,7 @@
 
         <!-- Control buttons: -->
         <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
-          <div class="px-4 py-5 sm:px-6 shadow-inner sm:grid sm:grid-cols-3 sm:gap-8 sm:px-6 shadow-inner">
+          <div class="px-4 py-5 pb-0 sm:px-6 shadow-inner sm:grid sm:grid-cols-3 sm:gap-8 sm:px-6 shadow-inner">
             <a id="submit" onclick="processData()"
               class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Procesar
               datos</a>
@@ -122,6 +122,20 @@
             <a id="clear" onclick="resetView()"
               class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Limpiar
               formulario</a>
+          </div>
+          <div class="px-4 py-2 sm:px-6 sm:grid sm:grid-cols-3 sm:col-span-3 sm:gap-8 sm:px-6">
+            <span class="flex items-center justify-center">
+              <img src="media/information.svg" alt="Information button"
+                onclick="displayTooltip('processDataButton', 'devTools')">
+            </span>
+            <span class="flex items-center justify-center">
+              <img src="media/information.svg" alt="Information button"
+                onclick="displayTooltip('copyDataButton', 'devTools')">
+            </span>
+            <span class="flex items-center justify-center">
+              <img src="media/information.svg" alt="Information button"
+                onclick="displayTooltip('clearButton', 'devTools')">
+            </span>
           </div>
         </div>
       </div>

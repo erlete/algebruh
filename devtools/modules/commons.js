@@ -1,5 +1,19 @@
-const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
 const DATABASE_PATH = "../src/databases/questions.json";
+
+const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
+
+const INFO = {
+    "devTools": {
+        "input": "Aquí deberás escribir la pregunta que quieras editar. Intenta que sea lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la pregunta, mayor será la probabilidad de obtener un resultado satisfactorio.",
+        "match": "Aquí podrás ver la coincidencia de la base de datos más parecida a la pregunta que has introducido.",
+        "confidence": "Aquí podrás ver el porcentaje de coincidencia de tu búsqueda con la mejor coincidencia encontrada en la base de datos.",
+        "answer": "Este campo contiene la respuesta a la coincidencia encontrada en la base de datos.",
+        "explanation": "Este campo contiene la explicación de la respuesta. En caso de que no haya explicación, déjalo en blanco.",
+        "processDataButton": "Con este botón deberás procesar los datos cada vez que modifiques los datos de una búsqueda.\n\nSi no se procesan los cambios, no se guardarán.",
+        "copyDataButton": "Con este botón podrás copiar los datos modificados en formato JSON.\n\nPosteriormente, deberas pegar los datos copiados en el archivo JSON de las preguntas, sustituyendo todods los contenidos anteriores.",
+        "clearButton": "Con este botón podrás limpiar tu búsqueda actual.\n\nNo se borrarán los datos procesados previamente."
+    }
+}
 
 // Data fetching functions:
 
@@ -107,3 +121,24 @@ function getFormattedData(text, confidenceThreshold) {
         "explanation": formatExplanation(bestMatch.explanation)
     }
 };
+
+// Auxiliary functions:
+
+/**
+ * Display tooltip with information for the given element and page.
+ * @date 8/12/2023 - 3:35:21 AM
+ *
+ * @param {string} elementID - ID of the element to display tooltip for.
+ * @param {string} pageID - ID of the page where the element is located.
+ */
+function displayTooltip(elementID, pageID) {
+    if (Object.keys(INFO).includes(pageID)) {
+        if (Object.keys(INFO[pageID]).includes(elementID)) {
+            alert(INFO[pageID][elementID]);
+        } else {
+            console.warn(`No info for element ${elementID} in page ${pageID}`);
+        }
+    } else {
+        console.warn(`No info for page ${pageID}`);
+    }
+}
