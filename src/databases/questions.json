@@ -951,11 +951,11 @@
         "answer": true,
         "explanation": null
     },
-    "Dados los vectores vj,...,Vp en R\u2099, el conjunto de todas las combinaciones lineales de estos vectores es un subespacio vectorial de R\u2099.": {
+    "Dados los vectores (vj,...,Vp) en R\u207f, el conjunto de todas las combinaciones lineales de estos vectores es un subespacio vectorial de R\u207f.": {
         "answer": true,
         "explanation": null
     },
-    "El espacio nulo de una matriz m x n es un subespacio vectorial de R\u2099.": {
+    "El espacio nulo de una matriz m x n es un subespacio vectorial de R\u207f.": {
         "answer": true,
         "explanation": null
     },
@@ -963,7 +963,7 @@
         "answer": false,
         "explanation": null
     },
-    "Las columnas de una matriz inversible n x n forman una base para R\u2099.": {
+    "Las columnas de una matriz inversible n x n forman una base para R\u207f.": {
         "answer": true,
         "explanation": null
     },
@@ -991,7 +991,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si x está en V y si la base B de V tiene n vectores, entonces [x|z] está en R”.": {
+    "Si x está en V y si la base B de V tiene n vectores, entonces [x | z] está en R\u207f.": {
         "answer": true,
         "explanation": null
     },
@@ -999,11 +999,11 @@
         "answer": false,
         "explanation": null
     },
-    "Si la base B de V tiene 3 elementos, entonces V y R\u2099 son isomorfos.": {
+    "Si la base B de V tiene 3 elementos, entonces V y R\u207f son isomorfos.": {
         "answer": true,
         "explanation": null
     },
-    "Si B es la base canónica de R\u2099 entonces el vector de coordenadas de un x de R\u2099 relativas a B es el propio x .": {
+    "Si B es la base canónica de R\u207f entonces el vector de coordenadas de un x de R\u207f relativas a B es el propio x .": {
         "answer": true,
         "explanation": null
     },
@@ -1019,7 +1019,7 @@
         "answer": true,
         "explanation": null
     },
-    "Cada recta en R\u2099 es un subespacio vectorial unidimensional de R\u2099.": {
+    "Cada recta en R\u207f es un subespacio vectorial unidimensional de R\u207f.": {
         "answer": false,
         "explanation": null
     },
@@ -1031,7 +1031,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si un conjunto de p vectores genera un subespacio p-dimensional H de R\u2099, entonces estos vectores forman una base para H.": {
+    "Si un conjunto de p vectores genera un subespacio p-dimensional H de R\u207f, entonces estos vectores forman una base para H.": {
         "answer": true,
         "explanation": null
     },
@@ -1039,7 +1039,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si B= {v,.. Vp} es una base para un subespacio H de R\u2099, entonces la correspondencia x \u2194 [x]z hace que H se vea y actúe igual que R?.": {
+    "Si B= {v,.. Vp} es una base para un subespacio H de R\u207f, entonces la correspondencia x \u2194 [x]z hace que H se vea y actúe igual que R?.": {
         "answer": true,
         "explanation": null
     },
@@ -1099,7 +1099,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si V = R\u2099 y C es la base canónica de R\u2099, entonces Pe. es la matriz de la función de coordenadas x \u2194 [x].": {
+    "Si V = R\u207f y C es la base canónica de R\u207f, entonces Pe. es la matriz de la función de coordenadas x \u2194 [x].": {
         "answer": false,
         "explanation": null
     },
@@ -1111,27 +1111,27 @@
         "answer": false,
         "explanation": null
     },
-    "Las columnas de cualquier matriz inversible n x n forman una base de R\u2099.": {
+    "Las columnas de cualquier matriz inversible n x n forman una base de R\u207f.": {
         "answer": true,
         "explanation": null
     },
-    "La base canónica de R\u2099 es la matriz identidad n x n, In.": {
+    "La base canónica de R\u207f es la matriz identidad n x n, In.": {
         "answer": false,
         "explanation": null
     },
-    "El vector de R\u2099 denotado e; es la i-ésima columna de la matriz identidad I,,.": {
+    "El vector de R\u207f denotado e; es la i-ésima columna de la matriz identidad I,,.": {
         "answer": true,
         "explanation": null
     },
-    "Cada vector v € R\u2099 es su propio vector de coordenadas respecto a la base canénica de R\u2099.": {
+    "Cada vector v € R\u207f es su propio vector de coordenadas respecto a la base canénica de R\u207f.": {
         "answer": true,
         "explanation": null
     },
-    "Si B = {vj,...,Wnf} es una base de R\u2099 entonces para todo i = (1,...,n) el vector de coordenadas de v; respecto a la base B es e;: [vj] = e;-": {
+    "Si B = {vj,...,Wnf} es una base de R\u207f entonces para todo i = (1,...,n) el vector de coordenadas de v; respecto a la base B es e;: [vj] = e;-": {
         "answer": true,
         "explanation": null
     },
-    "Si V es un espacio vectorial cuya dimensión es 1, entonces para cualquier base B de V, el vector de coordenadas [x] es un vector de R\u2099.": {
+    "Si V es un espacio vectorial cuya dimensión es 1, entonces para cualquier base B de V, el vector de coordenadas [x] es un vector de R\u207f.": {
         "answer": true,
         "explanation": null
     },
@@ -1143,15 +1143,15 @@
         "answer": true,
         "explanation": null
     },
-    "Si A = |v, ... vn] es una matriz cuadrada inversible y B es el conjunto formado por las columnas de A (B = {vj,...,Vn}) entonces B es una base de R\u2099 y A es la matriz de cambio de base de la base canónica de R\u2099 a B.": {
+    "Si A = |v, ... vn] es una matriz cuadrada inversible y B es el conjunto formado por las columnas de A (B = {vj,...,Vn}) entonces B es una base de R\u207f y A es la matriz de cambio de base de la base canónica de R\u207f a B.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz cuadrada inversible y B es el conjunto formado por las columnas de A, entonces B es una base de R\u2099 y para todo vector x de R” se cumple {x]z = A~!x.": {
+    "Si A es una matriz cuadrada inversible y B es el conjunto formado por las columnas de A, entonces B es una base de R\u207f y para todo vector x de R\u207f se cumple {x]z = A\u207B\u00b9x.": {
         "answer": true,
         "explanation": null
     },
-    "Si B es la base canónica de R\u2099 entonces para cada x € R\u2099 se cumple [x]g = x.": {
+    "Si B es la base canónica de R\u207f entonces para cada x € R\u207f se cumple [x]g = x.": {
         "answer": true,
         "explanation": null
     },
@@ -1163,7 +1163,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si B = {bi,b2}, y C = {c1,c2} son bases de R\u2099, entonces la forma escalonada reducida de la matriz [cy ¢ b; bz] es una matriz [I P] donde P tiene la propiedad [x]¢ = P [x] para todo x en R?.": {
+    "Si B = {bi,b2}, y C = {c1,c2} son bases de R\u207f, entonces la forma escalonada reducida de la matriz [cy ¢ b; bz] es una matriz [I P] donde P tiene la propiedad [x]¢ = P [x] para todo x en R?.": {
         "answer": true,
         "explanation": null
     },
@@ -1235,7 +1235,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si A es 1 x ny R\u2099 tiene una base de vectores propios de A, entonces A es diagonalizable.": {
+    "Si A es 1 x ny R\u207f tiene una base de vectores propios de A, entonces A es diagonalizable.": {
         "answer": true,
         "explanation": null
     },
@@ -1283,15 +1283,15 @@
         "answer": true,
         "explanation": null
     },
-    "Si A es diagonalizable y P es inversible entonces la matriz D = P\u207B\u2071AP es diagonal.": {
+    "Si A es diagonalizable y P es inversible entonces la matriz D = P\u207B\u00b9AP es diagonal.": {
         "answer": false,
         "explanation": null
     },
-    "A es diagonalizable si A = PDP\u207B\u2071 para alguna matriz D y alguna matriz inversible P.": {
+    "A es diagonalizable si A = PDP\u207B\u00b9 para alguna matriz D y alguna matriz inversible P.": {
         "answer": false,
         "explanation": null
     },
-    "Si R\u2099 tiene una base de vectores propios de A, entonces A es diagonalizable.": {
+    "Si R\u207f tiene una base de vectores propios de A, entonces A es diagonalizable.": {
         "answer": true,
         "explanation": null
     },
@@ -1319,7 +1319,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz inversible y 1 es un valor propio de A, entonces 1 también es un valor propio de A\u207B\u2071.": {
+    "Si A es una matriz inversible y 1 es un valor propio de A, entonces 1 también es un valor propio de A\u207B\u00b9.": {
         "answer": true,
         "explanation": null
     },
@@ -1359,11 +1359,11 @@
         "answer": false,
         "explanation": null
     },
-    "Una matriz n x n, A, es diagonalizable si y sólo si hay una base en R\u2099 respecto a la cual la matriz de la aplicaci6n lineal T(x) = Ax es una matriz diagonal.": {
+    "Una matriz n x n, A, es diagonalizable si y sólo si hay una base en R\u207f respecto a la cual la matriz de la aplicaci6n lineal T(x) = Ax es una matriz diagonal.": {
         "answer": true,
         "explanation": null
     },
-    "Si cada vector e; de la base canónica de R\u2099 es un vector propio de A, entonces A es una matriz diagonal.": {
+    "Si cada vector e; de la base canónica de R\u207f es un vector propio de A, entonces A es una matriz diagonal.": {
         "answer": true,
         "explanation": null
     },
@@ -1387,7 +1387,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz n x n diagonalizable entonces cada vector de R\u2099 puede escribirse como una combinación lineal de vectores propios de A.": {
+    "Si A es una matriz n x n diagonalizable entonces cada vector de R\u207f puede escribirse como una combinación lineal de vectores propios de A.": {
         "answer": true,
         "explanation": null
     },
@@ -1395,7 +1395,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz n x n entonces A\u2099 puede escribirse como una combinación lineal de potencias mas bajas de A.": {
+    "Si A es una matriz n x n entonces A\u207f puede escribirse como una combinación lineal de potencias mas bajas de A.": {
         "answer": true,
         "explanation": null
     },
@@ -1439,7 +1439,7 @@
         "answer": true,
         "explanation": null
     },
-    "No todo conjunto ortogonal de R\u2099 es libre.": {
+    "No todo conjunto ortogonal de R\u207f es libre.": {
         "answer": true,
         "explanation": null
     },
@@ -1455,11 +1455,11 @@
         "answer": false,
         "explanation": null
     },
-    "Si L es una recta por el origen e yj es la proyección ortogonal de y sobre L, entonces ||y || es la distancia de y a L.": {
+    "Si L es una recta por el origen e y j es la proyección ortogonal de y sobre L, entonces ||y || es la distancia de y a L.": {
         "answer": false,
         "explanation": null
     },
-    "No todo conjunto de vectores de R\u2099 linealmente independientes es ortogonal.": {
+    "No todo conjunto de vectores de R\u207f linealmente independientes es ortogonal.": {
         "answer": true,
         "explanation": null
     },
@@ -1487,7 +1487,7 @@
         "answer": true,
         "explanation": null
     },
-    "La proyeccion ortogonal de y sobre un subespacio W de R\u2099 puede depender en algunos casos de la base ortogonal de W usada para calcularla.": {
+    "La proyeccion ortogonal de y sobre un subespacio W de R\u207f puede depender en algunos casos de la base ortogonal de W usada para calcularla.": {
         "answer": false,
         "explanation": null
     },
@@ -1495,11 +1495,11 @@
         "answer": true,
         "explanation": null
     },
-    "Si las columnas de una matriz 1 x p, U, son ortonormales entonces uutly es la proyeccién ortogonal de y sobre el espacio columna de U.": {
+    "Si las columnas de una matriz 1 x p, U, son ortonormales entonces uuTly es la proyección ortogonal de y sobre el espacio columna de U.": {
         "answer": true,
         "explanation": null
     },
-    "Si W es un subespacio de R\u2099 y v pertenece tanto a W como a W\u207B\u2071, entonces v es el vector cero.": {
+    "Si W es un subespacio de R\u207f y v pertenece tanto a W como a W\u207B\u00b9, entonces v es el vector cero.": {
         "answer": true,
         "explanation": null
     },
@@ -1543,15 +1543,15 @@
         "answer": true,
         "explanation": null
     },
-    "Si L es una recta de R\u2099 que pasa por el origen y si vy es la proyección ortogonal de v sobre L entonces ||v — vy|| es la distancia de v a L.": {
+    "Si L es una recta de R\u207f que pasa por el origen y si vy es la proyección ortogonal de v sobre L entonces ||v — vy|| es la distancia de v a L.": {
         "answer": true,
         "explanation": null
     },
-    "Si un vector x € R\u2099 no pertenece a un subespacio H C R\u2099 entonces x — proy;;(x) no puede ser cero.": {
+    "Si un vector x € R\u207f no pertenece a un subespacio H C R\u207f entonces x — proy;;(x) no puede ser cero.": {
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz m x n, entonces todo vector x € R\u2099 se puede poner como suma x = p+u donde p € FilA y u € Nul A.": {
+    "Si A es una matriz m x n, entonces todo vector x € R\u207f se puede poner como suma x = p+u donde p € FilA y u € Nul A.": {
         "answer": true,
         "explanation": null
     },
@@ -1587,7 +1587,7 @@
         "answer": true,
         "explanation": null
     },
-    "Una solución del problema de mínimos cuadrados de Ax = b es un vector & tal que \\|b — Ax|| < ||b — Afi|| para todo x € R\u2099.": {
+    "Una solución del problema de mínimos cuadrados de Ax = b es un vector & tal que \\|b — Ax|| < ||b — Afi|| para todo x € R\u207f.": {
         "answer": false,
         "explanation": null
     },
@@ -1619,7 +1619,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si A tiene una factorización QR, A = QR, entonces la mejor forma de hallar la solución del problema de mínimos cuadrados de Ax = b es calcular X = R\u207B\u2071QTb.": {
+    "Si A tiene una factorización QR, A = QR, entonces la mejor forma de hallar la solución del problema de mínimos cuadrados de Ax = b es calcular X = R\u207B\u00b9QTb.": {
         "answer": true,
         "explanation": "En este caso, como Q traspuesta por Q es la identidad, las ecuaciones normales son equivalentes al sistema \"(R traspuesta) por R por x\" = \"(R traspuesta) por (Q traspuesta) por b\". Pero R (y R traspuesta) es inversible, por lo que la soluci ón es la indicada."
     },
@@ -1631,11 +1631,11 @@
         "answer": true,
         "explanation": null
     },
-    "Si L es una recta de R\u2099 que pasa por el origen y si vy es la proyección ortogonal de v sobre L entonees ||v — vy|| es la distancia de v a L.": {
+    "Si L es una recta de R\u207f que pasa por el origen y si vy es la proyección ortogonal de v sobre L entonees ||v — vy|| es la distancia de v a L.": {
         "answer": true,
         "explanation": null
     },
-    "Si un vector x € R\u2099 no pertenece a un subespacio H C R\" entonces x — proy;,;( ser cero.  ) no puede": {
+    "Si un vector x € R\u207f no pertenece a un subespacio H C R\u207f entonces x — proy;,;( ser cero.  ) no puede": {
         "answer": true,
         "explanation": null
     },
@@ -1659,11 +1659,11 @@
         "answer": false,
         "explanation": null
     },
-    "Si v es un vector no nulo de R\u2099, la matriz vv\u2099 es una matriz de proyección.": {
+    "Si v es un vector no nulo de R\u207f, la matriz vv\u207f es una matriz de proyección.": {
         "answer": false,
         "explanation": null
     },
-    "Si B = PDP\u207B\u2071 donde D es una matriz diagonal y P ortogonal, entonces B es simétrica.": {
+    "Si B = PDP\u207B\u00b9 donde D es una matriz diagonal y P ortogonal, entonces B es simétrica.": {
         "answer": true,
         "explanation": null
     },
@@ -1675,15 +1675,15 @@
         "answer": true,
         "explanation": null
     },
-    "Para cualquier matriz simétrica n x n, A, si x,y € R\u2099 entonces (Ax)-y = x-(Ay).": {
+    "Para cualquier matriz simétrica n x n, A, si x,y € R\u207f entonces (Ax)-y = x-(Ay).": {
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz simétrica y B es cualquier matriz tal que BA existe, entonces B'AB es una matriz simétrica.": {
+    "Si A es una matriz simétrica y B es cualquier matriz tal que BA existe, entonces B\u207B\u00b9AB es una matriz simétrica.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz ortogonalmente diagonalizable e inversible entonces A\u207B\u2071 también es ortogonalmente diagonalizable.": {
+    "Si A es una matriz ortogonalmente diagonalizable e inversible entonces A\u207B\u00b9 también es ortogonalmente diagonalizable.": {
         "answer": true,
         "explanation": null
     },
@@ -1703,7 +1703,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si v es un vector no nulo de R\u2099, entonces vv! es una matriz n x 1 de rango igual a 1.": {
+    "Si v es un vector no nulo de R\u207f, entonces vv! es una matriz n x 1 de rango igual a 1.": {
         "answer": true,
         "explanation": null
     },
@@ -1715,7 +1715,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si B = PDP\u207B\u2071 donde D es una matriz diagonal entonces B es una matriz simétrica.": {
+    "Si B = PDP\u207B\u00b9 donde D es una matriz diagonal entonces B es una matriz simétrica.": {
         "answer": false,
         "explanation": null
     },
@@ -1723,7 +1723,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si u es un vector unitario de R\u2099 y B = uuT entonces para todo vector x € R\u2099 sin excepción, Bx es la proyección ortogonal de x sobre u.": {
+    "Si u es un vector unitario de R\u207f y B = uuT entonces para todo vector x € R\u207f sin excepción, Bx es la proyección ortogonal de x sobre u.": {
         "answer": true,
         "explanation": null
     },
@@ -1735,15 +1735,15 @@
         "answer": true,
         "explanation": null
     },
-    "Para toda matriz A los ejes principales de la forma cuadrática x\" Ax son vectores propios de A.": {
+    "Para toda matriz A los ejes principales de la forma cuadrática xT Ax son vectores propios de A.": {
         "answer": false,
         "explanation": null
     },
-    "Una forma cuadrática definida positiva, Q, satisface Q(x) > 0 para todo vector x de R\".": {
+    "Una forma cuadrática definida positiva, Q, satisface Q(x) > 0 para todo vector x de R\u207f.": {
         "answer": false,
         "explanation": null
     },
-    "Si los autovalores de una matriz simétrica A son todos positivos, entonces la forma cuadrática x! Ax es definida positiva.": {
+    "Si los autovalores de una matriz simétrica A son todos positivos, entonces la forma cuadrática xT Ax es definida positiva.": {
         "answer": true,
         "explanation": null
     },
@@ -1755,11 +1755,11 @@
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz simétrica y P una matriz ortogonal, entonces el cambio de variable x = Py transforma x! Ax en una forma cuadratica sin términos de productos cruzados.": {
+    "Si A es una matriz simétrica y P una matriz ortogonal, entonces el cambio de variable x = Py transforma xT Ax en una forma cuadratica sin términos de productos cruzados.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz simétrica 2 x 2, entonces el conjunto de vectores x tales que x! Ax = c (para un número c dado) corresponde a una circunferencia 0 a una elipse o a una hipérbola.": {
+    "Si A es una matriz simétrica 2 x 2, entonces el conjunto de vectores x tales que xT Ax = c (para un número c dado) corresponde a una circunferencia 0 a una elipse o a una hipérbola.": {
         "answer": false,
         "explanation": null
     },
@@ -1767,7 +1767,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz simétrica y todos los valores de la forma cuadrática xT Ax son negativos para x # 0, entonces los autovalores de A son todos negativos.": {
+    "Si A es una matriz simétrica y todos los valores de la forma cuadrática xT Ax son negativos para x \u2260 0, entonces los autovalores de A son todos negativos.": {
         "answer": true,
         "explanation": null
     },
@@ -1779,11 +1779,11 @@
         "answer": false,
         "explanation": null
     },
-    "Si q es una forma cuadrática en R\u2099 y q es definida positiva, entonces q satisface q(x) > 0 para todo x € R\u2099.": {
+    "Si q es una forma cuadrática en R\u207f y q es definida positiva, entonces q satisface q(x) > 0 para todo x € R\u207f.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es la matriz de una forma cuadrática q(x) en R\u2099 y xT Ax > 0 para algún vector x € R\u2099 entonces q(x) es una forma cuadrática definida positiva.": {
+    "Si A es la matriz de una forma cuadrática q(x) en R\u207f y xT Ax > 0 para algún vector x € R\u207f entonces q(x) es una forma cuadrática definida positiva.": {
         "answer": false,
         "explanation": null
     },
@@ -1795,7 +1795,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si A es simétrica y P es ortogonal, el cambio de variable x = Pu transforma la forma cuadratica xT A x en una forma cuadrática cuya matriz es P\u207B\u2071 AP.": {
+    "Si A es simétrica y P es ortogonal, el cambio de variable x = Pu transforma la forma cuadratica xT A x en una forma cuadrática cuya matriz es P\u207B\u00b9 AP.": {
         "answer": true,
         "explanation": null
     },
@@ -1847,19 +1847,19 @@
         "answer": true,
         "explanation": null
     },
-    "Dados los vectores v1,...,Vp en R”, el conjunto de todas las combinaciones lineales de estos vectores es un subespacio de R”.": {
+    "Dados los vectores v1,...,Vp en R\u207f, el conjunto de todas las combinaciones lineales de estos vectores es un subespacio de R\u207f.": {
         "answer": true,
         "explanation": null
     },
-    "El conjunto de todas las soluciones de un sistema de m ecuaciones homogéneas con n incógnitas es un subespacio de R\u2099.": {
+    "El conjunto de todas las soluciones de un sistema de m ecuaciones homogéneas con n incógnitas es un subespacio de R\u207f.": {
         "answer": false,
         "explanation": null
     },
-    "Un subespacio de R\u2099 es cualquier conjunto H tal que (i) el vector cero está en H, (ii) si u y v están en H, u+v está en H, y (iii) sic es un número y u esté en H, cu esta en H.": {
+    "Un subespacio de R\u207f es cualquier conjunto H tal que (i) el vector cero está en H, (ii) si u y v están en H, u+v está en H, y (iii) sic es un número y u esté en H, cu esta en H.": {
         "answer": false,
         "explanation": null
     },
-    "Si x es un vector de un espacio vectorial V y si B es una base de V que tiene n vectores entonces [x] es un vector de R\u2099.": {
+    "Si x es un vector de un espacio vectorial V y si B es una base de V que tiene n vectores entonces [x] es un vector de R\u207f.": {
         "answer": true,
         "explanation": null
     },
@@ -1867,7 +1867,7 @@
         "answer": false,
         "explanation": null
     },
-    "A es una matriz m x n y la ecuacién Ax = b es compatible entonces Col A es igual aR”.": {
+    "A es una matriz m x n y la ecuacién Ax = b es compatible entonces Col A es igual a R\u207f.": {
         "answer": false,
         "explanation": null
     },
@@ -1875,11 +1875,11 @@
         "answer": true,
         "explanation": null
     },
-    "Si B es la base canónica de R\u2099 entonces el vector de coordenadas de un x de R\u2099 relativas a B es el propio x.": {
+    "Si B es la base canónica de R\u207f entonces el vector de coordenadas de un x de R\u207f relativas a B es el propio x.": {
         "answer": true,
         "explanation": null
     },
-    "Si B= {vi,..., vp} es una base de un subespacio H de R”, entonces la correspondencia x ++ [x]p hace que H se vea y actúe igual que R?.": {
+    "Si B= {vi,..., vp} es una base de un subespacio H de R\u207f, entonces la correspondencia x \u2194 [x]p hace que H se vea y actúe igual que R?.": {
         "answer": true,
         "explanation": null
     },
@@ -1887,11 +1887,11 @@
         "answer": true,
         "explanation": null
     },
-    "Las columnas de una matriz inversible n x n forman una base de R\u2099.": {
+    "Las columnas de una matriz inversible n x n forman una base de R\u207f.": {
         "answer": true,
         "explanation": null
     },
-    "El espacio nulo de una matriz m x n es un subespacio de R\u2099.": {
+    "El espacio nulo de una matriz m x n es un subespacio de R\u207f.": {
         "answer": true,
         "explanation": null
     },
@@ -1899,7 +1899,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si B = {vi,..., vn} es una base de R\u2099 entonces para todo i = 1,..., n el vector de coordenadas de vj respecto a la base B es e;: [vig = ei.": {
+    "Si B = {vi,..., vn} es una base de R\u207f entonces para todo i = 1,..., n el vector de coordenadas de vj respecto a la base B es e;: [vig = ei.": {
         "answer": true,
         "explanation": null
     }
