@@ -24,6 +24,10 @@ _The application is only available for the Windows x64 OS. Further implementatio
 
 Versions up to [v1.1.0-legacy](https://github.com/erlete/algebruh/releases/tag/v1.1.0-legacy) (included) are deprecated and kept as legacy code. There will be no active support for said versions. Issues related to them will be automatically discarded and PRs might not be reviewed.
 
+## Contributions
+
+Any contributions to the project are more than welcome! The rules for each kind of contribution are described in the [CONTRIBUTING.md](./CONTRIBUTING.md) file. Feel free to check them out anytime.
+
 ## Disclaimer
 
 **This software serves as educative tool for the author, as well as a method for users to learn how to answer algebra questions correctly. The software is provided "as is", without warranty of any kind, and shall not be related to any external entities, their products and/or activities.**

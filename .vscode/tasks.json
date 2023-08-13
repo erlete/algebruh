@@ -22,6 +22,26 @@
 			}
 		},
 		{
+			"label": "[DevTools] PHP: Start local server",
+			"type": "shell",
+			"windows": {
+				"command": "echo Site available at http://localhost:8889/devtools/index.html && php",
+				"args": [
+					"-S",
+					"localhost:8889"
+				]
+			},
+			"detail": "Start a PHP local server for content preview.",
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			}
+		},
+		{
 			"type": "npm",
 			"script": "make",
 			"problemMatcher": [],
@@ -83,6 +103,42 @@
 					".\\src\\styles\\template.css",
 					"-o",
 					".\\src\\styles\\output.css"
+				]
+			},
+			"problemMatcher": [],
+			"detail": "Compile Tailwind CSS output file"
+		},
+		{
+			"label": "[DevTools] CSS: Compile",
+			"type": "shell",
+			"osx": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					"./devtools/styles/template.css",
+					"-o",
+					"./devtools/styles/output.css"
+				]
+			},
+			"linux": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					"./devtools/styles/template.css",
+					"-o",
+					"./devtools/styles/output.css"
+				]
+			},
+			"windows": {
+				"command": "npx",
+				"args": [
+					"tailwindcss",
+					"-i",
+					".\\devtools\\styles\\template.css",
+					"-o",
+					".\\devtools\\styles\\output.css"
 				]
 			},
 			"problemMatcher": [],
