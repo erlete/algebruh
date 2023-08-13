@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full prevent-select">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Algebruh - Developer Mode</title>
+
+    <link rel="stylesheet" href="../src/styles/output.css">
+    <script defer src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <script src="../src/modules/difflib-browser.js"></script>
+    <script src="commons.js"></script>
+</head>
+
+<body class="h-full items-center bg-gray-200">
+    <div>
+        Input:
+        <input id="input" type="text" oninput="getResults()">
+    </div>
+
+    <div>
+        Confidence:
+        <p id="confidence"></p>
+    </div>
+
+    <div>
+        Text:
+        <input id="match" type="text">
+    </div>
+
+    <div>
+        Answer:
+        <!-- Create a form that contains two single-selection boxes: true and false -->
+        <form id="answer">
+            <input type="radio" id="true" name="truefalse" value="true">
+            <label for="true">True</label><br>
+            <input type="radio" id="false" name="truefalse" value="false">
+            <label for="false">False</label><br>
+        </form>
+    </div>
+
+    <div>
+        Explanation:
+        <input id="explanation" type="text">
+    </div>
+
+    <div>
+        <button id="submit" type="button" onclick="processData()">Procesar</button>
+    </div>
+
+    <div>
+        <button id="preview" type="button" onclick="copyData()">Copiar</button>
+    </div>
+
+    <div>
+        <button id="clear" type="button" onclick="resetView()">Limpiar</button>
+    </div>
+</body>
+
+</html>
