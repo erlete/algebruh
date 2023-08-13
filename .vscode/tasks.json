@@ -22,6 +22,26 @@
 			}
 		},
 		{
+			"label": "PHP: Start local server (DevTools mode)",
+			"type": "shell",
+			"windows": {
+				"command": "cd devtools && php",
+				"args": [
+					"-S",
+					"localhost:8889"
+				]
+			},
+			"detail": "Start a PHP local server for content preview.",
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			}
+		},
+		{
 			"type": "npm",
 			"script": "make",
 			"problemMatcher": [],
