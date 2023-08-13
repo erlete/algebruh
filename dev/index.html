@@ -2,62 +2,131 @@
 <html lang="es" class="h-full prevent-select">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Algebruh - Developer Mode</title>
+  <title>Algebruh - Developer Mode</title>
 
-    <link rel="stylesheet" href="../src/styles/output.css">
-    <script defer src="index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
-    <script src="../src/modules/difflib-browser.js"></script>
-    <script src="commons.js"></script>
+  <link rel="stylesheet" href="../src/styles/output.css">
+  <script defer src="index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+  <script src="../src/modules/difflib-browser.js"></script>
+  <script src="commons.js"></script>
 </head>
 
 <body class="h-full items-center bg-gray-200">
-    <div>
-        Input:
-        <input id="input" type="text" oninput="getResults()">
-    </div>
+  <main class="grid bg-gray-200">
+    <div class="py-6">
+      <div class="mx-12">
+        <!-- Input: -->
+        <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
+          <div class="px-4 py-5 sm:px-6 shadow-inner">
+            <h3 class="text-base font-bold tracking-tigh leading-6 text-gray-900">Buscador por texto</h3>
+          </div>
 
-    <div>
-        Confidence:
-        <p id="confidence"></p>
-    </div>
+          <div class="border-t border-gray-200">
+            <!-- Text input: -->
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('input', 'textSolver')">
+                  <img src="information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Búsqueda</b>
+              </dt>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <input type="text" name="input" id="input" oninput="getResults()"
+                  class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm"
+                  placeholder="Escribe aquí tu pregunta">
+              </dd>
+            </div>
 
-    <div>
-        Text:
-        <input id="match" type="text">
-    </div>
+            <!-- Confidence: -->
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block text-base" onclick="displayTooltip('confidence', 'textSolver')">
+                  <img src="information.svg" alt="Information button">
+                </span>
+                <b>Confianza</b>
+              </dt>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0" id="confidence"></dd>
+            </div>
+          </div>
+        </div>
 
-    <div>
-        Answer:
-        <!-- Create a form that contains two single-selection boxes: true and false -->
-        <form id="answer">
-            <input type="radio" id="true" name="truefalse" value="true">
-            <label for="true">True</label><br>
-            <input type="radio" id="false" name="truefalse" value="false">
-            <label for="false">False</label><br>
-        </form>
-    </div>
+        <!-- Output: -->
+        <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
+          <div class="px-4 py-5 sm:px-6 shadow-inner">
+            <h3 class="text-base font-bold leading-6 text-gray-900">Editor de pregunta</h3>
+          </div>
 
-    <div>
-        Explanation:
-        <input id="explanation" type="text">
-    </div>
+          <div class="border-t border-gray-200">
+            <!-- Match: -->
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('input', 'textSolver')">
+                  <img src="information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Enunciado</b>
+              </dt>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <input type="text" name="match" id="match"
+                  class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+              </dd>
+            </div>
 
-    <div>
-        <button id="submit" type="button" onclick="processData()">Procesar</button>
-    </div>
+            <!-- Answer: -->
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('answer', 'textSolver')">
+                  <img src="information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Respuesta</b>
+              </dt>
+              <dd></dd>
+              <form id="answer">
+                <dd class="text-sm text-gray-900 sm:mt-0">
+                  <input type="radio" id="true" name="truefalse" value="true">
+                  <label for="true">Verdadero</label><br>
+                  <input type="radio" id="false" name="truefalse" value="false">
+                  <label for="false">Falso</label><br>
+                </dd>
+              </form>
+            </div>
 
-    <div>
-        <button id="preview" type="button" onclick="copyData()">Copiar</button>
-    </div>
+            <!-- Explanation: -->
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+                <span class="inline-block" onclick="displayTooltip('input', 'textSolver')">
+                  <img src="information.svg" alt="Information button">
+                </span>
+                <b class="mt-0.5">Explanation</b>
+              </dt>
+              <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                <input type="text" name="explanation" id="explanation"
+                  class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+              </dd>
+            </div>
+          </div>
+        </div>
 
-    <div>
-        <button id="clear" type="button" onclick="resetView()">Limpiar</button>
+        <!-- Control buttons: -->
+        <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
+          <div class="px-4 py-5 sm:px-6 shadow-inner sm:grid sm:grid-cols-3 sm:gap-8 sm:px-6 shadow-inner">
+            <a id="submit" onclick="processData()"
+              class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Procesar
+              datos</a>
+            <a id="preview" onclick="copyData()"
+              class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Copiar
+              datos</a>
+            <a id="clear" onclick="resetView()"
+              class="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700">Limpiar
+              formulario</a>
+          </div>
+        </div>
+      </div>
     </div>
+  </main>
 </body>
 
 </html>
