@@ -123,15 +123,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si u y v son vectores distintos ambos no nulos, Gen{u, v} contiene la recta que pasa por u y por v.": {
-        "answer": true,
-        "explanation": null
-    },
     "Preguntar si el sistema correspondiente a una matriz ampliada |a1 a2 a3 b| tiene alguna solución es lo mismo que preguntar si b esta en el conjunto generado Gen{a1, a2, a3}.": {
-        "answer": true,
-        "explanation": null
-    },
-    "Si la ecuación Ax = b es incompatible, entonces b no esta en el conjunto generado por las columnas de A.": {
         "answer": true,
         "explanation": null
     },
@@ -292,10 +284,6 @@
         "explanation": null
     },
     "Las columnas de una matriz A son linealmente independientes si la ecuación A x = 0 tiene la solucion trivial.": {
-        "answer": false,
-        "explanation": null
-    },
-    "Si S es un conjunto de vectores ligado (los vectores de S son linealmente dependientes), entonces cada vector de S es una combinación lineal de los otros vectores en S.": {
         "answer": false,
         "explanation": null
     },
@@ -471,39 +459,39 @@
         "answer": false,
         "explanation": null
     },
-    "Una transformaci6n T es lineal si, y solo si, T(cjvy + c2v2) = cyT (vi) + c2T (v2) para todo vi y V2 en el dominio de T y para todos los ntimeros cy y c2.": {
+    "Una transformación T es lineal si, y solo si, T(c1v1 + c2v2) = c1 T(v1) + c2 T(v2) para todo v1 y V2 en el dominio de T y para todos los números c1 y c2.": {
         "answer": true,
         "explanation": null
     },
-    "Toda transformaci6én matricial es una transformacién lineal.": {
+    "Toda transformación matricial es una transformación lineal.": {
         "answer": true,
         "explanation": null
     },
-    "SiT: R* + R* gira los vectores del plano alrededor del origen en un angulo ¢, entonces T es una aplicacion lineal.": {
+    "Si T: R\u2099 — R\u2099 gira los vectores del plano alrededor del origen en un angulo ¢, entonces T es una aplicacion lineal.": {
         "answer": true,
         "explanation": null
     },
-    "Si T: R\" — R” es una transformaci6n lineal y b es un vector de R™, entonces una pregunta de unicidad es: ;Esta b en la imagen de T?. é Fed": {
+    "Si T: R\u2099 — R\u2099 es una transformación lineal y b es un vector de R\u2099, entonces una pregunta de unicidad es: Esta b en la imagen de T?.": {
         "answer": false,
         "explanation": null
     },
-    "Una transformaci6n lineal conserva las operaciones de suma de vectores y de multiplicacién por nimeros.": {
+    "Una transformación lineal conserva las operaciones de suma de vectores y de multiplicación por números.": {
         "answer": true,
         "explanation": null
     },
-    "El principio de superposicién es una descripcion fisica de una transformacién lineal.": {
+    "El principio de superposicién es una descripcion fisica de una transformación lineal.": {
         "answer": true,
         "explanation": null
     },
-    "Toda transformacion lineal es una transformacién matricial.": {
+    "Toda transformación lineal es una transformación matricial.": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicaci6n lineal T : R\" + R” esta completamente determinada por su efecto sobre las columnas de la matriz identidad n x n.": {
+    "Una aplicación lineal T : R\u2099 — R\u2099 esta completamente determinada por su efecto sobre las columnas de la matriz identidad n x n.": {
         "answer": true,
         "explanation": null
     },
-    "Toda aplicacién lineal T : R\" — R\" siempre lleva el origen de R” al origen de R”.": {
+    "Toda aplicacién lineal T : R\u2099 — R\u2099 siempre lleva el origen de R\u2099 al origen de R\u2099.": {
         "answer": true,
         "explanation": null
     },
@@ -511,19 +499,19 @@
         "answer": false,
         "explanation": null
     },
-    "Toda operaci6n elemental de filas que actue sobre matrices de n filas determina una aplicaci6n lineal de R\" en R”.": {
+    "Toda operación elemental de filas que actue sobre matrices de n filas determina una aplicaci6n lineal de R\u2099 en R\u2099.": {
         "answer": true,
         "explanation": null
     },
-    "En la matriz elemental correspondiente a una operacién elemental de filas todos los elementos son iguales a 10a 0.": {
+    "En la matriz elemental correspondiente a una operacién elemental de filas todos los elementos son iguales a 1 o a 0.": {
         "answer": false,
         "explanation": null
     },
-    "No toda aplicacién lineal de R” a R\" tiene por qué ser una aplicaci6n matricial.": {
+    "No toda aplicacién lineal de R\u2099 a R\u2099 tiene por qué ser una aplicaci6n matricial.": {
         "answer": false,
         "explanation": null
     },
-    "Las columnas de la matriz can6nica de una aplicacién lineal de R” a R son las imagenes de las columnas de la matriz identidad n x n.": {
+    "Las columnas de la matriz canónica de una aplicación lineal de R\u2099 a R\u2099 son las imagenes de las columnas de la matriz identidad n x n.": {
         "answer": true,
         "explanation": null
     },
@@ -531,7 +519,7 @@
         "answer": true,
         "explanation": null
     },
-    "En la matriz elemental correspondiente a una operaci6n elemental de intercambio de filas todos los elementos son iguales a 1 0 a 0.": {
+    "En la matriz elemental correspondiente a una operación elemental de intercambio de filas todos los elementos son iguales a 1 o a 0.": {
         "answer": true,
         "explanation": null
     },
@@ -543,39 +531,39 @@
         "answer": true,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es inyectiva si, y solo si, su matriz candnica tiene n columnas pivote": {
+    "Una aplicacion lineal T : R\u2099 — R\u2098 es inyectiva si, y solo si, su matriz canónica tiene n columnas pivote": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" — R\" es sobreyectiva si, y slo si, su matriz canOnica tiene m columnas pivote": {
+    "Una aplicacién lineal T : R\u2099 — R\u2098 es sobreyectiva si, y solo si, su matriz canónica tiene m columnas pivote": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es inyectiva si, y solo si, su matriz can6nica tiene m columnas pivote": {
+    "Una aplicacion lineal T : R\u2099 — R\u2098 es inyectiva si, y solo si, su matriz canónica tiene m columnas pivote": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" —> R” es sobreyectiva si, y slo si, su matriz can6nica tiene 1 columnas pivote": {
+    "Una aplicacién lineal T : R\u2099 —> R\u2098 es sobreyectiva si, y solo si, su matriz canónica tiene n columnas pivote": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" — R\" es inyectiva si, y solo si, su matriz canonica tiene un Pp. : ) J pivote en cada fila.": {
+    "Una aplicacién lineal T : R\u2099 — R\u2098 es inyectiva si, y solo si, su matriz canonica tiene un pivote en cada fila.": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" — R\" es sobreyectiva si, y sdlo si, su matriz candénica tiene un pivote en cada columna.": {
+    "Una aplicacién lineal T : R\u2099 — R\u2098 es sobreyectiva si, y sdlo si, su matriz canónica tiene un pivote en cada columna.": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es inyectiva si, y sdlo si, su matriz can6nica tiene un pivote en cada columna.": {
+    "Una aplicacion lineal T : R\u2099 — R\u2098 es inyectiva si, y solo si, su matriz canónica tiene un pivote en cada columna.": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es sobreyectiva si, y sdlo si, su matriz canoénica tiene un pivote en cada fila.": {
+    "Una aplicacion lineal T : R\u2099 — R\u2098 es sobreyectiva si, y solo si, su matriz canónica tiene un pivote en cada fila.": {
         "answer": true,
         "explanation": null
     },
-    "Si A y B son matrices de orden 2 x 2 con columnas aj, a2 y bj, bz, respectivamente, entonces AB = [a;b, agbp].": {
+    "Si A y B son matrices de orden 2 x 2 con columnas a1, a2 y b1, b2, respectivamente, entonces AB = [a;b, agbp].": {
         "answer": false,
         "explanation": null
     },
@@ -595,7 +583,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si A y B son matrices 3 x 3 y B = [b; bo bs], entonces AB = [Ab + Ab + Abs].": {
+    "Si A y B son matrices 3 x 3 y B = [b1 b2 b3], entonces AB = [Ab1 + Ab2 + Ab3].": {
         "answer": false,
         "explanation": "Debería decir A B igual a la matriz cuyas columnas son A b_1, A b_2, A b_3."
     },
@@ -603,7 +591,7 @@
         "answer": true,
         "explanation": null
     },
-    "La igualdad (AB)C = (AC)B se cumple para cualesquiera matrices A, B,C para las que los productos indicados estén definidos.": {
+    "La igualdad (AB)C = (AC)B se cumple para cualesquiera matrices A, B, C para las que los productos indicados estén definidos.": {
         "answer": false,
         "explanation": "No en general. Sólo se cumpliría si B y C conmutan."
     },
@@ -611,7 +599,7 @@
         "answer": false,
         "explanation": "Debería decir (A B) traspuesta igual a B traspuesta por A traspuesta."
     },
-    "La traspuesta de una suma de matrices orden.  s igual a la suma de sus traspuestas en el mismo": {
+    "La traspuesta de una suma de matrices es igual a la suma de sus traspuestas en el mismo orden.": {
         "answer": true,
         "explanation": null
     },
