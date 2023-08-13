@@ -2,78 +2,66 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "PHP: Start local server",
+			"label": "[Production] PHP: Start local server",
 			"type": "shell",
 			"windows": {
-				"command": "cd src && php",
+				"command": "php",
 				"args": [
 					"-S",
-					"localhost:8888"
+					"localhost:8888",
+					"-t",
+					"src"
 				]
 			},
-			"detail": "Start a PHP local server for content preview.",
+			"detail": "Start a PHP local server for the Production directory.",
+			"dependsOn": "[Internal] Production simple browser",
 			"presentation": {
 				"echo": false,
-				"reveal": "always",
+				"reveal": "silent",
 				"focus": false,
 				"panel": "dedicated",
 				"showReuseMessage": false,
 				"clear": true
-			}
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "[Internal] Production simple browser",
+			"hide": true,
+			"command": "${input:openProductionBrowser}",
+			"detail": "Open Production localhost content in simple browser.",
+			"presentation": {
+				"echo": false,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
 		},
 		{
 			"label": "[DevTools] PHP: Start local server",
 			"type": "shell",
-			"windows": {
-				"command": "echo Site available at http://localhost:8889/devtools/index.html && php",
-				"args": [
-					"-S",
-					"localhost:8889"
-				]
-			},
-			"detail": "Start a PHP local server for content preview.",
+			"command": "php",
+			"args": [
+				"-S",
+				"localhost:8889"
+			],
+			"detail": "Start a PHP local server for the DevTools directory.",
+			"dependsOn": "[Internal] DevTools simple browser",
 			"presentation": {
 				"echo": false,
-				"reveal": "always",
+				"reveal": "silent",
 				"focus": false,
 				"panel": "dedicated",
 				"showReuseMessage": false,
 				"clear": true
-			}
-		},
-		{
-			"type": "npm",
-			"script": "make",
-			"problemMatcher": [],
-			"label": "NPM: Build",
-			"detail": "Build the app with electron-forge make",
-			"group": {
-				"kind": "build",
-				"isDefault": true
 			},
-			"dependsOn": [
-				"NPM: Install",
-				"CSS: Compile"
-			],
-			"dependsOrder": "sequence"
+			"problemMatcher": []
 		},
 		{
-			"type": "npm",
-			"script": "install",
-			"group": "none",
-			"problemMatcher": [],
-			"label": "NPM: Install",
-			"detail": "Install dependencies with npm install",
-		},
-		{
-			"type": "npm",
-			"script": "start",
-			"problemMatcher": [],
-			"label": "NPM: Start",
-			"detail": "Start a live demo of the app with electron-forge start"
-		},
-		{
-			"label": "CSS: Compile",
+			"label": "[Production] Compile CSS",
 			"type": "shell",
 			"osx": {
 				"command": "npx",
@@ -105,11 +93,19 @@
 					".\\src\\styles\\output.css"
 				]
 			},
-			"problemMatcher": [],
-			"detail": "Compile Tailwind CSS output file"
+			"detail": "Compile Tailwind CSS Production output file",
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
 		},
 		{
-			"label": "[DevTools] CSS: Compile",
+			"label": "[DevTools] Compile CSS",
 			"type": "shell",
 			"osx": {
 				"command": "npx",
@@ -141,8 +137,80 @@
 					".\\devtools\\styles\\output.css"
 				]
 			},
+			"detail": "Compile Tailwind CSS DevTools output file",
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "[Internal] DevTools simple browser",
+			"hide": true,
+			"command": "echo ${input:openDevToolsBrowser}",
+			"detail": "Open DevTools localhost content in simple browser.",
+			"presentation": {
+				"echo": false,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": false
+			},
+			"problemMatcher": []
+		},
+		{
+			"type": "npm",
+			"script": "make",
 			"problemMatcher": [],
-			"detail": "Compile Tailwind CSS output file"
+			"label": "NPM: Build",
+			"detail": "Build the app with electron-forge make",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"dependsOn": [
+				"NPM: Install",
+				"CSS: Compile"
+			],
+			"dependsOrder": "sequence"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"group": "none",
+			"problemMatcher": [],
+			"label": "NPM: Install",
+			"detail": "Install dependencies with npm install",
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"problemMatcher": [],
+			"label": "NPM: Start",
+			"detail": "Start a live demo of the app with electron-forge start"
+		}
+	],
+	"inputs": [
+		{
+			"id": "openProductionBrowser",
+			"type": "command",
+			"command": "simpleBrowser.show",
+			"args": [
+				"http://localhost:8888"
+			]
+		},
+		{
+			"id": "openDevToolsBrowser",
+			"type": "command",
+			"command": "simpleBrowser.show",
+			"args": [
+				"http://localhost:8889/devtools/index.html"
+			]
 		}
 	]
 }
