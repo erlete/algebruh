@@ -61,94 +61,6 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "[Production] Compile CSS",
-			"type": "shell",
-			"osx": {
-				"command": "npx",
-				"args": [
-					"tailwindcss",
-					"-i",
-					"./src/styles/template.css",
-					"-o",
-					"./src/styles/output.css"
-				]
-			},
-			"linux": {
-				"command": "npx",
-				"args": [
-					"tailwindcss",
-					"-i",
-					"./src/styles/template.css",
-					"-o",
-					"./src/styles/output.css"
-				]
-			},
-			"windows": {
-				"command": "npx",
-				"args": [
-					"tailwindcss",
-					"-i",
-					".\\src\\styles\\template.css",
-					"-o",
-					".\\src\\styles\\output.css"
-				]
-			},
-			"detail": "Compile Tailwind CSS Production output file",
-			"presentation": {
-				"echo": false,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": false,
-				"clear": false
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "[DevTools] Compile CSS",
-			"type": "shell",
-			"osx": {
-				"command": "npx",
-				"args": [
-					"tailwindcss",
-					"-i",
-					"./devtools/styles/template.css",
-					"-o",
-					"./devtools/styles/output.css"
-				]
-			},
-			"linux": {
-				"command": "npx",
-				"args": [
-					"tailwindcss",
-					"-i",
-					"./devtools/styles/template.css",
-					"-o",
-					"./devtools/styles/output.css"
-				]
-			},
-			"windows": {
-				"command": "npx",
-				"args": [
-					"tailwindcss",
-					"-i",
-					".\\devtools\\styles\\template.css",
-					"-o",
-					".\\devtools\\styles\\output.css"
-				]
-			},
-			"detail": "Compile Tailwind CSS DevTools output file",
-			"presentation": {
-				"echo": false,
-				"reveal": "always",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": false,
-				"clear": false
-			},
-			"problemMatcher": []
-		},
-		{
 			"label": "[Internal] DevTools simple browser",
 			"hide": true,
 			"command": "echo ${input:openDevToolsBrowser}",
@@ -193,6 +105,41 @@
 			"problemMatcher": [],
 			"label": "NPM: Start",
 			"detail": "Start a live demo of the app with electron-forge start"
+		},
+		{
+			"label": "Compile CSS",
+			"type": "shell",
+			"windows": {
+				"command": ".\\scripts\\compileCSS\\windows.bat",
+				"args": [
+					"${input:CSSCompilationMode}",
+					"${input:CSSCompilationType}"
+				]
+			},
+			"osx": {
+				"command": "./scripts/compileCSS/unix.sh",
+				"args": [
+					"${input:CSSCompilationMode}",
+					"${input:CSSCompilationType}"
+				]
+			},
+			"linux": {
+				"command": "./scripts/compileCSS/unix.sh",
+				"args": [
+					"${input:CSSCompilationMode}",
+					"${input:CSSCompilationType}"
+				]
+			},
+			"detail": "Compile Tailwind CSS template to output file.",
+			"presentation": {
+				"echo": false,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"problemMatcher": []
 		}
 	],
 	"inputs": [
@@ -211,6 +158,26 @@
 			"args": [
 				"http://localhost:8889/devtools/index.html"
 			]
+		},
+		{
+			"type": "pickString",
+			"id": "CSSCompilationMode",
+			"description": "Where should the compilation be performed?",
+			"options": [
+				"Production",
+				"DevTools"
+			],
+			"default": "Production"
+		},
+		{
+			"type": "pickString",
+			"id": "CSSCompilationType",
+			"description": "How should the compilation be performed?",
+			"options": [
+				"Single",
+				"Continuous"
+			],
+			"default": "Single"
 		}
 	]
 }
