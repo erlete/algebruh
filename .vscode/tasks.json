@@ -2,54 +2,17 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "[Production] PHP: Start local server",
+			"label": "Compile CSS",
 			"type": "shell",
+			"command": "./scripts/compileCSS/unix.sh",
 			"windows": {
-				"command": "php",
-				"args": [
-					"-S",
-					"localhost:8888",
-					"-t",
-					"src"
-				]
+				"command": ".\\scripts\\compileCSS\\windows.bat"
 			},
-			"detail": "Start a PHP local server for the Production directory.",
-			"dependsOn": "[Internal] Production simple browser",
-			"presentation": {
-				"echo": false,
-				"reveal": "silent",
-				"focus": false,
-				"panel": "dedicated",
-				"showReuseMessage": false,
-				"clear": true
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "[Internal] Production simple browser",
-			"hide": true,
-			"command": "${input:openProductionBrowser}",
-			"detail": "Open Production localhost content in simple browser.",
-			"presentation": {
-				"echo": false,
-				"reveal": "silent",
-				"focus": false,
-				"panel": "shared",
-				"showReuseMessage": false,
-				"clear": false
-			},
-			"problemMatcher": []
-		},
-		{
-			"label": "[DevTools] PHP: Start local server",
-			"type": "shell",
-			"command": "php",
 			"args": [
-				"-S",
-				"localhost:8889"
+				"${input:CSSCompilationMode}",
+				"${input:CSSCompilationType}"
 			],
-			"detail": "Start a PHP local server for the DevTools directory.",
-			"dependsOn": "[Internal] DevTools simple browser",
+			"detail": "Compile Tailwind CSS template to output file.",
 			"presentation": {
 				"echo": false,
 				"reveal": "silent",
@@ -61,17 +24,24 @@
 			"problemMatcher": []
 		},
 		{
-			"label": "[Internal] DevTools simple browser",
-			"hide": true,
-			"command": "echo ${input:openDevToolsBrowser}",
-			"detail": "Open DevTools localhost content in simple browser.",
+			"label": "Start local server",
+			"type": "shell",
+			"command": "./scripts/startLocalServer/unix.sh",
+			"windows": {
+				"command": ".\\scripts\\startLocalServer\\windows.bat"
+			},
+			"args": [
+				"${input:localServerMode}",
+				"${input:localServerPort}"
+			],
+			"detail": "Start a PHP local server.",
 			"presentation": {
 				"echo": false,
 				"reveal": "silent",
 				"focus": false,
-				"panel": "shared",
+				"panel": "dedicated",
 				"showReuseMessage": false,
-				"clear": false
+				"clear": true
 			},
 			"problemMatcher": []
 		},
@@ -105,60 +75,9 @@
 			"problemMatcher": [],
 			"label": "NPM: Start",
 			"detail": "Start a live demo of the app with electron-forge start"
-		},
-		{
-			"label": "Compile CSS",
-			"type": "shell",
-			"windows": {
-				"command": ".\\scripts\\compileCSS\\windows.bat",
-				"args": [
-					"${input:CSSCompilationMode}",
-					"${input:CSSCompilationType}"
-				]
-			},
-			"osx": {
-				"command": "./scripts/compileCSS/unix.sh",
-				"args": [
-					"${input:CSSCompilationMode}",
-					"${input:CSSCompilationType}"
-				]
-			},
-			"linux": {
-				"command": "./scripts/compileCSS/unix.sh",
-				"args": [
-					"${input:CSSCompilationMode}",
-					"${input:CSSCompilationType}"
-				]
-			},
-			"detail": "Compile Tailwind CSS template to output file.",
-			"presentation": {
-				"echo": false,
-				"reveal": "silent",
-				"focus": false,
-				"panel": "dedicated",
-				"showReuseMessage": false,
-				"clear": true
-			},
-			"problemMatcher": []
 		}
 	],
 	"inputs": [
-		{
-			"id": "openProductionBrowser",
-			"type": "command",
-			"command": "simpleBrowser.show",
-			"args": [
-				"http://localhost:8888"
-			]
-		},
-		{
-			"id": "openDevToolsBrowser",
-			"type": "command",
-			"command": "simpleBrowser.show",
-			"args": [
-				"http://localhost:8889/devtools/index.html"
-			]
-		},
 		{
 			"type": "pickString",
 			"id": "CSSCompilationMode",
@@ -178,6 +97,22 @@
 				"Continuous"
 			],
 			"default": "Single"
+		},
+		{
+			"type": "pickString",
+			"id": "localServerMode",
+			"description": "Where should the local server run?",
+			"options": [
+				"Production",
+				"DevTools"
+			],
+			"default": "Single"
+		},
+		{
+			"type": "promptString",
+			"id": "localServerPort",
+			"description": "On which port should the local server run?",
+			"default": "8888"
 		}
 	]
 }
