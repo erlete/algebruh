@@ -31,7 +31,7 @@
         "answer": true,
         "explanation": null
     },
-    "Una solución particular de un sistema de ecuaciones lineales que tenga las incógnitas X1,...,Xn es una lista de números s1,...,Sn que hace de cada ecuación del sistema un enunciado verdadero cuando las incógnitas x1,...,Xn se sustituyen por los valores s1,...,Sy": {
+    "Una solución particular de un sistema de ecuaciones lineales que tenga las incógnitas x1,...,xn es una lista de números s1,...,sn que hace de cada ecuación del sistema un enunciado verdadero cuando las incógnitas x1,...,Xn se sustituyen por los valores s1,...,Sy": {
         "answer": true,
         "explanation": null
     },
@@ -59,7 +59,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si una fila en la forma escalonada de la matriz ampliada de un sistema es (0 0 05 0), entonces el sistema de ecuaciones lineales asociado es incompatible.": {
+    "Si una fila en la forma escalonada de la matriz ampliada de un sistema es (0 0 0 5 0), entonces el sistema de ecuaciones lineales asociado es incompatible.": {
         "answer": false,
         "explanation": null
     },
@@ -103,7 +103,7 @@
         "answer": true,
         "explanation": null
     },
-    "El conjunto solución del sistema cuya matriz ampliada solución de la ecuación vectorial x, a; + x2a2 + x3a3 = b.  1 a2 a3 b] es igual al conjunto": {
+    "El conjunto solución del sistema cuya matriz ampliada es [a1 a2 a3 b] es igual al conjunto solución de la ecuación vectorial x1a1 + x2a2 + x3a3 = b.": {
         "answer": true,
         "explanation": null
     },
@@ -111,7 +111,7 @@
         "answer": false,
         "explanation": null
     },
-    "‘a de cinco ntimeros reales es un vector en R°.  Cualquier lis": {
+    "Cualquier lista de cinco números reales es un vector en R3.": {
         "answer": false,
         "explanation": null
     },
@@ -119,19 +119,11 @@
         "answer": true,
         "explanation": null
     },
-    "Siu y v son vectores distintos de cero, Gen{u, vj contiene la recta que pasa por u y por el origen.": {
+    "Si u y v son vectores distintos de cero, Gen{u, v} contiene la recta que pasa por u y por el origen.": {
         "answer": true,
         "explanation": null
     },
-    "Si uy v son vectores distintos ambos no nulos, Gen{u, v} contiene la recta que pasa por u y por v.": {
-        "answer": true,
-        "explanation": null
-    },
-    "Preguntar si el sistema correspondiente a una matriz ampliada |a; a2 a3 b| tiene alguna soluci6n es lo mismo que preguntar si b esta en el conjunto generado Gen{aj, a2, a3}.": {
-        "answer": true,
-        "explanation": null
-    },
-    "Si la ecuacién Ax = b es incompatible, entonces b no esta en el conjunto generado por las columnas de A.": {
+    "Preguntar si el sistema correspondiente a una matriz ampliada |a1 a2 a3 b| tiene alguna solución es lo mismo que preguntar si b esta en el conjunto generado Gen{a1, a2, a3}.": {
         "answer": true,
         "explanation": null
     },
@@ -143,7 +135,7 @@
         "answer": true,
         "explanation": null
     },
-    "Un vector b pertenece al espacio columna de A si y sdlo si el sistema Ax = b es compatible y determinado.": {
+    "Un vector b pertenece al espacio columna de A si y solo si el sistema Ax = b es compatible y determinado.": {
         "answer": false,
         "explanation": null
     },
@@ -155,7 +147,7 @@
         "answer": true,
         "explanation": null
     },
-    "La ecuacién x = p + fv describe una recta que pasa por v y es paralela a p.": {
+    "La ecuación x = p + fv describe una recta que pasa por v y es paralela a p.": {
         "answer": false,
         "explanation": null
     },
@@ -175,15 +167,15 @@
         "answer": true,
         "explanation": null
     },
-    "La ecuacién Ax = b se conoce como una ecuacion vectorial.": {
+    "La ecuación Ax = b se conoce como una ecuacion vectorial.": {
         "answer": false,
         "explanation": null
     },
-    "Un vector b es una combinaci6n lineal de las columnas de una matriz A si, y s6lo si, la ecuacién Ax = b tiene al menos una solucién.": {
+    "Un vector b es una combinación lineal de las columnas de una matriz A si, y solo si, la ecuación Ax = b tiene al menos una solución.": {
         "answer": true,
         "explanation": null
     },
-    "La ecuacién Ax = b es compatible si la matriz ampliada [A b] tiene una posicién pivote en cada fila.": {
+    "La ecuación Ax = b es compatible si la matriz ampliada [A b] tiene una posición pivote en cada fila.": {
         "answer": false,
         "explanation": null
     },
@@ -191,111 +183,107 @@
         "answer": true,
         "explanation": null
     },
-    "Si las columnas de una matriz A de orden m x n generan R™, entonces la ecuaci6n Ax = b es compatible para cada vector b de R™.": {
+    "Si las columnas de una matriz A de orden m x n generan R\u207F, entonces la ecuación Ax = b es compatible para cada vector b de R\u207F.": {
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz m x n y la ecuacién Ax = b es incompatible para algun b en R\", entonces A no puede tener una posicién pivote en cada fila.": {
+    "Si A es una matriz m x n y la ecuación Ax = b es incompatible para algun b en R\u207F, entonces A no puede tener una posición pivote en cada fila.": {
         "answer": true,
         "explanation": null
     },
-    "Cualquier ecuacion matricial Ax = b corresponde a una ecuaci6n vectorial con el mismo conjunto solucién.": {
+    "Cualquier ecuación matricial Ax = b corresponde a una ecuación vectorial con el mismo conjunto solución.": {
         "answer": true,
         "explanation": null
     },
-    "Cualquier combinacion lineal de vectores de R™ siempre puede escribirse en la forma de producto Ax para una matriz A y un vector x.": {
+    "Cualquier combinacion lineal de vectores de R\u207F siempre puede escribirse en la forma de producto Ax para una matriz A y un vector x.": {
         "answer": true,
         "explanation": null
     },
-    "El conjunto solucién de un sistema de ecuaciones lineales cuya matriz ampliada es [ay az a3 b] es el mismo que el conjunto solucién de Ax = b, si A = [ay ap as].": {
+    "El conjunto solución de un sistema de ecuaciones lineales cuya matriz ampliada es [a1 a2 a3 b] es el mismo que el conjunto solución de Ax = b, si A = [a1 a2 a3].": {
         "answer": true,
         "explanation": null
     },
-    "Si la ecuaci6n Ax = b es incompatible, entonces b no esta en el conjunto generado por las columnas de A.": {
+    "Si la ecuación Ax = b es incompatible, entonces b no esta en el conjunto generado por las columnas de A.": {
         "answer": true,
         "explanation": null
     },
-    "Si la matriz ampliada [A b] tiene una posicion pivote en cada fila, entonces la ecuaci6n Ax = bes incompatible.": {
+    "Si la matriz ampliada [A b] tiene una posicion pivote en cada fila, entonces la ecuación Ax = b es incompatible.": {
         "answer": false,
         "explanation": null
     },
-    "Si 5 iz 5 5 m 5 sari Si A es una matriz m x n cuyas columnas no generan R , entonces necesariamente la ecuacién Ax = b es incompatible para algtin vector b en R”.": {
+    "Si A es una matriz m x n cuyas columnas no generan R\u207F , entonces necesariamente la ecuación Ax = b es incompatible para algún vector b en R\u207F.": {
         "answer": true,
         "explanation": null
     },
-    "La ecuaci6n homogénea A x = 0 tiene soluci6n no trivial si, y sdlo si, tiene por lo menos una variable libre.": {
+    "La ecuación homogénea A x = 0 tiene solución no trivial si, y solo si, tiene por lo menos una variable libre.": {
         "answer": true,
         "explanation": null
     },
-    "Si la matriz A tiene una posicién pivote en cada fila, entonces la ecuacién Ax = b es compatible para todo b.": {
+    "Si la matriz A tiene una posición pivote en cada fila, entonces la ecuación Ax = b es compatible para todo b.": {
         "answer": true,
         "explanation": null
     },
-    "Si la matriz A tiene un pivote en cada fila, entonces el sistema representado por la ecuaci6n matricial Ax = b no puede tener mds ecuaciones que incdégnitas.": {
+    "Si la matriz A tiene un pivote en cada fila, entonces el sistema representado por la ecuación matricial Ax = b no puede tener más ecuaciones que incógnitas.": {
         "answer": true,
         "explanation": null
     },
-    "Si la matriz ampliada |A b} tiene una posicion pivote en cada fila, entonces la ecuaci6n Ax = bes incompatible.": {
+    "Si la matriz ampliada [A b] tiene una posición pivote en cada fila, entonces la ecuación Ax = b es incompatible.": {
         "answer": false,
         "explanation": null
     },
-    "Si la matriz ampliada [A b| tiene una posici6n pivote en cada fila, entonces la ecuaci6n Ax = b es compatible.": {
+    "Si la matriz ampliada [A b] tiene una posición pivote en cada fila, entonces la ecuación Ax = b es compatible.": {
         "answer": false,
         "explanation": null
     },
-    "Una ecuacién homogénea siempre es compatible.": {
+    "Una ecuación homogénea siempre es compatible.": {
         "answer": true,
         "explanation": null
     },
-    "La ecuacién A x = 0 proporciona una descripcién explicita de su conjunto solucién.": {
+    "La ecuación Ax = 0 proporciona una descripción explicita de su conjunto solución.": {
         "answer": false,
         "explanation": null
     },
-    "La ecuacién homogénea A x = 0 tiene solucién trivial si, y sdlo si, cuenta por lo menos con una variable libre.": {
+    "La ecuación homogénea Ax = 0 tiene solución trivial si, y solo si, cuenta por lo menos con una variable libre.": {
         "answer": false,
         "explanation": null
     },
-    "La ecuaci6n x = p + tv describe una recta que pasa por v y es paralela a p.": {
+    "La ecuación x = p + tv describe una recta que pasa por v y es paralela a p.": {
         "answer": false,
         "explanation": null
     },
-    "El conjunto solucién de Ax = b es el conjunto de todos los vectores de la forma w = p + v, donde v es cualquier soluci6n de la ecuacién A x = 0.": {
+    "El conjunto solución de Ax = b es el conjunto de todos los vectores de la forma w = p + v, donde v es cualquier solución de la ecuación Ax = 0.": {
         "answer": true,
         "explanation": null
     },
-    "Si x es una solucién no trivial de A x = 0, entonces todos los elementos de x son diferentes de cero.": {
+    "Si x es una solución no trivial de Ax = 0, entonces todos los elementos de x son diferentes de cero.": {
         "answer": false,
         "explanation": null
     },
-    "La ecuaciOn x = x2u + X3v, con x2 y x3 arbitrarios (y con u y v tales que no son multiplos entre si), describe un plano que pasa por el origen.": {
+    "La ecuación x = x2u + X3v, con x2 y x3 arbitrarios (y con u y v tales que no son multiplos entre si), describe un plano que pasa por el origen.": {
         "answer": true,
         "explanation": null
     },
-    "La ecuacién Ax = b es homogénea si el vector cero es una solucién.": {
+    "La ecuación Ax = b es homogénea si el vector cero es una solución.": {
         "answer": true,
         "explanation": null
     },
-    "El efecto de sumar p a un vector es trasladar el vector en una direcci6n paralela a p.": {
+    "El efecto de sumar p a un vector es trasladar el vector en una dirección paralela a p.": {
         "answer": true,
         "explanation": null
     },
-    "El conjunto solucién de A x = b se obtiene al trasladar el conjunto solucion de A x = 0 por un vector cualquiera.": {
+    "El conjunto solución de Ax = b se obtiene al trasladar el conjunto solucion de Ax = 0 por un vector cualquiera.": {
         "answer": false,
         "explanation": null
     },
-    "La ecuacién A x = b es homogénea si y sdlo si el vector cero es una solucién.": {
+    "La ecuación Ax = b es homogénea si y solo si el vector cero es una solución.": {
         "answer": true,
         "explanation": null
     },
-    "El conjunto solucién de A x = b es un trasladado del conjunto solucién de A x = 0.": {
+    "El conjunto solución de Ax = b es un trasladado del conjunto solución de Ax = 0.": {
         "answer": true,
         "explanation": null
     },
-    "Las columnas de una matriz A son linealmente independientes si la ecuacién A x = 0 tiene la solucion trivial.": {
-        "answer": false,
-        "explanation": null
-    },
-    "Si S es un conjunto de vectores ligado (los vectores de S son linealmente dependientes), entonces cada vector de S es una combinaci6n lineal de los otros vectores en S.": {
+    "Las columnas de una matriz A son linealmente independientes si la ecuación Ax = 0 tiene la solucion trivial.": {
         "answer": false,
         "explanation": null
     },
@@ -307,7 +295,7 @@
         "answer": true,
         "explanation": null
     },
-    "Dos vectores son linealmente dependientes si, y sdlo si, estan en una misma recta que pasa por el origen.": {
+    "Dos vectores son linealmente dependientes si, y solo si, estan en una misma recta que pasa por el origen.": {
         "answer": true,
         "explanation": null
     },
@@ -315,23 +303,23 @@
         "answer": false,
         "explanation": null
     },
-    "Si x e y son linealmente independientes y z esta en Gen{x, y}, entonces el conjunto {x, y,Z} es ligado.": {
+    "Si x e y son linealmente independientes y z esta en Gen{x, y}, entonces el conjunto {x, y, z} es ligado.": {
         "answer": true,
         "explanation": null
     },
-    "Si un conjunto de vectores de R\" es ligado (los vectores son linealmente dependientes), entonces el conjunto contiene mds vectores que coordenadas tiene cada vector.": {
+    "Si un conjunto de vectores de R\u207F es ligado (los vectores son linealmente dependientes), entonces el conjunto contiene más vectores que coordenadas tiene cada vector.": {
         "answer": false,
         "explanation": null
     },
-    "Los coeficientes cy,...,C;, en una combinacion lineal cyvy +--+ + CV, no pueden ser todos iguales a cero.": {
+    "Los coeficientes c1,...,cn;, en una combinacion lineal c1v1 + ... + cnvn, no pueden ser todos iguales a cero.": {
         "answer": false,
         "explanation": null
     },
-    "El espacio nulo de una matriz A es el conjunto soluci6n de Ax = 0.": {
+    "El espacio nulo de una matriz A es el conjunto solución de Ax = 0.": {
         "answer": true,
         "explanation": null
     },
-    "Los vectores que sirven para expresar la soluci6n general de Ax = 0 en forma paramétrica vectorial generan el espacio nulo de A.": {
+    "Los vectores que sirven para expresar la solución general de Ax = 0 en forma paramétrica vectorial generan el espacio nulo de A.": {
         "answer": true,
         "explanation": null
     },
@@ -367,7 +355,7 @@
         "answer": true,
         "explanation": null
     },
-    "Si el ndmero de posiciones pivote de A es igual al numero de filas de A entoces el nimero de posiciones pivote de AT es también igual al nimero de filas de A?.": {
+    "Si el número de posiciones pivote de A es igual al número de filas de A entonces el número de posiciones pivote de AT es también igual al número de filas de A.": {
         "answer": false,
         "explanation": null
     },
@@ -379,159 +367,159 @@
         "answer": false,
         "explanation": null
     },
-    "Si un conjunto de vectores es libre (0 linealmente independiente) entonces ningun vector del conjunto es combinaci6n lineal de los otros.": {
+    "Si un conjunto de vectores es libre (o linealmente independiente) entonces ningun vector del conjunto es combinación lineal de los otros.": {
         "answer": true,
         "explanation": null
     },
-    "Si un conjunto de vectores es ligado (0 linealmente dependiente) entonces algtin vector del conjunto es combinaci6n lineal de los otros.": {
+    "Si un conjunto de vectores es ligado (o linealmente dependiente) entonces algún vector del conjunto es combinación lineal de los otros.": {
         "answer": true,
         "explanation": null
     },
-    "Si un conjunto de vectores es ligado (0 linealmente dependiente) entonces cada vector del conjunto es combinaci6n lineal de los otros.": {
+    "Si un conjunto de vectores es ligado (o linealmente dependiente) entonces cada vector del conjunto es combinación lineal de los otros.": {
         "answer": false,
         "explanation": null
     },
-    "Un conjunto de vectores es ligado (0 linealmente dependiente) si y solo si no es libre.": {
+    "Un conjunto de vectores es ligado (o linealmente dependiente) si y solo si no es libre.": {
         "answer": true,
         "explanation": null
     },
-    "Las columnas de una matriz A son linealmente independientes si la ecuaci6n A x = 0 tiene la solucién trivial.": {
+    "Las columnas de una matriz A son linealmente independientes si la ecuación Ax = 0 tiene la solución trivial.": {
         "answer": false,
         "explanation": null
     },
-    "Si S es un conjunto de vectores ligado (los vectores de S son linealmente dependientes), entonces cada vector de S es una combinacién lineal de los otros vectores en S.": {
+    "Si S es un conjunto de vectores ligado (los vectores de S son linealmente dependientes), entonces cada vector de S es una combinación lineal de los otros vectores en S.": {
         "answer": false,
         "explanation": null
     },
-    "El problema de unicidad de solucién de un sistema de ecuaciones lineales es un problema de determinar si una aplicaci6n es inyectiva.": {
+    "El problema de unicidad de solución de un sistema de ecuaciones lineales es un problema de determinar si una aplicación es inyectiva.": {
         "answer": true,
         "explanation": null
     },
-    "Si la aplicaci6n matricial definida por la matriz de coeficientes de un sistema es sobreyectiva entonces se puede asegurar la existencia de soluci6n.": {
+    "Si la aplicación matricial definida por la matriz de coeficientes de un sistema es sobreyectiva entonces se puede asegurar la existencia de solución.": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacion T : R\" — R\" es sobreyectiva si a cada vector x en R” lo transforma en aletin vector de R™.": {
+    "Una aplicacion T : R\u207F —> R\u207F es sobreyectiva si a cada vector x en R\u207F lo transforma en algún vector de R\u207F.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz 3 x 2, entonces la aplicaci6n x ++ A x no puede ser inyectiva.": {
+    "Si A es una matriz 3 x 2, entonces la aplicación x -> Ax no puede ser inyectiva.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz 4 x 3 entonces la transformacion x ++ Ax es una aplicacion inyectiva de Ren R*.": {
+    "Si A es una matriz 4 x 3 entonces la transformacion x -> Ax es una aplicacion inyectiva de R3 en R4.": {
         "answer": false,
         "explanation": null
     },
-    "Si un sistema tiene una unica solucion, al cambiar los terminos independientes al azar, el nuevo sistema podria tener muchas soluciones.": {
+    "Si un sistema tiene una unica solución, al cambiar los terminos independientes al azar, el nuevo sistema podria tener muchas soluciones.": {
         "answer": false,
         "explanation": null
     },
-    "Si un sistema cumple la propiedad de existencia fuerte de solucién, al cambiar los términos independientes al azar, el nuevo sistema podria dejar de cumplirla.": {
+    "Si un sistema cumple la propiedad de existencia fuerte de solución, al cambiar los términos independientes al azar, el nuevo sistema podria dejar de cumplirla.": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicaci6n T : R\" — R\" es inyectiva si cada vector en R\" se transforma en un Unico vector en R”™.": {
+    "Una aplicaci6n T : R\u207F —> R\u207F es inyectiva si cada vector en R\u207F se transforma en un unico vector en R\u207F.": {
         "answer": false,
         "explanation": null
     },
-    "El codominio de la transformaci6n x ++ Ax es el conjunto de todas las combinaciones lineales de las columnas de A.": {
+    "El codominio de la transformación x -> Ax es el conjunto de todas las combinaciones lineales de las columnas de A.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz 3 x 2, entonces la aplicacién x ++ A x no puede ser sobreyectiva.": {
+    "Si A es una matriz 3 x 2, entonces la aplicación x -> A x no puede ser sobreyectiva.": {
         "answer": true,
         "explanation": null
     },
-    "Una transformacién matricial es un tipo especial de funcién.": {
+    "Una transformación matricial es un tipo especial de función.": {
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz de orden 3 x 5 y T una transformacion definida por T(x) = Ax, entonces el dominio de T es R°.": {
+    "Si A es una matriz de orden 3 x 5 y T una transformacion definida por T(x) = Ax, entonces el dominio de T es R3.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz m x n que tiene m columnas pivote entonces la aplicaci6n x ++ Ax es una aplicaci6n inyectiva.": {
+    "Si A es una matriz m x n que tiene m columnas pivote entonces la aplicación x -> Ax es una aplicación inyectiva.": {
         "answer": false,
         "explanation": null
     },
-    "La aplicacion de R* a R* que refleja los puntos en el origen (simetrfa central con centro en el origen) es la misma que la que gira todos los vectores 180°.": {
+    "La aplicacion de R\u207F a R\u207F que refleja los puntos en el origen (simetría central con centro en el origen) es la misma que la que gira todos los vectores 180°.": {
         "answer": true,
         "explanation": null
     },
-    "Una transformacion lineal es un tipo especial de funcién.": {
+    "Una transformacion lineal es un tipo especial de función.": {
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz de orden m x n, entonces el conjunto imagen de la transformacién x Axes R?.": {
+    "Si A es una matriz de orden m x n, entonces el conjunto imagen de la transformación x -> Ax es R\u207F.": {
         "answer": false,
         "explanation": null
     },
-    "Cuando se realizan dos aplicaciones lineales una después de la otra, el efecto combinado puede no ser siempre una aplicacioén lineal.": {
+    "Cuando se realizan dos aplicaciones lineales una después de la otra, el efecto combinado puede no ser siempre una aplicación lineal.": {
         "answer": false,
         "explanation": null
     },
-    "Una transformaci6n T es lineal si, y solo si, T(cjvy + c2v2) = cyT (vi) + c2T (v2) para todo vi y V2 en el dominio de T y para todos los ntimeros cy y c2.": {
+    "Una transformación T es lineal si, y solo si, T(c1v1 + c2v2) = c1 T(v1) + c2 T(v2) para todo v1 y V2 en el dominio de T y para todos los números c1 y c2.": {
         "answer": true,
         "explanation": null
     },
-    "Toda transformaci6én matricial es una transformacién lineal.": {
+    "Toda transformación matricial es una transformación lineal.": {
         "answer": true,
         "explanation": null
     },
-    "SiT: R* + R* gira los vectores del plano alrededor del origen en un angulo ¢, entonces T es una aplicacion lineal.": {
+    "Si T: R\u207F —> R\u207F gira los vectores del plano alrededor del origen en un angulo ¢, entonces T es una aplicacion lineal.": {
         "answer": true,
         "explanation": null
     },
-    "Si T: R\" — R” es una transformaci6n lineal y b es un vector de R™, entonces una pregunta de unicidad es: ;Esta b en la imagen de T?. é Fed": {
+    "Si T: R\u207F —> R\u207F es una transformación lineal y b es un vector de R\u207F, entonces una pregunta de unicidad es: Esta b en la imagen de T?.": {
         "answer": false,
         "explanation": null
     },
-    "Una transformaci6n lineal conserva las operaciones de suma de vectores y de multiplicacién por nimeros.": {
+    "Una transformación lineal conserva las operaciones de suma de vectores y de multiplicación por números.": {
         "answer": true,
         "explanation": null
     },
-    "El principio de superposicién es una descripcion fisica de una transformacién lineal.": {
+    "El principio de superposición es una descripcion fisica de una transformación lineal.": {
         "answer": true,
         "explanation": null
     },
-    "Toda transformacion lineal es una transformacién matricial.": {
+    "Toda transformación lineal es una transformación matricial.": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicaci6n lineal T : R\" + R” esta completamente determinada por su efecto sobre las columnas de la matriz identidad n x n.": {
+    "Una aplicación lineal T : R\u207F —> R\u207F esta completamente determinada por su efecto sobre las columnas de la matriz identidad n x n.": {
         "answer": true,
         "explanation": null
     },
-    "Toda aplicacién lineal T : R\" — R\" siempre lleva el origen de R” al origen de R”.": {
+    "Toda aplicación lineal T : R\u207F —> R\u207F siempre lleva el origen de R\u207F al origen de R\u207F.": {
         "answer": true,
         "explanation": null
     },
-    "SiT: RR\" — R\" y S: R! — R? son aplicaciones lineales, la composicion S o T : R™ — R? existe si y sdlo si el nimero de columnas de la matriz de T es igual al ntimero de filas de la matriz de S.": {
+    "Si T: RR\" —> R\" y S: R! —> R? son aplicaciones lineales, la composicion S o T : R™ — R? existe si y solo si el número de columnas de la matriz de T es igual al número de filas de la matriz de S.": {
         "answer": false,
         "explanation": null
     },
-    "Toda operaci6n elemental de filas que actue sobre matrices de n filas determina una aplicaci6n lineal de R\" en R”.": {
+    "Toda operación elemental de filas que actue sobre matrices de n filas determina una aplicación lineal de R\u207F en R\u207F.": {
         "answer": true,
         "explanation": null
     },
-    "En la matriz elemental correspondiente a una operacién elemental de filas todos los elementos son iguales a 10a 0.": {
+    "En la matriz elemental correspondiente a una operación elemental de filas todos los elementos son iguales a 1 o a 0.": {
         "answer": false,
         "explanation": null
     },
-    "No toda aplicacién lineal de R” a R\" tiene por qué ser una aplicaci6n matricial.": {
+    "No toda aplicación lineal de R\u207F a R\u207F tiene por qué ser una aplicaci6n matricial.": {
         "answer": false,
         "explanation": null
     },
-    "Las columnas de la matriz can6nica de una aplicacién lineal de R” a R son las imagenes de las columnas de la matriz identidad n x n.": {
+    "Las columnas de la matriz canónica de una aplicación lineal de R\u207F a R\u207F son las imagenes de las columnas de la matriz identidad n x n.": {
         "answer": true,
         "explanation": null
     },
-    "ts  La matriz canénica de una aplicaci6én lineal de R? a que refleja los puntos en el eje horizontal, el eje vertical o el origen tiene la forma (4°), donde ay b son +1.": {
+    "La matriz canónica de una aplicación lineal de R\u207F que refleja los puntos en el eje horizontal, el eje vertical o el origen tiene la forma (4°), donde a y b son \u00B11.": {
         "answer": true,
         "explanation": null
     },
-    "En la matriz elemental correspondiente a una operaci6n elemental de intercambio de filas todos los elementos son iguales a 1 0 a 0.": {
+    "En la matriz elemental correspondiente a una operación elemental de intercambio de filas todos los elementos son iguales a 1 o a 0.": {
         "answer": true,
         "explanation": null
     },
@@ -539,43 +527,43 @@
         "answer": true,
         "explanation": null
     },
-    "En toda matriz elemental correspondiente a una operacién elemental de reemplazo todos los elementos de la diagonal son iguales a 1.": {
+    "En toda matriz elemental correspondiente a una operación elemental de reemplazo todos los elementos de la diagonal son iguales a 1.": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es inyectiva si, y solo si, su matriz candnica tiene n columnas pivote": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es inyectiva si, y solo si, su matriz canónica tiene n columnas pivote": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" — R\" es sobreyectiva si, y slo si, su matriz canOnica tiene m columnas pivote": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es sobreyectiva si, y solo si, su matriz canónica tiene m columnas pivote": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es inyectiva si, y solo si, su matriz can6nica tiene m columnas pivote": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es inyectiva si, y solo si, su matriz canónica tiene m columnas pivote": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" —> R” es sobreyectiva si, y slo si, su matriz can6nica tiene 1 columnas pivote": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es sobreyectiva si, y solo si, su matriz canónica tiene n columnas pivote": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" — R\" es inyectiva si, y solo si, su matriz canonica tiene un Pp. : ) J pivote en cada fila.": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es inyectiva si, y solo si, su matriz canónica tiene un pivote en cada fila.": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacién lineal T : R\" — R\" es sobreyectiva si, y sdlo si, su matriz candénica tiene un pivote en cada columna.": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es sobreyectiva si, y solo si, su matriz canónica tiene un pivote en cada columna.": {
         "answer": false,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es inyectiva si, y sdlo si, su matriz can6nica tiene un pivote en cada columna.": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es inyectiva si, y solo si, su matriz canónica tiene un pivote en cada columna.": {
         "answer": true,
         "explanation": null
     },
-    "Una aplicacion lineal T : R\" — R\" es sobreyectiva si, y sdlo si, su matriz canoénica tiene un pivote en cada fila.": {
+    "Una aplicación lineal T : R\u207F —> R\u2098 es sobreyectiva si, y solo si, su matriz canónica tiene un pivote en cada fila.": {
         "answer": true,
         "explanation": null
     },
-    "Si A y B son matrices de orden 2 x 2 con columnas aj, a2 y bj, bz, respectivamente, entonces AB = [a;b, agbp].": {
+    "Si A y B son matrices de orden 2 x 2 con columnas a1, a2 y b1, b2, respectivamente, entonces AB = [a1b1 a2b2].": {
         "answer": false,
         "explanation": null
     },
@@ -587,7 +575,7 @@
         "answer": true,
         "explanation": null
     },
-    "La igualdad A’ + B? = (A+B)! se cumple para cualesquiera matrices A,B cuya suma esté definida.": {
+    "La igualdad AT + BT = (A+B)T se cumple para cualesquiera matrices A,B cuya suma esté definida.": {
         "answer": true,
         "explanation": null
     },
@@ -595,7 +583,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si A y B son matrices 3 x 3 y B = [b; bo bs], entonces AB = [Ab + Ab + Abs].": {
+    "Si A y B son matrices 3 x 3 y B = [b1 b2 b3], entonces AB = [Ab1 + Ab2 + Ab3].": {
         "answer": false,
         "explanation": "Debería decir A B igual a la matriz cuyas columnas son A b_1, A b_2, A b_3."
     },
@@ -603,19 +591,19 @@
         "answer": true,
         "explanation": null
     },
-    "La igualdad (AB)C = (AC)B se cumple para cualesquiera matrices A, B,C para las que los productos indicados estén definidos.": {
+    "La igualdad (AB)C = (AC)B se cumple para cualesquiera matrices A, B, C para las que los productos indicados estén definidos.": {
         "answer": false,
         "explanation": "No en general. Sólo se cumpliría si B y C conmutan."
     },
-    "La igualdad (AB)' = A’ B\" se cumple para cualesquiera matrices A y B para las que el producto AB esté definido.": {
+    "La igualdad (AB)T = AT BT se cumple para cualesquiera matrices A y B para las que el producto AB esté definido.": {
         "answer": false,
         "explanation": "Debería decir (A B) traspuesta igual a B traspuesta por A traspuesta."
     },
-    "La traspuesta de una suma de matrices orden.  s igual a la suma de sus traspuestas en el mismo": {
+    "La traspuesta de una suma de matrices es igual a la suma de sus traspuestas en el mismo orden.": {
         "answer": true,
         "explanation": null
     },
-    "Si A y B son matrices 3 x 3 y B = [b; bz bs], entonces AB = [Ab; Abz Abs].": {
+    "Si A y B son matrices 3 x 3 y B = [b1 b2 b3], entonces AB = [Ab1 Ab2 Ab3].": {
         "answer": true,
         "explanation": null
     },
@@ -623,11 +611,11 @@
         "answer": false,
         "explanation": null
     },
-    "Toda columna de un producto de matrices AB es una combinacién lineal de las columnas de A usando como coeficientes los elementos de la columna correspondiente de B.": {
+    "Toda columna de un producto de matrices AB es una combinación lineal de las columnas de A usando como coeficientes los elementos de la columna correspondiente de B.": {
         "answer": true,
         "explanation": null
     },
-    "La igualdad (A +B)’ = B™ + AT se cumple para cualesquiera matrices A,B cuya suma esté definida.": {
+    "La igualdad (A + B)T = BT + AT se cumple para cualesquiera matrices A,B cuya suma esté definida.": {
         "answer": true,
         "explanation": null
     },
@@ -639,23 +627,23 @@
         "answer": false,
         "explanation": null
     },
-    "Si A y B son matrices n x 1 entonces (A + B)(A — B) = A? — B?.": {
+    "Si A y B son matrices n x n entonces (A + B)(A — B) = A\u00B2 — B\u00B2.": {
         "answer": false,
         "explanation": null
     },
     "Para que una matriz B sea inversa de A, ambas ecuaciones AB = I y BA = I deben ser ciertas.": {
         "answer": true,
-        "explanation": "Es la definici ón de matriz inversa."
+        "explanation": "Es la definición de matriz inversa."
     },
-    "Si A y B son matrices n x n inversibles, entonces A~'B~! es la inversa de AB.": {
+    "Si A y B son matrices n x n inversibles, entonces A\u207B\u00B9B\u207B\u00B9 es la inversa de AB.": {
         "answer": false,
         "explanation": null
     },
-    "SiA=(4 °), y ab —cd 4 0, entonces A es inversible.": {
+    "Si A=(4 °), y ab — cd 4 0, entonces A es inversible.": {
         "answer": false,
         "explanation": null
     },
-    "Si A es una matriz inversible n x 1, entonces la ecuaci6n A x = b es compatible para todo vector b en R\".": {
+    "Si A es una matriz inversible n x n, entonces la ecuación A x = b es compatible para todo vector b en R\u207F.": {
         "answer": true,
         "explanation": null
     },
@@ -667,7 +655,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si A es inversible, entonces la inversa de A~! es la propia A.": {
+    "Si A es inversible, entonces la inversa de A\u207B\u00B9 es la propia A.": {
         "answer": true,
         "explanation": null
     },
@@ -679,15 +667,15 @@
         "answer": true,
         "explanation": "Es una matriz con un pivote en cada fila y en cada columna."
     },
-    "Si A es una matriz inversible n x n, entonces las operaciones elementales de filas que reducen A a la identidad I, también reducen A~! a I).": {
+    "Si A es una matriz inversible n x n, entonces las operaciones elementales de filas que reducen A a la identidad I, también reducen A\u207B\u00B9 a I).": {
         "answer": false,
         "explanation": "Debería decir \"también reducen la identidad n por n a la inversa de A\"."
     },
-    "Las columnas de una matriz inversible n x son vectores independientes y generan R\".": {
+    "Las columnas de una matriz inversible n x n son vectores independientes y generan R\u207F.": {
         "answer": true,
         "explanation": null
     },
-    "Las filas de una matriz inversible n x n son vectores independientes y generan R”.": {
+    "Las filas de una matriz inversible n x n son vectores independientes y generan R\u207F.": {
         "answer": true,
         "explanation": null
     },
@@ -695,19 +683,19 @@
         "answer": false,
         "explanation": null
     },
-    "Si una matriz tiene inversa sdlo por la derecha o s6lo por la izquierda, entonces se puede afirmar que no es cuadrada.": {
+    "Si una matriz tiene inversa solo por la derecha o solo por la izquierda, entonces se puede afirmar que no es cuadrada.": {
         "answer": true,
         "explanation": null
     },
-    "Para que una matriz B sea inversa de una matriz A, es suficiente que la ecuacién AB = I sea cierta.": {
+    "Para que una matriz B sea inversa de una matriz A, es suficiente que la ecuación AB = I sea cierta.": {
         "answer": false,
         "explanation": "Sólo si A es cuadrada. Si esto no se sabe, es necesario también que BA = I."
     },
-    "Para que una matriz cuadrada B sea inversa de una matriz A, es suficiente que la ecuacién AB = I sea cierta.": {
+    "Para que una matriz cuadrada B sea inversa de una matriz A, es suficiente que la ecuación AB = I sea cierta.": {
         "answer": true,
         "explanation": null
     },
-    "Si AB = BA y Aes inversible, entonces A 1B = BA},": {
+    "Si AB = BA y A es inversible, entonces A 1B = BA},": {
         "answer": true,
         "explanation": null
     },
@@ -715,19 +703,19 @@
         "answer": false,
         "explanation": null
     },
-    "SiA=(4 °), y ab = cd, entonces A no es inversible.": {
+    "Si A=(4 °), y ab = cd, entonces A no es inversible.": {
         "answer": false,
         "explanation": "Sería verdadero si dijese ad = bc."
     },
-    "Si A es una matriz inversible n x n, entonces las operaciones elementales de filas que tranforman A en la identidad I, también transforman I, en A~!.": {
+    "Si A es una matriz inversible n x n, entonces las operaciones elementales de filas que tranforman A en la identidad I, también transforman I, en A\u207B\u00B9.": {
         "answer": true,
         "explanation": null
     },
-    "Si A= |A, A2| y B= |B, Bo) son matrices por bloques con A; y A2 de los mismos tamafios respectivos que By y Bz, entonces A+B = {[A, +B, A+ By].": {
+    "Si A= |A1 A2| y B= |B1, B2| son matrices por bloques con A1 y A2 de los mismos tamaños respectivos que B1 y B2, entonces A+B = [A1 +B1, A2+ B2].": {
         "answer": true,
         "explanation": null
     },
-    "SiA= oe a] yB= [2| entonces las particiones de A y B son conformes para la  multiplicaci6n por bloques.": {
+    "Si A= oe a] y B= [2| entonces las particiones de A y B son conformes para la  multiplicaci6n por bloques.": {
         "answer": false,
         "explanation": null
     },
@@ -743,7 +731,7 @@
         "answer": true,
         "explanation": null
     },
-    "La factorizaci6n LU de una matriz, si existe es tnica.": {
+    "La factorizaci6n LU de una matriz, si existe es única.": {
         "answer": false,
         "explanation": null
     },
@@ -787,23 +775,23 @@
         "answer": false,
         "explanation": null
     },
-    "Si CA = I), (la matriz identidad n x n) entonces A no puede tener mas columnas que filas.": {
+    "Si CA = I, (la matriz identidad n x n) entonces A no puede tener mas columnas que filas.": {
         "answer": true,
         "explanation": null
     },
-    "Si CA = I, (la matriz identidad n x n) entonces la ecuaci6n Ax = 0 tiene tinicamente la soluci6n trivial.": {
+    "Si CA = I, (la matriz identidad n x n) entonces la ecuación Ax = 0 tiene úninicamente la solución trivial.": {
         "answer": true,
-        "explanation": "Para cualquier soluci ón x de Ax = 0 se cumple x = Ix = C Ax = C 0 = 0."
+        "explanation": "Para cualquier solución x de Ax = 0 se cumple x = Ix = C Ax = C 0 = 0."
     },
-    "Si AD = I, (la matriz identidad m x m) entonces para todo b en R\", la ecuaci6én Ax = b tiene alguna soluci6n.": {
+    "Si AD = I, (la matriz identidad m x m) entonces para todo b en R\u2098, la ecuación Ax = b tiene alguna solución.": {
         "answer": true,
-        "explanation": "La identidad (AD)b = b le ída como A(Db) = b expresa que Db es una solución de Ax = b."
+        "explanation": "La identidad (AD)b = b leída como A(Db) = b expresa que Db es una solución de Ax = b."
     },
-    "Un determinante de una matriz 1 x n puede calcularse usando determinantes de submatri- ces de orden (n — 1) x (n—1).": {
+    "Un determinante de una matriz n x n puede calcularse usando determinantes de submatrices de orden (n — 1) x (n — 1).": {
         "answer": true,
         "explanation": null
     },
-    "El cofactor (i,j) de una matriz A es la matriz Ajj; que se obtiene al eliminar de A su i-ésima fila y su j-ésima columna.": {
+    "El cofactor (i,j) de una matriz A es la matriz Aij  que se obtiene al eliminar de A su i-ésima fila y su j-ésima columna.": {
         "answer": false,
         "explanation": null
     },
@@ -819,7 +807,7 @@
         "answer": false,
         "explanation": null
     },
-    "Una operacién elemental de filas no afecta al determinante de una matriz.": {
+    "Una operación elemental de filas no afecta al determinante de una matriz.": {
         "answer": false,
         "explanation": null
     },
@@ -855,11 +843,11 @@
         "answer": true,
         "explanation": null
     },
-    "Una operacién de reemplazo de filas no afecta al determinante de una matriz.": {
+    "Una operación de reemplazo de filas no afecta al determinante de una matriz.": {
         "answer": true,
         "explanation": null
     },
-    "El determinante de A es el producto de los pivotes presentes en cualquier forma escalonada U de A, multiplicado por (—1)\", donde r es el nimero de intercambios de fila realizados durante la reducci6n por filas de A a U.": {
+    "El determinante de A es el producto de los pivotes presentes en cualquier forma escalonada U de A, multiplicado por (—1)\u207F, donde n es el número de intercambios de fila realizados durante la reducción por filas de A a U.": {
         "answer": false,
         "explanation": null
     },
@@ -875,7 +863,7 @@
         "answer": false,
         "explanation": null
     },
-    "Si det A es cero, entonces dos filas o dos columnas son iguales, 0 una fila o una columna es cero.": {
+    "Si det A es cero, entonces dos filas o dos columnas son iguales, o una fila o una columna es cero.": {
         "answer": false,
         "explanation": null
     },
@@ -883,15 +871,15 @@
         "answer": false,
         "explanation": null
     },
-    "Las filas de una matriz cuadrada A son linealmente dependientes si y sdlo si det A = 0.": {
+    "Las filas de una matriz cuadrada A son linealmente dependientes si y solo si det A = 0.": {
         "answer": true,
         "explanation": null
     },
-    "Para cualquier matriz cuadrada A, det Al = det A.": {
+    "Para cualquier matriz cuadrada A, det AT = det A.": {
         "answer": true,
         "explanation": null
     },
-    "Para cualquier matriz cuadrada A, det(kA) = kdet A.": {
+    "Para cualquier matriz cuadrada A, det(kA) = k det A.": {
         "answer": false,
         "explanation": null
     },
@@ -899,51 +887,51 @@
         "answer": true,
         "explanation": null
     },
-    "Para cualesquiera matrices cuadradas A y B del mismo orden, aunque sea AB # BA siempre se cumple det(AB) = det(BA).": {
+    "Para cualesquiera matrices cuadradas A y B del mismo orden, aunque sea AB \u2260 BA siempre se cumple det(AB) = det(BA).": {
         "answer": true,
         "explanation": null
     },
-    "Para cualquier matriz inversible A, det(A~!) = (det A)~!.": {
+    "Para cualquier matriz inversible A, det(A\u207B\u00B9) = (det A)\u207B\u00B9.": {
         "answer": true,
         "explanation": null
     },
-    "Para toda matriz cuadrada U tal que UTU = I, det(U) = 4": {
+    "Para toda matriz cuadrada U tal que UT U = I, det(U) = \u00B11": {
         "answer": true,
         "explanation": null
     },
-    "Si P es una matriz inversible, det(PAP~!) = det A.": {
+    "Si P es una matriz inversible, det(PAP\u207B\u00B9) = det A.": {
         "answer": true,
         "explanation": null
     },
-    "Un subespacio de R\" es cualquier conjunto H tal que (i) el vector cero esta en H, (ii) si u y v estan en H, u+ v esta en H, y (iii) sic es un nimero y u esta en H, cu esté en H.": {
+    "Un subespacio de R\u207F es cualquier conjunto H tal que (i) el vector cero esta en H, (ii) si u y v estan en H, u + v esta en H, y (iii) si c es un número y u esta en H, cu esté en H.": {
         "answer": false,
         "explanation": null
     },
-    "El espacio columna de una matriz A es el subespacio imagen de la aplicacién x +> Ax.": {
+    "El espacio columna de una matriz A es el subespacio imagen de la aplicación x -> Ax.": {
         "answer": true,
         "explanation": null
     },
-    "Si A es una matriz m x n y la ecuacién Ax = b es compatible entonces el espacio columna de A es todo R\".": {
+    "Si A es una matriz m x n y la ecuación Ax = b es compatible entonces el espacio columna de A es todo R\u207F.": {
         "answer": false,
         "explanation": null
     },
-    "El nticleo de una aplicacién lineal es un espacio vectorial.": {
+    "El núcleo de una aplicación lineal es un espacio vectorial.": {
         "answer": true,
         "explanation": null
     },
-    "Sivy,..- ,Vp estan en R\"”, entonces Gen{v1,..- /Vpt es lo mismo que el espacio columna de la matriz |v; ... vp].": {
+    "Si v1,...,vn estan en R\u207F, entonces Gen{v1,..., vn} es lo mismo que el espacio columna de la matriz |v1 ... vn].": {
         "answer": true,
         "explanation": null
     },
-    "El conjunto de todas las soluciones de un sistema de m ecuaciones homogéneas en 1 incégnitas es un subespacio vectorial de R™.": {
+    "El conjunto de todas las soluciones de un sistema de m ecuaciones homogéneas en n incógnitas es un subespacio vectorial de R\u2098.": {
         "answer": false,
         "explanation": null
     },
-    "Un subconjunto H de R\" es un subespacio si el vector cero esta en H.": {
+    "Un subconjunto H de R\u207F es un subespacio si el vector cero esta en H.": {
         "answer": false,
         "explanation": null
     },
-    "El espacio nulo de A es el nticleo de la aplicacién x +> Ax.": {
+    "El espacio nulo de A es el núcleo de la aplicación x -> Ax.": {
         "answer": true,
         "explanation": null
     },
@@ -951,15 +939,15 @@
         "answer": true,
         "explanation": null
     },
-    "Dados los vectores (vj,...,Vp) en R\u207f, el conjunto de todas las combinaciones lineales de estos vectores es un subespacio vectorial de R\u207f.": {
+    "Dados los vectores v1,...,vn en R\u207F, el conjunto de todas las combinaciones lineales de estos vectores es un subespacio vectorial de R\u207F.": {
         "answer": true,
         "explanation": null
     },
-    "El espacio nulo de una matriz m x n es un subespacio vectorial de R\u207f.": {
+    "El espacio nulo de una matriz m x n es un subespacio vectorial de R\u207F.": {
         "answer": true,
         "explanation": null
     },
-    "Si H = Gen{bj,...b)} entonces el conjunto {bj,...b,)} es una base de H.": {
+    "Si H = Gen{b1,...bn} entonces el conjunto {b1,...bn} es una base de H.": {
         "answer": false,
         "explanation": null
     },
