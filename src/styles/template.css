@@ -27,6 +27,13 @@
     /* Firefox */
 }
 
+.gradient-color-text {
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
 /* Progress bar stylization: */
 
 progress:not(value) {
