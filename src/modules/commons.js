@@ -5,7 +5,6 @@ const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
 const INFO = {
     "textSolver": {
         "input": "Aquí deberás escribir la pregunta que quieras resolver. Intenta que sea lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la pregunta, mayor será la probabilidad de obtener un resultado satisfactorio.",
-        "confidenceThreshold": "Con este selector puedes ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
         "match": "Aquí podrás ver la coincidencia de la base de datos más parecida a la pregunta que has introducido.",
         "confidence": "Aquí podrás ver el porcentaje de coincidencia de tu búsqueda con la mejor coincidencia encontrada en la base de datos.",
         "answer": "Este campo contiene la respuesta a la coincidencia encontrada en la base de datos.\n\nRecuerda revisar que la coincidencia sea parecida o igual a tu pregunta original.",
@@ -13,7 +12,6 @@ const INFO = {
     },
     "imageSolver": {
         "input": "Aquí deberás arrastrar una imagen de la pregunta que quieras buscar. Sirven capturas de pantalla e imagenes guardadas pero no siempre funciona con imagenes de páginas web directamente.\n\nRecuerda encuadrar lo máximo posible el texto a buscar, reduciendo así las posibilidades de falsos reconocimientos.",
-        "confidenceThreshold": "Con este selector puedes ajustar el porcentaje de coincidencia mínimo que debe tener la pregunta encontrada con tu búsqueda.\n\nSi el programa no encuentra coincidencias para tu búsqueda, reduce el porcentaje. Si quieres una coincidencia más precisa, auméntalo.",
         "text": "Este campo contiene el texto escaneado de la imagen.",
         "match": "Aquí podrás ver la coincidencia de la base de datos más parecida a la pregunta que has introducido.",
         "confidence": "Aquí podrás ver el porcentaje de coincidencia de tu búsqueda con la mejor coincidencia encontrada en la base de datos.",
@@ -87,14 +85,13 @@ function formatExplanation(explanation) {
 // Pattern matching functions:
 
 /**
- * Get the best match for the given text and confidence threshold.
+ * Get the best match for the given text.
  * @date 8/12/2023 - 3:13:43 AM
  *
  * @param {string} text - Input text.
- * @param {number} confidenceThreshold - Confidence threshold.
  * @returns {{ text: any; confidence: string; answer: str | null; explanation: str | null; } | null} - Best match. {@link null} if no match.
  */
-function getBestMatch(text, confidenceThreshold) {
+function getBestMatch(text) {
     // Generate match array:
     let matchArray = Object.entries(window.data).map((questionData) => ({
         "text": questionData[0],
@@ -103,8 +100,7 @@ function getBestMatch(text, confidenceThreshold) {
         "explanation": questionData[1].explanation
     }));
 
-    // Filter by confidence threshold and sort from higher to lower ratio:
-    matchArray = matchArray.filter(match => match.confidence >= confidenceThreshold / 100);
+    // Sort from higher to lower ratio:
     matchArray.sort((a, b) => b.confidence - a.confidence);
 
     // Return best match if available, else return null:
@@ -117,15 +113,14 @@ function getBestMatch(text, confidenceThreshold) {
 }
 
 /**
- * Get formatter data for the given text and confidence threshold.
+ * Get formatter data for the given text.
  * @date 8/12/2023 - 3:16:24 AM
  *
  * @param {string} text - Input text.
- * @param {number} confidenceThreshold - Confidence threshold.
  * @returns {{ text: string; match: string; confidence: string; answer: string; explanation: string; }} - Formatted data.
  */
-function getFormattedData(text, confidenceThreshold) {
-    const bestMatch = getBestMatch(text, confidenceThreshold);
+function getFormattedData(text) {
+    const bestMatch = getBestMatch(text);
 
     // Return formatted data if available, else default missing messages:
     return bestMatch === null ? {
@@ -142,26 +137,6 @@ function getFormattedData(text, confidenceThreshold) {
         "explanation": formatExplanation(bestMatch.explanation)
     }
 };
-
-// Event functions:
-
-/**
- * Update output data when minimum confidence threshold is changed.
- * @date 8/12/2023 - 3:12:55 AM
- */
-function updateMatchThreshold() {
-    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
-    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
-
-    // If there has been any previous input, filter the result:
-    if (lastInput !== null) {
-        const outputData = getFormattedData(lastInput, confidenceThreshold);
-
-        for (let key of KEYS) {
-            document.getElementById(key).innerHTML = outputData[key];
-        }
-    }
-}
 
 // Auxiliary functions:
 
