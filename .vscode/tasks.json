@@ -57,7 +57,7 @@
 			},
 			"dependsOn": [
 				"NPM: Install",
-				"CSS: Compile"
+				"Compile CSS"
 			],
 			"dependsOrder": "sequence"
 		},
