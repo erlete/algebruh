@@ -7,22 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Algebruh - Modo Imagen</title>
-  <link rel="icon" type="image/x-icon" href="media/icon.ico">
+  <link rel="icon" type="image/x-icon" href="./media/icon.ico">
 
-  <link rel="stylesheet" href="styles/output.css">
-  <script defer src="renderers/image.js"></script>
-  <script src="modules/commons.js"></script>
-  <script src="modules/tesseract.min.js"></script> <!-- Tesseract OCR import -->
-  <script src="modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
+  <link rel="stylesheet" href="./styles/output.css">
+  <script defer src="./renderers/image.js"></script>
+  <script src="./modules/commons.js"></script>
+  <script src="./modules/tesseract.min.js"></script> <!-- Tesseract OCR import -->
+  <script src="./modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
 </head>
 
-<body class="h-full items-center bg-gray-200" ondragenter="event.preventDefault()" ondrop="event.preventDefault()"
+<body class="h-full items-center bg-gray-200 no-scrollbar" ondragenter="event.preventDefault()" ondrop="event.preventDefault()"
   ondragover="event.preventDefault()">
   <!-- Header and navigation bar: -->
   <header class="bg-gray-200 shadow-lg rounded-lg mb-6">
     <nav class="p-6 flex items-center justify-between" aria-label="Global">
       <!-- Logo image: -->
-      <div class="flex-1 items-center">
+      <div class="">
         <a href="index.html">
           <span class="sr-only">Algebruh</span>
           <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
@@ -31,12 +31,18 @@
 
       <!-- Navigation links: -->
       <div class="flex gap-x-12 sm:gap-x-24 text-center">
+        <a href="image.html" class="text-base text-center text-black-900 underline">Modo Imagen</a>
         <a href="index.html" class="text-base text-center text-gray-900">Inicio</a>
-        <a href="image.html" class="text-base text-center text-gray-900 underline">Modo Imagen</a>
         <a href="text.html" class="text-base text-center text-gray-900">Modo Texto</a>
       </div>
 
-      <div class="flex-1 justify-center"></div>
+      <!-- Logo image: -->
+      <div class="">
+        <a href="https://github.com/erlete/algebruh">
+          <span class="sr-only">GitHub</span>
+          <img class="h-0 sm:h-8 sm:w-auto" src="media/gh-icon.png" alt="GitHub logo">
+        </a>
+      </div>
     </nav>
   </header>
 
