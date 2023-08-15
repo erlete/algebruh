@@ -13,12 +13,12 @@
   <script defer src="./renderers/index.js"></script>
 </head>
 
-<body class="h-full bg-gray-200 no-scrollbar bg-gradient-to-r from-sky-100 to-indigo-200">
+<body class="h-full items-center no-scrollbar bg-gradient-to-r from-sky-100 to-indigo-200">
   <!-- Header and navigation bar: -->
-  <header class="bg-gray-200 shadow-lg rounded-b-lg mb-6 bg-gradient-to-r from-blue-200 to-violet-200">
+  <header class="shadow-lg rounded-b-lg mb-6 bg-gradient-to-r from-blue-200 to-violet-200">
     <nav class="p-6 flex items-center justify-between" aria-label="Global">
       <!-- Logo image: -->
-      <div class="">
+      <div>
         <a href="index.html">
           <span class="sr-only">Algebruh</span>
           <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
@@ -27,13 +27,13 @@
 
       <!-- Navigation links: -->
       <div class="flex gap-x-12 sm:gap-x-24 text-center">
-        <a href="image.html" class="text-base text-center text-gray-900 font-semibold">Modo Imagen</a>
-        <a href="index.html" class="text-base text-center text-black-900 font-semibold underline">Inicio</a>
-        <a href="text.html" class="text-base text-center text-gray-900 font-semibold">Modo Texto</a>
+        <a href="image.html" class="text-base text-center text-gray-900 font-semibold hover:text-indigo-400">Modo Imagen</a>
+        <a href="index.html" class="text-base text-center text-black-900 font-semibold text-indigo-600">Inicio</a>
+        <a href="text.html" class="text-base text-center text-gray-900 font-semibold hover:text-indigo-400">Modo Texto</a>
       </div>
 
       <!-- Logo image: -->
-      <div class="">
+      <div>
         <a href="https://github.com/erlete/algebruh">
           <span class="sr-only">GitHub</span>
           <img class="h-0 sm:h-8 sm:w-auto" src="media/gh-icon.png" alt="GitHub logo">
@@ -42,12 +42,12 @@
     </nav>
   </header>
 
-  <main class="z-10 h-max flex flex-col items-center justify-center bg-gray-200 align-middle bg-gradient-to-r from-sky-100 to-indigo-200">
+  <main class="z-10 h-max flex flex-col items-center justify-center align-middle bg-gradient-to-r from-sky-100 to-indigo-200">
     <!-- Title and slogan: -->
     <div class="text-center m-16 p-16">
 
-      <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        Alge<em>bruh</em>
+      <h1 class="mt-4 p-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl hover:bg-gradient-to-r hover:from-sky-900 hover:to-indigo-500 gradient-color-text bg-gradient-to-r from-gray-900 to-indigo-500">
+        Alge<em class="text-black hover:text-transparent">bruh</em>
       </h1>
 
       <p class="mt-6 text-base text-gray-600">
@@ -67,7 +67,7 @@
       </div>
 
       <p class="mt-10 w-[30rem] text-sm italic text-gray-600">
-        Este es un proyecto desarollado por y para estudiantes, sin ánimo de lucro. Si te ha parecido útil, considera dejar una estrella en el repositorio de GitHub (icono superior derecho de la barra de navegación).
+        Este es un proyecto desarollado por y para estudiantes, sin ánimo de lucro. Si te ha parecido útil, considera dejar una estrella en el <a class="text-indigo-500" href="https://github.com/erlete/algebruh">repositorio de GitHub</a>.
       </p>
 
     </div>
