@@ -40,11 +40,10 @@ function getResults(event) {
     ).then(({ data: { text } }) => {
         text = text.trim();
         document.getElementById("text").innerHTML = text;
-        const confidenceThreshold = document.getElementById("confidenceThreshold").value;
 
         // If the text is not empty, process it, else display missing data message:
         if (text !== "") {
-            const outputData = getFormattedData(text, confidenceThreshold);
+            const outputData = getFormattedData(text);
 
             for (let key of KEYS) {
                 document.getElementById(key).innerHTML = outputData[key];
@@ -66,10 +65,6 @@ function resetView() {
     for (let key of KEYS) {
         document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
     }
-
-    // Set dynamic range input value:
-    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
-    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
 
     // Reset tesseract progress:
     document.getElementById("tesseractProgress").innerHTML = "";

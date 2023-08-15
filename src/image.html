@@ -7,44 +7,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Algebruh - Modo Imagen</title>
+  <link rel="icon" type="image/x-icon" href="./media/icon.ico">
 
-  <link rel="stylesheet" href="styles/output.css">
-  <script defer src="renderers/image.js"></script>
-  <script src="modules/commons.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
-  <!-- Tesseract OCR import -->
-  <script src="modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
+  <link rel="stylesheet" href="./styles/output.css">
+  <script defer src="./renderers/image.js"></script>
+  <script src="./modules/commons.js"></script>
+  <script src="./modules/tesseract.min.js"></script> <!-- Tesseract OCR import -->
+  <script src="./modules/difflib-browser.js"></script> <!-- Pattern matching library import -->
 </head>
 
-<body class="h-full items-center bg-gray-200" ondragenter="event.preventDefault()" ondrop="event.preventDefault()"
-  ondragover="event.preventDefault()">
-  <!-- Header and navigation bar: -->
-  <header class="bg-gray-200 shadow-lg rounded-lg mb-6">
+<body class="h-full items-center no-scrollbar bg-gradient-to-r from-sky-100 to-indigo-200"
+  ondragenter="event.preventDefault()" ondrop="event.preventDefault()" ondragover="event.preventDefault()">
+  <header class="shadow-lg rounded-b-lg mb-6 bg-gradient-to-r from-blue-200 to-violet-200">
     <nav class="p-6 flex items-center justify-between" aria-label="Global">
-      <!-- Logo image: -->
-      <div class="flex-1 items-center">
+      <!-- Algebruh logo -->
+      <div>
         <a href="index.html">
           <span class="sr-only">Algebruh</span>
           <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
         </a>
       </div>
 
-      <!-- Navigation links: -->
+      <!-- Navigation links -->
       <div class="flex gap-x-12 sm:gap-x-24 text-center">
-        <a href="index.html" class="text-base text-center text-gray-900">Inicio</a>
-        <a href="image.html" class="text-base text-center text-gray-900 underline">Modo Imagen</a>
-        <a href="text.html" class="text-base text-center text-gray-900">Modo Texto</a>
+        <a href="image.html" class="text-base text-center text-gray-900 font-semibold text-indigo-600">Modo Imagen</a>
+        <a href="index.html" class="text-base text-center text-black-900 font-semibold hover:text-indigo-400">Inicio</a>
+        <a href="text.html" class="text-base text-center text-gray-900 font-semibold hover:text-indigo-400">Modo
+          Texto</a>
       </div>
 
-      <div class="flex-1 justify-center"></div>
+      <!-- GitHub logo -->
+      <div>
+        <a href="https://github.com/erlete/algebruh">
+          <span class="sr-only">GitHub</span>
+          <img class="h-0 sm:h-8 sm:w-auto" src="media/gh-icon.png" alt="GitHub logo">
+        </a>
+      </div>
     </nav>
   </header>
 
-  <main class="grid bg-gray-200">
+  <main class="grid bg-gradient-to-r from-sky-100 to-indigo-200">
     <div class="py-6 mb-6">
       <div class="mx-12">
         <!-- Input: -->
-        <div class="overflow-hidden bg-white shadow rounded-lg">
+        <div class="overflow-hidden bg-white shadow-lg border-solid border-2 border-gray-300 rounded-lg">
           <div class="px-4 py-5 sm:px-6 shadow-inner">
             <h3 class="text-base font-bold tracking-tigh leading-6 text-gray-900">Buscador por imagen</h3>
           </div>
@@ -72,24 +78,11 @@
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <p class="">Arrastra aquí tu imagen</p>
+                        <p>Arrastra aquí tu imagen</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </dd>
-            </div>
-            <!-- Confidence threshold input: -->
-            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
-              <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
-                <span class="inline-block" onclick="displayTooltip('confidenceThreshold', 'imageSolver')">
-                  <img src="media/information.svg" alt="Information button">
-                </span>
-                <b class="mt-0.5">Confianza mínima (<span id="confidenceThresholdValue"></span>%)</b>
-              </dt>
-              <dd class="flex items-center justify-center sm:col-span-2 sm:mt-0">
-                <input class="w-full" type="range" id="confidenceThreshold" name="confidenceThreshold" min="1" max="100"
-                  value="75" step="0.1" oninput="updateMatchThreshold()">
               </dd>
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
@@ -112,7 +105,7 @@
         </div>
 
         <!-- Output: -->
-        <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
+        <div class="overflow-hidden bg-white shadow-lg rounded-lg border-solid border-2 border-gray-300 mt-12">
           <div class="px-4 py-5 sm:px-6 shadow-inner">
             <h3 class="text-base font-bold leading-6 text-gray-900">Resultados de la búsqueda</h3>
           </div>

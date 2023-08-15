@@ -11,12 +11,10 @@ let lastInput = null;
  */
 function getResults() {
     const text = document.getElementById("input").value;
-    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
-    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
 
     // If the text is not empty, process it, else display default message:
     if (text !== "") {
-        const outputData = getFormattedData(text, confidenceThreshold);
+        const outputData = getFormattedData(text);
 
         for (let key of KEYS) {
             document.getElementById(key).innerHTML = outputData[key];
@@ -37,10 +35,6 @@ function resetView() {
     for (let key of KEYS) {
         document.getElementById(key).innerHTML = DEFAULT_MESSAGE;
     }
-
-    // Set dynamic range input value:
-    const confidenceThreshold = document.getElementById("confidenceThreshold").value;
-    document.getElementById("confidenceThresholdValue").innerHTML = confidenceThreshold;
 }
 
 // Main function:

@@ -66,14 +66,13 @@ function formatExplanation(explanation) {
 // Pattern matching functions:
 
 /**
- * Get the best match for the given text and confidence threshold.
+ * Get the best match for the given text.
  * @date 8/12/2023 - 3:13:43 AM
  *
  * @param {string} text - Input text.
- * @param {number} confidenceThreshold - Confidence threshold.
  * @returns {{ text: any; confidence: string; answer: str | null; explanation: str | null; } | null} - Best match. {@link null} if no match.
  */
-function getBestMatch(text, confidenceThreshold) {
+function getBestMatch(text) {
     // Generate match array:
     let matchArray = Object.entries(window.data).map((questionData) => ({
         "text": questionData[0],
@@ -82,8 +81,7 @@ function getBestMatch(text, confidenceThreshold) {
         "explanation": questionData[1].explanation
     }));
 
-    // Filter by confidence threshold and sort from higher to lower ratio:
-    matchArray = matchArray.filter(match => match.confidence >= confidenceThreshold / 100);
+    // Sort from higher to lower ratio:
     matchArray.sort((a, b) => b.confidence - a.confidence);
 
     // Return best match if available, else return null:
@@ -96,15 +94,14 @@ function getBestMatch(text, confidenceThreshold) {
 }
 
 /**
- * Get formatter data for the given text and confidence threshold.
+ * Get formatter data for the given text.
  * @date 8/12/2023 - 3:16:24 AM
  *
  * @param {string} text - Input text.
- * @param {number} confidenceThreshold - Confidence threshold.
  * @returns {{ text: string; match: string; confidence: string; answer: string; explanation: string; }} - Formatted data.
  */
-function getFormattedData(text, confidenceThreshold) {
-    const bestMatch = getBestMatch(text, confidenceThreshold);
+function getFormattedData(text) {
+    const bestMatch = getBestMatch(text);
 
     // Return formatted data if available, else default missing messages:
     return bestMatch === null ? {
