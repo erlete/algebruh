@@ -92,7 +92,7 @@ function resetView() {
     // Clear form (tag name sensitive):
     for (let key of KEYS) {
         if (document.getElementById(key).tagName === "INPUT") {
-            document.getElementById(key).value = DEFAULT_MESSAGE;
+            document.getElementById(key).placeholder = DEFAULT_MESSAGE;
         } else if (document.getElementById(key).tagName === "FORM") {
             document.getElementById(key).reset();
         } else {
