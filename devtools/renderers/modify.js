@@ -75,8 +75,9 @@ function processData() {
  */
 function copyData() {
     if (submitted) {
-        alert("Los nuevos datos JSON han sido copiados al portapapeles.\n\nReemplaza los datos de la base de datos con los nuevos y refresca la página.")
         navigator.clipboard.writeText(JSON.stringify(window.data, null, 4));
+        alert("Los nuevos datos JSON han sido copiados al portapapeles.\n\nReemplaza los datos de la base de datos con los nuevos datos copiados.")
+        setTimeout(() => window.location.reload(), 1000);
     } else {
         alert("No se pueden copiar datos sin cambios.\n\nModifica cualquier entrada, procesa los cambios e inténtalo de nuevo.")
     }
