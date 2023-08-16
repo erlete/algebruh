@@ -1182,9 +1182,13 @@ select {
 
 /* Custom */
 
+/* Hide element */
+
 .hidden {
   display: none;
 }
+
+/* Prevent text selection */
 
 .prevent-select {
   -webkit-user-select: none;
@@ -1206,6 +1210,8 @@ select {
   scrollbar-width: none;
   /* Firefox */
 }
+
+/* Prepare text boundaries for background gradiend */
 
 .gradient-color-text {
   -webkit-background-clip: text;
