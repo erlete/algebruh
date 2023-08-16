@@ -4,10 +4,12 @@
 
 /* Custom */
 
+/* Hide element */
 .hidden {
     display: none;
 }
 
+/* Prevent text selection */
 .prevent-select {
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -27,6 +29,7 @@
     /* Firefox */
 }
 
+/* Prepare text boundaries for background gradiend */
 .gradient-color-text {
     -webkit-background-clip: text;
     -moz-background-clip: text;

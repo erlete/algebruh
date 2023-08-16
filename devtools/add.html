@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full prevent-select">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Algebruh DevTools - Añadir preguntas</title>
+  <link rel="icon" type="image/x-icon" href="./media/icon.ico">
+
+  <link rel="stylesheet" href="./styles/output.css">
+  <script defer src="./renderers/add.js"></script>
+  <script src="./modules/tesseract.min.js"></script>
+  <script src="./modules/difflib-browser.js"></script>
+  <script src="./modules/commons.js"></script>
+</head>
+
+<body class="h-full items-center no-scrollbar bg-gradient-to-r from-gray-600 to-gray-200">
+  <header class="shadow-lg rounded-b-lg mb-6 bg-gradient-to-r from-gray-700 to-gray-400">
+    <nav class="p-6 flex items-center justify-between" aria-label="Global">
+      <!-- Algebruh logo -->
+      <div>
+        <a href="index.html">
+          <span class="sr-only">Algebruh</span>
+          <img class="h-0 sm:h-8 sm:w-auto" src="media/icon.png" alt="Algebruh logo">
+        </a>
+      </div>
+
+      <!-- Navigation links -->
+      <div class="flex gap-x-12 sm:gap-x-24 text-center">
+        <a href="add.html" class="text-base text-center text-gray-900 font-semibold text-red-900">Añadir
+          preguntas</a>
+        <a href="index.html" class="text-base text-center text-black-900 font-semibold hover:text-red-800">Inicio</a>
+        <a href="modify.html" class="text-base text-center text-gray-900 font-semibold hover:text-red-800">Modificar
+          preguntas</a>
+      </div>
+
+      <!-- GitHub logo -->
+      <div>
+        <a href="https://github.com/erlete/algebruh">
+          <span class="sr-only">GitHub</span>
+          <img class="h-0 sm:h-8 sm:w-auto" src="media/gh-icon.png" alt="GitHub logo">
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="grid gap-y-6 mx-12 pb-12">
+    <!-- Input -->
+    <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
+      <div class="px-4 py-5 sm:px-6 shadow-inner">
+        <h3 class="text-base font-bold leading-6 text-gray-900">Editor de pregunta</h3>
+      </div>
+
+      <div class="border-t border-gray-200">
+        <!-- Match -->
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+          <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+            <span class="inline-block" onclick="displayTooltip('text', 'add')">
+              <img src="media/information.svg" alt="Information button">
+            </span>
+            <b class="mt-0.5">Enunciado</b>
+          </dt>
+          <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            <input type="text" name="input" id="input"
+              class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+          </dd>
+        </div>
+
+        <!-- Answer -->
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+          <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+            <span class="inline-block" onclick="displayTooltip('answer', 'add')">
+              <img src="media/information.svg" alt="Information button">
+            </span>
+            <b class="mt-0.5">Respuesta</b>
+          </dt>
+          <dd></dd>
+          <form id="answer">
+            <dd class="text-sm text-gray-900 sm:mt-0">
+              <input type="radio" id="true" name="truefalse" value="true">
+              <label for="true">Verdadero</label><br>
+              <input type="radio" id="false" name="truefalse" value="false">
+              <label for="false">Falso</label><br>
+            </dd>
+          </form>
+        </div>
+
+        <!-- Explanation -->
+        <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-2 sm:gap-4 sm:px-6 shadow-inner">
+          <dt class="text-sm font-medium text-gray-500 flex items-center gap-x-1 py-0.5">
+            <span class="inline-block" onclick="displayTooltip('explanation', 'add')">
+              <img src="media/information.svg" alt="Information button">
+            </span>
+            <b class="mt-0.5">Explicación</b>
+          </dt>
+          <dd class="text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+            <input type="text" name="explanation" id="explanation"
+              class="shadow-inner block w-full rounded-md border-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+          </dd>
+        </div>
+      </div>
+    </div>
+
+    <!-- Control buttons -->
+    <div class="overflow-hidden bg-white shadow rounded-lg mt-6">
+      <div class="px-4 py-5 pb-0 sm:px-6 shadow-inner sm:grid sm:grid-cols-3 sm:gap-8 sm:px-6 shadow-inner">
+        <a id="submit" onclick="processData()"
+          class="inline-block rounded-md bg-rose-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-500 text-center font-medium text-whit">Procesar
+          datos</a>
+        <a id="preview" onclick="copyData()"
+          class="inline-block rounded-md bg-rose-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-500 text-center font-medium text-whit">Copiar
+          datos</a>
+        <a id="clear" onclick="resetView()"
+          class="inline-block rounded-md bg-rose-900 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-rose-500 text-center font-medium text-whit">Limpiar
+          formulario</a>
+      </div>
+      <div class="px-4 py-2 sm:px-6 sm:grid sm:grid-cols-3 sm:col-span-3 sm:gap-8 sm:px-6">
+        <span class="flex items-center justify-center">
+          <img src="media/information.svg" alt="Information button"
+            onclick="displayTooltip('processDataButton', 'add')">
+        </span>
+        <span class="flex items-center justify-center">
+          <img src="media/information.svg" alt="Information button" onclick="displayTooltip('copyDataButton', 'add')">
+        </span>
+        <span class="flex items-center justify-center">
+          <img src="media/information.svg" alt="Information button" onclick="displayTooltip('clearButton', 'add')">
+        </span>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>
