@@ -3,14 +3,23 @@ const DATABASE_PATH = "../src/databases/questions.json";
 const MISSING_MESSAGE = "No se ha encontrado ningún resultado viable";
 
 const INFO = {
-    "devTools": {
+    "modify": {
         "input": "Aquí deberás escribir la pregunta que quieras editar. Intenta que sea lo más parecida posible a las preguntas disponibles en la base de datos.\n\nCuanta más información contenga la pregunta, mayor será la probabilidad de obtener un resultado satisfactorio.",
         "match": "Aquí podrás ver la coincidencia de la base de datos más parecida a la pregunta que has introducido.",
         "confidence": "Aquí podrás ver el porcentaje de coincidencia de tu búsqueda con la mejor coincidencia encontrada en la base de datos.",
+        "text": "Este campo contiene el enunciado de la coincidencia encontrada en la base de datos.",
         "answer": "Este campo contiene la respuesta a la coincidencia encontrada en la base de datos.",
         "explanation": "Este campo contiene la explicación de la respuesta. En caso de que no haya explicación, déjalo en blanco.",
         "processDataButton": "Con este botón deberás procesar los datos cada vez que modifiques los datos de una búsqueda.\n\nSi no se procesan los cambios, no se guardarán.",
-        "copyDataButton": "Con este botón podrás copiar los datos modificados en formato JSON.\n\nPosteriormente, deberas pegar los datos copiados en el archivo JSON de las preguntas, sustituyendo todods los contenidos anteriores.",
+        "copyDataButton": "Con este botón podrás copiar la base de datos modificada en formato JSON.\n\nPosteriormente, deberas pegar los datos copiados en el archivo JSON de las preguntas, sustituyendo todods los contenidos anteriores.",
+        "clearButton": "Con este botón podrás limpiar tu búsqueda actual.\n\nNo se borrarán los datos procesados previamente."
+    },
+    "add": {
+        "text": "Aquí deberás escribir el enunciado de la pregunta que quieras añadir.",
+        "answer": "Aquí deberás marcar la respuesta a la pregunta que quieras añadir.",
+        "explanation": "Aquí deberás escribir la explicación de la respuesta a la pregunta que quieras añadir. En caso de que no haya explicación, déjalo en blanco.",
+        "processDataButton": "Con este botón deberás procesar los datos cada vez que añadas una nueva pregunta.\n\nSi no se procesan los cambios, no se guardarán.",
+        "copyDataButton": "Con este botón podrás copiar la base de datos modificada en formato JSON.\n\nPosteriormente, deberas pegar los datos copiados en el archivo JSON de las preguntas, sustituyendo todods los contenidos anteriores.",
         "clearButton": "Con este botón podrás limpiar tu búsqueda actual.\n\nNo se borrarán los datos procesados previamente."
     }
 }
