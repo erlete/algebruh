@@ -1,7 +1,7 @@
 {
   "name": "algebruh",
   "productName": "Algebruh",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "The absurdly simple method to get your Algebra questions right.",
   "main": "src/index.js",
   "scripts": {
