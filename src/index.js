@@ -13,7 +13,7 @@ const createWindow = () => {
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
         },
-        icon: path.join(__dirname, "media/icon.ico")
+        icon: path.join(__dirname, "media/favicon.ico")
     });
 
     mainWindow.maximize();
