@@ -1,4 +1,4 @@
-# Algebruh
+# [Algebruh](https://algebruh.erlete.dev)
 
 Algebruh is an algebra question solver platform. It implements OCR and textual pattern matching technologies to provide with answers to plenty of questions stored in a database.
 
@@ -10,7 +10,7 @@ There are two ways to benefit from the Algebruh platform tools:
 
 ### Webpage access
 
-The easiest way to access the platform is to use [the webpage](https://algebruh.erlete.org). It does not require any specific operating system, architecture or dependencies to work.
+The easiest way to access the platform is to use [the webpage](https://algebruh.erlete.dev). It does not require any specific operating system, architecture or dependencies to work.
 
 ### Webapp access
 
