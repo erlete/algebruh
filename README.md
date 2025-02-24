@@ -1,5 +1,8 @@
 # [Algebruh](https://algebruh.erlete.dev)
 
+> [!IMPORTANT]
+> This repository has been converted to a public archive since its development will not be continued. It was an experiment with educational purposes only and it succeeded in its task. However, it is now rendered almost useless due to changes in the logic it follows. Thus, the final release (**v3.2.2-eol**), will mark the end of its life. Thanks to all people who supported the development and used this resource during its lifetime.
+
 Algebruh is an algebra question solver platform. It implements OCR and textual pattern matching technologies to provide with answers to plenty of questions stored in a database.
 
 _**Note**: parts of this documentation are intended for developers alone. All platform usage instructions are located in the web/webapp itself._
